@@ -28,7 +28,7 @@ const Events = () => {
               <div className="flex flex-col lg:flex-row gap-6">
                 {/* Coluna da esquerda: Data e Detalhes */}
                 <div className="lg:w-3/4 space-y-4"> {/* Ajustado para 3/4 */}
-                  <div className="bg-blue-900 text-white rounded-lg p-4 text-center w-full mb-4">
+                  <div className="bg-blue-900 text-white rounded-lg p-4 text-center w-[200px] mb-4">
                     <div className="text-2xl font-bold mb-1">
                       {`${event.date.split('/')[0]} ${monthNames[parseInt(event.date.split('/')[1], 10) - 1]}`}
                     </div>
@@ -69,11 +69,11 @@ const Events = () => {
                 </div>
 
                 {/* Coluna da direita: Imagem */}
-                <div className="lg:w-1/4 flex justify-center items-start"> {/* Ajustado para 1/4 e alinhamento */}
+                <div className="lg:w-1/2 flex justify-center items-start"> {/* Ajustado para 1/4 e alinhamento */}
                    <img
                     src={event.image}
                     alt="Imagem do Evento"
-                    className="w-[200px] h-auto object-cover rounded-lg"
+                    className="w-[500px] h-auto object-cover rounded-lg"
                   />
                 </div>
               </div>
