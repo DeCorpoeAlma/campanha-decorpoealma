@@ -1,6 +1,6 @@
 import React from 'react';
 import { Calendar, Clock, MapPin, Users } from 'lucide-react';
-import { events } from '../data/eventsData';
+import { events } from '@/data/eventsData';
 
 const Events = () => {
   const monthNames = [

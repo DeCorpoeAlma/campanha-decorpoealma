@@ -84,6 +84,39 @@ const Program = () => {
     }
   ];
 
+  const parishes = [
+    {
+      name: 'Faro (Sé e São Pedro)',
+      candidate: 'Bruno Lage',
+      priorities: ['Reabilitação urbana', 'Comércio local', 'Turismo sustentável'],
+      image: '' // Adicionar campo de imagem
+    },
+    {
+      name: 'Montenegro',
+      candidate: 'Virgínia Alpestana',
+      priorities: ['Mobilidade', 'Espaços verdes', 'Segurança'],
+      image: '' // Adicionar campo de imagem
+    },
+    {
+      name: 'Santa Bárbara de Nexe',
+      candidate: 'Eva Mendonça',
+      priorities: ['Desenvolvimento rural', 'Associativismo', 'Cultura local'],
+      image: '' // Adicionar campo de imagem
+    },
+    {
+      name: 'Conceição',
+      candidate: 'Patrícia Cadete',
+      priorities: ['Habitação social', 'Transportes', 'Apoio aos idosos'],
+      image: '/public/Patricia_Cadete_01.jpg' // Adicionar caminho da imagem para Patrícia Cadete
+    },
+    {
+      name: 'Estoi',
+      candidate: 'João Ferradeira',
+      priorities: ['Habitação social', 'Transportes', 'Cultura local'],
+      image: '/public/Nome_01.jpg' // Adicionar caminho da imagem para Patrícia Cadete
+    }
+  ];
+
   return (
     <section id="programa" className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -92,7 +125,7 @@ const Program = () => {
             Programa Eleitoral
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Um programa abrangente que aborda os principais desafios de Faro, 
+            Um programa abrangente que aborda os principais desafios de Faro,
             com propostas concretas para melhorar a qualidade de vida de todos os cidadãos.
           </p>
         </div>
@@ -130,7 +163,7 @@ const Program = () => {
                 {programAreas[activeTab].title}
               </h3>
             </div>
-            
+
             <div className="grid md:grid-cols-2 gap-4">
               {programAreas[activeTab].proposals.map((proposal, index) => (
                 <div key={index} className="bg-white p-4 rounded-lg shadow-sm border border-gray-200">
@@ -144,6 +177,48 @@ const Program = () => {
           </div>
         </div>
 
+{/* Candidatos às Juntas de Freguesia */}
+        <div className="mt-16"> {/* Adicionado margem superior para separar do conteúdo anterior */}
+          <h3 className="text-2xl font-bold text-blue-900 text-center mb-12">
+            Candidatos às Juntas de Freguesia
+          </h3>
+          
+          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {parishes.map((parish, index) => (
+              <div key={index} className="bg-white rounded-xl p-6 shadow-md border-l-4 border-yellow-500 flex items-center gap-6"> {/* Adicionado flexbox */}
+                <div className="flex-grow"> {/* Envolve o texto e permite que ele cresça */}
+                  <h4 className="text-xl font-bold text-blue-900 mb-2">
+                    {parish.name}
+                  </h4>
+                  <p className="text-lg text-yellow-600 font-medium mb-4">
+                    {parish.candidate}
+                  </p>
+                  
+                  <div>
+                    <h5 className="font-semibold text-gray-800 mb-2">Prioridades:</h5>
+                    <ul className="space-y-1">
+                      {parish.priorities.map((priority, idx) => (
+                        <li key={idx} className="flex items-center gap-2 text-gray-600">
+                          <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                          <span>{priority}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                
+                {/* Adicionar imagem do candidato se existir */}
+                {parish.image && (
+                  <img
+                    src={parish.image}
+                    alt={`Foto de ${parish.candidate}`}
+                    className="w-40 h-56 object-cover rounded-full flex-shrink-0" // Classes para imagem (aumentado)
+                  />
+                )}
+              </div>
+            ))}
+          </div>
+        </div>
         {/* Download Button */}
         <div className="text-center mt-12">
           <button className="bg-blue-900 hover:bg-blue-800 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2 mx-auto">

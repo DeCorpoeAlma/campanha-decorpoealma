@@ -4,6 +4,7 @@ import { Menu, X } from 'lucide-react';
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeLink, setActiveLink] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -11,6 +12,30 @@ const Header = () => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const sections = document.querySelectorAll('section[id]');
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveLink(`#${entry.target.id}`);
+          }
+        });
+      },
+      { threshold: 0.5 } // Adjust threshold as needed
+    );
+
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        observer.unobserve(section);
+      });
+    };
   }, []);
 
   const menuItems = [
@@ -41,7 +66,9 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-white hover:text-yellow-500 transition-colors duration-200 font-medium"
+                className={`transition-colors duration-200 font-medium ${
+                  activeLink === item.href ? 'text-yellow-500' : 'text-white hover:text-yellow-500'
+                }`}
                 style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)' }}
               >
                 {item.name}
@@ -66,7 +93,9 @@ const Header = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-gray-700 hover:text-blue-900 transition-colors duration-200 font-medium py-2"
+                  className={`transition-colors duration-200 font-medium py-2 ${
+                    activeLink === item.href ? 'text-blue-900' : 'text-gray-700 hover:text-blue-900'
+                  }`}
                   onClick={() => setIsMenuOpen(false)}
                   style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)' }}
                 >

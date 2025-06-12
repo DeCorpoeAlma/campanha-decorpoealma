@@ -1,31 +1,35 @@
 import React from 'react';
-import Header from './components/Header';
-import Hero from './components/Hero';
-import CandidateSection from './components/CandidateSection';
-import Program from './components/Program';
-import News from './components/News';
-import Events from './components/Events';
-import Participate from './components/Participate';
-import Team from './components/Team';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+import Header from '@/components/Header';
+import Hero from '@/components/Hero';
+import News from '@/components/News';
+import CandidateSection from '@/components/CandidateSection';
+import CristovaoNorteSection from '@/components/CristovaoNorteSection';
+import CristovaoValues from '@/components/CristovaoValues';
+import CristovaoVision from '@/components/CristovaoVision';
+import Events from '@/components/Events';
+import MacarioCorreiaSection from '@/components/MacarioCorreiaSection';
+import Participate from '@/components/Participate';
+import Program from '@/components/Program';
+import Team from '@/components/Team';
+import Footer from '@/components/Footer';
+// Importar o Chatbot se ele for usado em alguma seção específica
+// import Chatbot from '@/components/Chatbot';
 
 function App() {
   return (
-    <div className="min-h-screen">
+    <>
       <Header />
-      <main>
-        <Hero />
-        <CandidateSection />
-        <Program />
-        <News />
-        <Events />
-        <Participate />
-        <Team />
-        <Contact />
-      </main>
+      <Hero />
+      <News />
+      <CandidateSection />
+      <Events />
+      <Program />
+      <Participate />
+      <Team />
       <Footer />
-    </div>
+      {/* Adicionar o Chatbot em uma seção apropriada se necessário */}
+      {/* <Chatbot /> */}
+    </>
   );
 }
 

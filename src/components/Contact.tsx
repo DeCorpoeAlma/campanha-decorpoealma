@@ -10,7 +10,7 @@ const Contact = () => {
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -18,7 +18,7 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Here you would typically send the data to your backend
     setIsSubmitted(true);
@@ -56,8 +56,8 @@ const Contact = () => {
                   <div>
                     <h4 className="font-semibold text-gray-800 mb-1">Sede de Campanha</h4>
                     <p className="text-gray-600">
-                      Rua da República, 123<br />
-                      8000-123 Faro
+                      Rua de São Luís (Beco Frei André Álvares), 56<br />
+                      8000-285 Faro
                     </p>
                     <p className="text-sm text-gray-500 mt-2">
                       Segunda a Sexta: 9h00-18h00<br />
@@ -70,8 +70,8 @@ const Contact = () => {
                   <Mail className="text-blue-600 mt-1" size={24} />
                   <div>
                     <h4 className="font-semibold text-gray-800 mb-1">Email</h4>
-                    <p className="text-gray-600">geral@farocorpoealma.pt</p>
-                    <p className="text-gray-600">imprensa@farocorpoealma.pt</p>
+                    <p className="text-gray-600">geral@farodecorpoealma.pt</p>
+                    <p className="text-gray-600">imprensa@farodecorpoealma.pt</p>
                   </div>
                 </div>
 
@@ -79,8 +79,7 @@ const Contact = () => {
                   <Phone className="text-blue-600 mt-1" size={24} />
                   <div>
                     <h4 className="font-semibold text-gray-800 mb-1">Telefone</h4>
-                    <p className="text-gray-600">289 123 456</p>
-                    <p className="text-gray-600">961 234 567</p>
+                    <p className="text-gray-600">289 813 425</p>
                   </div>
                 </div>
               </div>
@@ -94,19 +93,19 @@ const Contact = () => {
               
               <div className="flex gap-4">
                 <a
-                  href="#"
+                  href="https://www.facebook.com/profile.php?id=100066736810804"
                   className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full transition-colors duration-200"
                 >
                   <Facebook size={24} />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.instagram.com/faro_de_corpo_e_alma/"
                   className="bg-pink-600 hover:bg-pink-700 text-white p-3 rounded-full transition-colors duration-200"
                 >
                   <Instagram size={24} />
                 </a>
                 <a
-                  href="#"
+                  href="https://www.youtube.com/@farodecorpoealma"
                   className="bg-red-600 hover:bg-red-700 text-white p-3 rounded-full transition-colors duration-200"
                 >
                   <Youtube size={24} />
@@ -115,12 +114,18 @@ const Contact = () => {
             </div>
 
             {/* Map Placeholder */}
-            <div className="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
-              <div className="text-center text-gray-500">
-                <MapPin size={48} className="mx-auto mb-2" />
-                <p>Mapa da localização</p>
-                <p className="text-sm">Sede de Campanha - Faro</p>
-              </div>
+            {/* Mapa da localização */}
+            <div className="rounded-lg overflow-hidden shadow-md">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d411.1665761528269!2d-7.929760356960938!3d37.02087930474841!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0552c582e77817%3A0x18e18eceddb51fc6!2sPSD%20Algarve!5e1!3m2!1spt-PT!2spt!4v1749667984072!5m2!1spt-PT!2spt"
+                width="100%"
+                height="400" // Ajuste a altura conforme necessário
+                style={{ border: 0 }}
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Mapa da Sede de Campanha - Faro"
+              ></iframe>
             </div>
           </div>
 

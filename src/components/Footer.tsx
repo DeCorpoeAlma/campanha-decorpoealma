@@ -60,11 +60,11 @@ const Footer = () => {
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <Mail size={18} className="text-yellow-400" />
-                  <span className="text-blue-100">geral@farocorpoealma.pt</span>
+                  <span className="text-blue-100">geral@farodecorpoealma.pt</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone size={18} className="text-yellow-400" />
-                  <span className="text-blue-100">289 123 456</span>
+                  <span className="text-blue-100">289 813 425</span>
                 </div>
               </div>
               
@@ -73,19 +73,19 @@ const Footer = () => {
                 <h5 className="text-sm font-medium text-yellow-400 mb-3">Siga-nos</h5>
                 <div className="flex gap-3">
                   <a
-                    href="#"
+                    href="https://www.facebook.com/profile.php?id=100066736810804"
                     className="bg-blue-800 hover:bg-blue-700 p-2 rounded-full transition-colors duration-200"
                   >
                     <Facebook size={20} />
                   </a>
                   <a
-                    href="#"
+                    href="https://www.instagram.com/faro_de_corpo_e_alma/"
                     className="bg-blue-800 hover:bg-blue-700 p-2 rounded-full transition-colors duration-200"
                   >
                     <Instagram size={20} />
                   </a>
                   <a
-                    href="#"
+                    href="https://www.youtube.com/@farodecorpoealma"
                     className="bg-blue-800 hover:bg-blue-700 p-2 rounded-full transition-colors duration-200"
                   >
                     <Youtube size={20} />
@@ -103,7 +103,7 @@ const Footer = () => {
               </div>
               
               <div className="text-blue-200 text-sm text-center md:text-right">
-                <p>Mandatário Financeiro: [Nome do Mandatário]</p>
+                <p>Mandatário: [Nome do Mandatário]</p>
                 <p className="mt-1">
                   Campanha desenvolvida com{' '}
                   <Heart size={14} className="inline text-yellow-400" />{' '}
