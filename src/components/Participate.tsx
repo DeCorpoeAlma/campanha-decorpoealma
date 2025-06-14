@@ -1,8 +1,23 @@
 import React, { useState } from 'react';
 import { Heart, Users, Share2, DollarSign, CheckCircle } from 'lucide-react';
 
+interface FormData {
+  nome: string;
+  apelido: string;
+  email: string;
+  telemovel: string;
+  dataNascimento: string;
+  idade: string;
+  genero: string;
+  interesses: string[]; // Definir explicitamente como string[]
+  codigoPostal: string;
+  consentimentoDados: boolean;
+  subscricaoEmail: boolean;
+  subscricaoSMS: boolean;
+}
+
 const Participate = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     nome: '',
     apelido: '',
     email: '',
@@ -32,7 +47,7 @@ const Participate = () => {
     { id: 'agriculturaMar', label: 'Agricultura e Mar' },
   ];
 
-  const handleInputChange = (e) => {
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({
       ...prev,
@@ -40,16 +55,16 @@ const Participate = () => {
     }));
   };
 
-  const handleInterestChange = (interestId) => {
+  const handleInterestChange = (interestId: string) => {
     setFormData(prev => ({
       ...prev,
-      interests: prev.interests.includes(interestId)
-        ? prev.interests.filter(id => id !== interestId)
-        : [...prev.interests, interestId]
+      interesses: prev.interesses.includes(interestId)
+        ? prev.interesses.filter((id: string) => id !== interestId)
+        : [...prev.interesses, interestId]
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Here you would typically send the data to your backend
     setIsSubmitted(true);
@@ -135,6 +150,24 @@ const Participate = () => {
                   Fala com família, amigos e colegas sobre as nossas propostas 
                   para Faro.
                 </p>
+              </div>
+            </div>
+{/* Contactos e Mapa */}
+            <div className="space-y-6">
+              <h3 className="text-2xl font-bold text-blue-900 mb-4">
+                Contactos e Localização
+              </h3>
+              <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-green-500">
+                <h4 className="font-semibold text-blue-900 mb-2">Sede de Campanha</h4>
+                <p className="text-gray-600">
+                  Telefone: 289 813 425<br />
+                  Email: geral@farodecorpoealma.pt<br />
+                  Morada: Rua de São Luís (Beco Frei André Álvares) 56, 8000-285 Faro
+                </p>
+              </div>
+              <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-purple-500">
+                <h4 className="font-semibold text-blue-900 mb-2">Localização</h4>
+                <div className="w-full h-64 rounded-lg overflow-hidden" dangerouslySetInnerHTML={{ __html: '<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230.98267172593035!2d-7.929507089271855!3d37.020797626710475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0552c582e77817%3A0x18e18eceddb51fc6!2sPSD%20Algarve!5e1!3m2!1spt-PT!2spt!4v1749868057968!5m2!1spt-PT!2spt" style="border:0; width: 100%; height: 100%;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>' }} />
               </div>
             </div>
           </div>

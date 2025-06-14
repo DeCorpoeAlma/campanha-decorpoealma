@@ -12,8 +12,8 @@ import Participate from '@/components/Participate';
 import Program from '@/components/Program';
 import Team from '@/components/Team';
 import Footer from '@/components/Footer';
-// Importar o Chatbot se ele for usado em alguma seção específica
-// import Chatbot from '@/components/Chatbot';
+// Importar o Chatbot
+import Chatbot from '@/components/Chatbot';
 
 function App() {
   return (
@@ -26,9 +26,9 @@ function App() {
       <Program />
       <Participate />
       <Team />
+      {/* Adicionar o Chatbot aqui */}
+      <Chatbot />
       <Footer />
-      {/* Adicionar o Chatbot em uma seção apropriada se necessário */}
-      {/* <Chatbot /> */}
     </>
   );
 }

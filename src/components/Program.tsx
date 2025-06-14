@@ -104,13 +104,13 @@ const Program = () => {
       image: '' // Adicionar campo de imagem
     },
     {
-      name: 'Conceição',
+      name: 'Estoi',
       candidate: 'Patrícia Cadete',
       priorities: ['Habitação social', 'Transportes', 'Apoio aos idosos'],
       image: '/public/Patricia_Cadete_01.jpg' // Adicionar caminho da imagem para Patrícia Cadete
     },
     {
-      name: 'Estoi',
+      name: 'Conceição',
       candidate: 'João Ferradeira',
       priorities: ['Habitação social', 'Transportes', 'Cultura local'],
       image: '/public/Nome_01.jpg' // Adicionar caminho da imagem para Patrícia Cadete

@@ -5,22 +5,22 @@ export const events = [
     time: '18:30',
     location: 'Montenegro - Clube Desportivo de Montenegro',
     type: 'Apresentação Pública',
-    description: 'Apresentação dos candidatos às Juntas de Freguesia.',
+    description: 'Ouvimos as queixas dos moradores do Montenegro.',
     attendees: 'Participação livre',
     image: '/Ouvir_Montenegro.jpg'
   },
   {
-    title: 'Ouvir.Estoi',
+    title: 'Estoi. De Corpo e Alma',
     date: '17/06/2025 (terça-feira)',
     time: '18:30',
-    location: 'Estoi - Largo da Igreja',
+    location: 'Estoi - Largo da Igreja Matriz',
     type: 'Apresentação Pública',
     description: 'Apresentação dos candidatos às Juntas de Freguesia.',
     attendees: 'Participação livre',
-    image: ''
+    image: '/Estoi_17Jun.jpeg'
   },
   {
-    title: 'Ouvir.Conceição',
+    title: 'Conceição. De Corpo e Alma',
     date: '26/06/2025 (quinta-feira)',
     time: '18:30',
     location: 'Conceição - Pátio da Casa do Povo',
@@ -30,7 +30,7 @@ export const events = [
     image: ''
   },
   {
-    title: 'Ouvir.Faro',
+    title: 'Faro. De Corpo e Alma',
     date: '03/07/2025 (quinta-feira)',
     time: '18:30',
     location: 'Faro - Espaço Muralhas',
@@ -40,7 +40,7 @@ export const events = [
     image: ''
   },
   {
-    title: 'Ouvir.Montenegro',
+    title: 'Montenegro. De Corpo e Alma',
     date: '10/07/2025 (quinta-feira)',
     time: '18:30',
     location: 'Montenegro - Clube Desportivo de Montenegro',
@@ -50,7 +50,7 @@ export const events = [
     image: ''
   },
   {
-    title: 'Ouvir.Santa Bárbara',
+    title: 'Santa Bárbara. De Corpo e Alma',
     date: '17/07/2025 (quinta-feira)',
     time: '18:30',
     location: 'Santa Bárbara - Largo da Igreja',
