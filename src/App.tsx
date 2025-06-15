@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import News from '@/components/News';
@@ -16,6 +16,14 @@ import Footer from '@/components/Footer';
 import Chatbot from '@/components/Chatbot';
 
 function App() {
+  useEffect(() => {
+    // Adicionar scroll suave para navegação por âncoras
+    document.documentElement.style.scrollBehavior = 'smooth';
+    return () => {
+      document.documentElement.style.scrollBehavior = 'auto';
+    };
+  }, []);
+
   return (
     <>
       <Header />
@@ -25,9 +33,8 @@ function App() {
       <Events />
       <Program />
       <Participate />
-      <Team />
-      {/* Adicionar o Chatbot aqui */}
       <Chatbot />
+      <Team />
       <Footer />
     </>
   );

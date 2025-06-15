@@ -69,12 +69,12 @@ const Chatbot = () => {
 
   // Mensagem inicial do bot
   useEffect(() => {
-    addMessage('Olá! Sou seu assistente de IA sobre a campanha "Faro. De Corpo e Alma". Pergunte-me sobre a campanha, os candidatos ou o programa!', 'bot');
+    addMessage('Olá! Sou o seu assistente de IA sobre a campanha "Faro. De Corpo e Alma". Pergunte-me sobre a campanha, os candidatos ou o programa!', 'bot');
   }, []); // Executar apenas uma vez na montagem do componente
 
   return (
-    <section id="chatbot" className="py-20 bg-gray-100">
-      <div className="container mx-auto px-4">
+    <section id="chatbot" className="py-20 bg-gray-100 scroll-mt-24">
+      <div className="max-w-screen-xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-blue-900 mb-4">
             Fale Connosco
@@ -84,7 +84,7 @@ const Chatbot = () => {
           </p>
         </div>
 
-        <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden flex flex-col h-[600px]"> {/* Altura fixa para o chat */}
+        <div className="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col h-[calc(100vh-16rem)]"> {/* Altura responsiva */}
           <div ref={chatMessagesRef} className="flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50"> {/* Fundo claro para mensagens */}
             {messages.map((msg, index) => (
               <div
@@ -92,7 +92,7 @@ const Chatbot = () => {
                 className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}
               >
                 <div
-                  className={`p-3 rounded-lg max-w-xs ${
+                  className={`p-4 rounded-lg w-[85%] ${
                     msg.sender === 'user'
                       ? 'bg-blue-500 text-white'
                       : 'bg-gray-200 text-gray-800' // Cor de fundo para mensagens do bot
@@ -114,7 +114,7 @@ const Chatbot = () => {
             ))}
             {isTyping && (
               <div className="flex justify-start">
-                <div className="p-3 rounded-lg max-w-xs bg-gray-200 text-gray-800">
+                <div className="p-4 rounded-lg w-[85%] bg-gray-200 text-gray-800">
                   <div className="typing-indicator">
                     <div className="typing-dots">
                       <span></span>

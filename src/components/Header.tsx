@@ -47,13 +47,11 @@ const Header = () => {
     { name: 'Eventos', href: '#eventos' },
     { name: 'Equipa', href: '#equipa' },
     { name: 'Participa', href: '#participa' },
-    { name: 'Contactos', href: '#contactos' },
+    { name: 'Chatbot', href: '#chatbot' },
   ];
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'shadow-lg py-2' : 'backdrop-blur-sm py-4'
-    }`}>
+    <header className="fixed w-full z-50 transition-all duration-300 bg-transparent py-4">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           <div className="text-2xl font-bold text-white" style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)' }}>
@@ -70,6 +68,12 @@ const Header = () => {
                   activeLink === item.href ? 'text-yellow-500' : 'text-white hover:text-yellow-500'
                 }`}
                 style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)' }}
+                onClick={() => {
+                  const element = document.querySelector(item.href);
+                  if (element) {
+                    element.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
               >
                 {item.name}
               </a>
@@ -96,7 +100,14 @@ const Header = () => {
                   className={`transition-colors duration-200 font-medium py-2 ${
                     activeLink === item.href ? 'text-blue-900' : 'text-gray-700 hover:text-blue-900'
                   }`}
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.querySelector(item.href);
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                    setIsMenuOpen(false);
+                  }}
                   style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)' }}
                 >
                   {item.name}

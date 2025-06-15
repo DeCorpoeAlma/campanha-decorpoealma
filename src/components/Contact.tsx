@@ -71,7 +71,6 @@ const Contact = () => {
                   <div>
                     <h4 className="font-semibold text-gray-800 mb-1">Email</h4>
                     <p className="text-gray-600">geral@farodecorpoealma.pt</p>
-                    <p className="text-gray-600">imprensa@farodecorpoealma.pt</p>
                   </div>
                 </div>
 
