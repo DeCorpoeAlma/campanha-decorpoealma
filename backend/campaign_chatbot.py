@@ -14,6 +14,29 @@ import os
 from contextlib import asynccontextmanager
 from dotenv import load_dotenv # Importar load_dotenv
 
+def save_subscriber_email(email: str):
+    """Guarda o email de subscrição num arquivo persistente ou local."""
+    # Tenta obter o caminho do disco persistente de uma variável de ambiente
+    persistent_dir = os.getenv("PERSISTENT_DISK_PATH")
+    
+    if persistent_dir:
+        # Usa o caminho do disco persistente se definido
+        filepath = os.path.join(persistent_dir, 'subscribers.txt')
+        # Garante que o diretório exista
+        os.makedirs(persistent_dir, exist_ok=True)
+        logger.info(f"Usando disco persistente para guardar email em: {filepath}")
+    else:
+        # Fallback para arquivo local se a variável de ambiente não estiver definida
+        filepath = os.path.join(os.path.dirname(__file__), 'subscribers.txt')
+        logger.warning(f"Variável PERSISTENT_DISK_PATH não definida. Guardando email localmente em: {filepath}")
+
+    try:
+        with open(filepath, 'a') as f:
+            f.write(email + '\n')
+        logger.info(f"Email '{email}' guardado com sucesso em {filepath}")
+    except Exception as e:
+        logger.error(f"Erro ao guardar email '{email}' em {filepath}: {str(e)}")
+
 # Carregar variáveis de ambiente do arquivo .env
 load_dotenv()
 
@@ -55,6 +78,10 @@ class HealthResponse(BaseModel):
 # Configuração de segurança (usaremos a chave do .env, mas mantemos a estrutura para consistência)
 # security = HTTPBearer() # Não usaremos mais HTTPBearer para a chave principal
 
+# Modelo Pydantic para subscrição
+class SubscribeRequest(BaseModel):
+    email: str = Field(..., description="Email para subscrição")
+
 # Gerenciador de contexto para aplicação
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -82,7 +109,7 @@ app = FastAPI(
 # Configuração CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Em produção, especifique domínios específicos
+    allow_origins=["https://decorpoealma.netlify.app"],  # Domínio do site Netlify em produção
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -144,8 +171,11 @@ def extract_text_from_frontend(filepath):
     # Isso pode ser impreciso para estruturas complexas
     text_in_tags = re.findall(r'>([^<]+)<', content)
     
+    # Extrair URLs de tags <a>
+    urls_in_tags = re.findall(r'<a\s+[^>]*href=["\']([^"\']+)["\']', content)
+
     # Combinar e limpar
-    all_text = " ".join(extracted_strings + text_in_tags)
+    all_text = " ".join(extracted_strings + text_in_tags + urls_in_tags)
 
     # Remover múltiplos espaços em branco e quebras de linha
     cleaned_text = re.sub(r'\s+', ' ', all_text).strip()
@@ -159,6 +189,7 @@ def load_site_content():
     # Caminhos dos arquivos do frontend (ajuste conforme a estrutura do seu projeto)
     # Adicione aqui todos os arquivos relevantes que contêm informações sobre a campanha e candidatos
     frontend_files = [
+        'src/components/Hero.tsx', # Adicionado componente Hero
         'src/components/CandidateSection.tsx',
         'src/components/CristovaoValues.tsx',
         'src/components/CristovaoVision.tsx',
@@ -167,9 +198,14 @@ def load_site_content():
         'src/components/MacarioRole.tsx',
         'src/components/Program.tsx',
         'src/components/Team.tsx',
+        'src/components/Contact.tsx',
+        'src/components/News.tsx',
+        'src/components/Events.tsx', # Garantir que Eventos está incluído
+        'src/components/Participate.tsx', # Garantir que Participate está incluído
+        'src/components/Footer.tsx', # Adicionado componente Footer
         'src/data/candidatesData.ts',
-        'README.md', # O README também pode ter informações úteis
-        # Removidos arquivos menos relevantes para reduzir o tamanho do contexto
+        'src/data/eventsData.ts',
+        'README.md',
     ]
 
     for filepath in frontend_files:
@@ -498,6 +534,13 @@ async def chat_stream(
     api_key: str = Depends(get_openrouter_api_key)
 ):
     """Endpoint para chat com streaming (implementação futura)"""
+
+@app.post("/subscribe")
+async def subscribe(request: SubscribeRequest):
+    """Endpoint para subscrição da agenda"""
+    logger.info(f"Pedido de subscrição recebido para o email: {request.email}")
+    save_subscriber_email(request.email) # Chamar a função para guardar o email
+    return {"message": "Subscrição recebida com sucesso!"}
     raise HTTPException(
         status_code=status.HTTP_501_NOT_IMPLEMENTED,
         detail="Streaming ainda não implementado"

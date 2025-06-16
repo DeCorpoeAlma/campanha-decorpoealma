@@ -35,8 +35,17 @@ const CristovaoNorteSection = () => {
               {cristovao.values && <CristovaoValues values={cristovao.values} />}
             </div>
 
-            {/* Renderizar CristovaoVision apenas se cristovao.vision existir */}
-            {cristovao.vision && <CristovaoVision vision={cristovao.vision} />}
+            <div className="flex flex-col items-center space-y-8 lg:col-start-2"> {/* Segunda coluna com layout vertical */}
+              <div className="flex justify-center"> {/* Container para a imagem */}
+                <img
+                  src="/Cristovao_Norte_01.jpg" // Caminho relativo à pasta public
+                  alt={`Foto de ${cristovao.name}`}
+                  className="rounded-lg shadow-md max-w-full h-auto" // Estilos para a imagem
+                />
+              </div>
+              {/* Renderizar CristovaoVision apenas se cristovao.vision existir */}
+              {cristovao.vision && <CristovaoVision vision={cristovao.vision} />}
+            </div>
           </div>
         </div>
       </div>

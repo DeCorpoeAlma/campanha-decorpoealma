@@ -14,7 +14,7 @@ const CristovaoVision: React.FC<CristovaoVisionProps> = ({ vision }) => {
   }
 
   return (
-    <div className="relative">
+    <div className="relative w-full"> {/* Adicionado w-full para ajustar a largura */}
       <div className="bg-gradient-to-br from-blue-100 to-yellow-100 p-8 rounded-2xl">
         <div className="bg-white p-6 rounded-xl shadow-lg">
           <h3 className="text-2xl font-bold text-blue-900 mb-4">Visão para Faro</h3>

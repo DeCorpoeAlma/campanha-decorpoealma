@@ -86,6 +86,8 @@ const Footer = () => {
                   </a>
                   <a
                     href="https://www.youtube.com/@farodecorpoealma"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="bg-blue-800 hover:bg-blue-700 p-2 rounded-full transition-colors duration-200"
                   >
                     <Youtube size={20} />

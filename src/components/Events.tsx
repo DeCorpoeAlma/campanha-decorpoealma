@@ -1,5 +1,5 @@
 import React from 'react';
-import { Calendar, Clock, MapPin, Users } from 'lucide-react';
+import { Clock, MapPin, Users } from 'lucide-react';
 import { events } from '@/data/eventsData';
 
 const Events = () => {
@@ -7,7 +7,6 @@ const Events = () => {
     "Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho",
     "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"
   ];
-
 
   return (
     <section id="eventos" className="py-20 bg-white">
@@ -85,16 +84,14 @@ const Events = () => {
           <p className="text-gray-600 mb-4">
             Quer estar sempre informado sobre os nossos eventos?
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <input
-              type="email"
-              placeholder="O seu email"
-              className="px-6 py-3 border border-gray-300 rounded-full focus:outline-none focus:border-blue-500 max-w-xs"
-            />
-            <button className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 px-6 py-3 rounded-full font-semibold transition-colors duration-200">
-              Subscrever Agenda
-            </button>
-          </div>
+          <a
+            href="https://form.qomon.org/faro-2025/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-yellow-500 hover:bg-yellow-600 text-blue-900 px-6 py-3 rounded-full font-semibold transition-colors duration-200"
+          >
+            Subscrever Agenda
+          </a>
         </div>
       </div>
     </section>

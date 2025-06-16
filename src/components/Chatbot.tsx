@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Send } from 'lucide-react';
 import ReactMarkdown from 'react-markdown'; // Importar react-markdown
 import remarkGfm from 'remark-gfm'; // Importar remark-gfm para tabelas, etc.
+import rehypeRaw from 'rehype-raw'; // Importar rehype-raw para permitir HTML
 
 const Chatbot = () => {
   const [messages, setMessages] = useState<Array<{ text: string; sender: string; timestamp: string }>>([]);
@@ -10,7 +11,8 @@ const Chatbot = () => {
   const [isTyping, setIsTyping] = useState(false);
   const chatMessagesRef = useRef<HTMLDivElement>(null); // Ref para scroll automático
 
-  const backendUrl = 'http://localhost:8000/chat'; // URL do backend Python
+  // URL do backend Python implantado no Render
+  const backendUrl = 'https://campanha-decorpoealma.onrender.com/chat';
   const defaultModel = 'meta-llama/llama-3.1-70b-instruct'; // Modelo fixo para Llama
 
   // Efeito para scrollar para a última mensagem
@@ -100,7 +102,7 @@ const Chatbot = () => {
                 >
                   {/* Renderizar Markdown para mensagens do bot */}
                   {msg.sender === 'bot' ? (
-                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                    <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]}>
                       {msg.text}
                     </ReactMarkdown>
                   ) : (

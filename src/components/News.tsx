@@ -140,10 +140,15 @@ const News = () => {
                     <Play size={16} />
                   </button>
                 ) : (
-                  <button className="flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200">
+                  <a
+                    href="#" // Substituir por URL real se disponível nos dados
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200"
+                  >
                     Ler Mais
                     <ExternalLink size={16} />
-                  </button>
+                  </a>
                 )}
               </div>
             </article>

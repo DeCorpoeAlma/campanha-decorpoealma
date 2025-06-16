@@ -89,13 +89,13 @@ const Program = () => {
       name: 'Faro (Sé e São Pedro)',
       candidate: 'Bruno Lage',
       priorities: ['Reabilitação urbana', 'Comércio local', 'Turismo sustentável'],
-      image: '' // Adicionar campo de imagem
+      image: '/Bruno_Lage_01.jpg' // Adicionar campo de imagem
     },
     {
       name: 'Montenegro',
       candidate: 'Virgínia Alpestana',
       priorities: ['Mobilidade', 'Espaços verdes', 'Segurança'],
-      image: '' // Adicionar campo de imagem
+      image: '/Virginia_Alpestana_01.jpg' // Adicionar campo de imagem
     },
     {
       name: 'Santa Bárbara de Nexe',
@@ -113,7 +113,7 @@ const Program = () => {
       name: 'Conceição',
       candidate: 'João Ferradeira',
       priorities: ['Habitação social', 'Transportes', 'Cultura local'],
-      image: '/Nome_01.jpg' // Adicionar caminho da imagem para Patrícia Cadete
+      image: '/Joao_Ferradeira_01.jpg' // Adicionar caminho da imagem para Patrícia Cadete
     }
   ];
 

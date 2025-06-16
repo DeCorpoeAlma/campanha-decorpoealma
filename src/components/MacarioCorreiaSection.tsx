@@ -24,9 +24,7 @@ const MacarioCorreiaSection = () => {
                 {macario.biography} {/* Usar biografia dos dados */}
               </p>
 
-              {/* Usar o novo componente para Percurso Político */}
-              <MacarioPoliticalCareer />
-
+              {/* Mover a citação para aqui, na primeira coluna */}
               <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
                 <Quote size={24} className="text-blue-500 mb-3" />
                 <blockquote className="text-lg italic text-blue-900">
@@ -35,11 +33,20 @@ const MacarioCorreiaSection = () => {
               </div>
             </div>
 
-            <div className="lg:order-1 relative">
+            <div className="lg:order-1 relative space-y-6"> {/* Adicionado space-y-6 para espaçamento vertical */}
+              <div className="flex justify-center mb-8 lg:mb-0"> {/* Container para centralizar a imagem */}
+                <img
+                  src="/Macário_Correia_02.jpg" // Caminho relativo à pasta public
+                  alt={`Foto de ${macario.name}`}
+                  className="rounded-lg shadow-md max-w-full h-auto" // Estilos para a imagem
+                />
+              </div>
               <div className="bg-gradient-to-br from-yellow-100 to-blue-100 p-8 rounded-2xl">
                 {/* Usar o novo componente para Papel na Candidatura */}
                 <MacarioRole />
               </div>
+              {/* Mover o Percurso Político para aqui, abaixo do Papel na Candidatura */}
+              <MacarioPoliticalCareer />
             </div>
           </div>
         </div>

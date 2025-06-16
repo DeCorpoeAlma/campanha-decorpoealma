@@ -105,6 +105,8 @@ const Contact = () => {
                 </a>
                 <a
                   href="https://www.youtube.com/@farodecorpoealma"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="bg-red-600 hover:bg-red-700 text-white p-3 rounded-full transition-colors duration-200"
                 >
                   <Youtube size={24} />
