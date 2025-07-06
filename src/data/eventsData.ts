@@ -27,17 +27,17 @@ export const events = [
     type: 'Apresentação Pública',
     description: 'Apresentação dos candidatos às Juntas de Freguesia.',
     attendees: 'Participação livre',
-    image: ''
+    image: 'Flyer Conceição.jpg'
   },
   {
     title: 'Faro. De Corpo e Alma',
     date: '03/07/2025 (quinta-feira)',
-    time: '18:30',
-    location: 'Faro - Espaço Muralhas',
+    time: '18:45',
+    location: 'Jardim da Alameda João de Deus',
     type: 'Apresentação Pública',
     description: 'Apresentação dos candidatos às Juntas de Freguesia.',
     attendees: 'Participação livre',
-    image: ''
+    image: '/Flyer_Bruno_Lage.jpeg'
   },
   {
     title: 'Montenegro. De Corpo e Alma',

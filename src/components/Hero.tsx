@@ -1,7 +1,21 @@
 import React from 'react';
 import { ArrowRight, Users, FileText } from 'lucide-react';
+import useEmblaCarousel from 'embla-carousel-react';
+import Autoplay from 'embla-carousel-autoplay';
 
 const Hero = () => {
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()]);
+
+  const phrases = [
+    "Algo que nunca existiu vai nascer em Faro. Uma coligação única.<br />Um encontro improvável de diferentes visões, <br />unidas por Faro e pelo compromisso de fazer melhor.",
+    "Está a chegar algo inédito.<br />Uma coligação feita de pluralidade. De entrega genuína.<br />Com a alma de Faro no centro de tudo.",
+    "Nem todas as campanhas nascem iguais.<br />Algumas surpreendem.<br />Começam onde menos se espera: na união improvável de caminhos distintos.",
+    "De vozes que, sendo diferentes, partilham uma vontade comum.<br />Um movimento novo, nascido do inconformismo.<br />De quem acredita no futuro. Um melhor Futuro.",
+    "<br />Quando há coragem para juntar o que nunca se juntou, o futuro começa a mudar.",
+    "Ideias diversas, convicções firmes, um só compromisso: <br />cuidar da nossa cidade e do nosso concelho, <br />transformar com responsabilidade, agir com esperança e com sentido.",
+    "Juntos, vamos fazer história.<br /> Por Faro. Por todos nós.<br />Com confiança."
+  ];
+
   return (
     <section id="inicio" className="relative overflow-hidden">
       {/* Background Image */}
@@ -20,10 +34,15 @@ const Hero = () => {
           {/* Main Content */}
           <div className="flex flex-col justify-center"> {/* Removed pb-32 */}
             <div className="space-y-8">
-              <p className="text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed font-medium"> {/* Removed text-white, drop-shadow-lg */}
-                Uma visão renovada para Faro. Uma candidatura que une experiência e renovação
-                para construir o futuro da nossa cidade.
-              </p>
+              <div className="embla" ref={emblaRef}>
+                <div className="embla__container">
+                  {phrases.map((phrase, index) => (
+                    <div className="embla__slide" key={index}>
+                      <p className="text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed font-medium" dangerouslySetInnerHTML={{ __html: phrase }}></p>
+                    </div>
+                  ))}
+                </div>
+              </div>
 
               {/* Action Buttons */}
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

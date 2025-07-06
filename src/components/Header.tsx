@@ -54,9 +54,7 @@ const Header = () => {
     <header className="fixed w-full z-50 transition-all duration-300 bg-transparent py-4">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
-          <div className="text-2xl font-bold text-white" style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)' }}>
-            FARO 2025
-          </div>
+          <img src="/images/Logo_FCC_transparente_01.png" alt="Logo FCC" className="h-10 w-auto" />
           
           {/* Desktop Menu */}
           <nav className="hidden lg:flex space-x-8">

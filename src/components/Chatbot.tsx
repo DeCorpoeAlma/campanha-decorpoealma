@@ -13,14 +13,14 @@ const Chatbot = () => {
 
   // URL do backend Python implantado no Render
   const backendUrl = 'https://campanha-decorpoealma.onrender.com/chat';
-  const defaultModel = 'meta-llama/llama-3.1-70b-instruct'; // Modelo fixo para Llama
+  const defaultModel = 'anthropic/claude-3.5-sonnet'; // Modelo padrão suportado pelo backend
 
   // Efeito para scrollar para a última mensagem
   useEffect(() => {
     if (chatMessagesRef.current) {
       chatMessagesRef.current.scrollTop = chatMessagesRef.current.scrollHeight;
     }
-  }, [messages]);
+})
 
   const addMessage = (text: string, sender: string) => {
     const now = new Date();

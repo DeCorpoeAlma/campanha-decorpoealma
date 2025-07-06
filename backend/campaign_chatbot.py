@@ -1,3 +1,5 @@
+import os
+print(f"Executing script: {os.path.abspath(__file__)}")
 # backend/campaign_chatbot.py
 from fastapi import FastAPI, HTTPException, Depends, status
 from fastapi.middleware.cors import CORSMiddleware
@@ -13,6 +15,7 @@ import json
 import os
 from contextlib import asynccontextmanager
 from dotenv import load_dotenv # Importar load_dotenv
+from transformers import pipeline
 
 def save_subscriber_email(email: str):
     """Guarda o email de subscrição num arquivo persistente ou local."""
@@ -52,7 +55,7 @@ class Message(BaseModel):
 
 class ChatRequest(BaseModel):
     message: str = Field(..., min_length=1, max_length=4000, description="Mensagem do usuário")
-    model: str = Field(default="anthropic/claude-3.5-sonnet", description="Modelo a ser usado")
+    model: str = Field(default="google/gemini-pro", description="Modelo a ser usado")
     temperature: float = Field(default=0.7, ge=0.0, le=2.0, description="Temperatura para geração")
     max_tokens: int = Field(default=1000, ge=1, le=4000, description="Máximo de tokens na resposta")
     session_id: Optional[str] = Field(default=None, description="ID da sessão para manter contexto")
@@ -91,6 +94,16 @@ async def lifespan(app: FastAPI):
     app.state.http_client = httpx.AsyncClient(timeout=60.0)
     app.state.site_context = load_site_content() # Carregar conteúdo do site na inicialização
     logger.info(f"Conteúdo do site carregado. Tamanho: {len(app.state.site_context)} caracteres.")
+    logger.info("⏳ Carregando modelo Gervasio (PORTULAN/gervasio-8b-portuguese-ptpt-decoder)...")
+    try:
+        # Temporariamente usando DialoGPT-medium para teste
+        app.state.gervasio_pipeline = pipeline("text-generation", model="microsoft/DialoGPT-medium", trust_remote_code=True)
+        logger.info("✅ Modelo Gervasio carregado com sucesso.")
+    except Exception as e:
+        logger.error(f"❌ Erro ao carregar modelo Gervasio: {e}")
+        app.state.gervasio_pipeline = None # Define como None em caso de erro
+        # Dependendo da criticidade, pode-se considerar levantar a exceção ou sair
+        # raise e # Descomente para impedir o startup em caso de falha
     yield
     # Shutdown
     logger.info("🛑 Finalizando Campaign Chatbot Backend...")
@@ -394,10 +407,11 @@ async def chat(
     """Endpoint principal para chat"""
     
     # Validar modelo
-    if request.model not in AVAILABLE_MODELS:
+    # Validar modelo (apenas para modelos OpenRouter)
+    if request.model != "PORTULAN/gervasio-8b-portuguese-ptpt-decoder" and request.model not in AVAILABLE_MODELS:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
-            detail=f"Modelo '{request.model}' não suportado. Modelos disponíveis: {list(AVAILABLE_MODELS.keys())}"
+            detail=f"Modelo '{request.model}' não suportado. Modelos disponíveis: {list(AVAILABLE_MODELS.keys()) + ['PORTULAN/gervasio-8b-portuguese-ptpt-decoder']}"
         )
     
     # Criar ou usar sessão existente
@@ -411,7 +425,8 @@ async def chat(
     conversation_history = session_manager.get_messages(session_id)
     
     # Construir mensagens para a API, incluindo o contexto do site e a persona
-    messages_for_api = [
+    # A persona e o contexto do site são importantes para ambos os modelos
+    messages_for_model = [
         {"role": "system", "content": """
 Você é um especialista e conselheiro oficial da campanha política "Faro. De Corpo e Alma", com conhecimento profundo e autoridade sobre todos os aspectos da campanha e dos seus candidatos.
 Instruções de Comportamento:
@@ -455,26 +470,46 @@ Adapte o nível de detalhe conforme a pergunta.
     history_to_add = conversation_history[-4:] + [user_message] # Ajuste o número conforme necessário
     
     for msg in history_to_add:
-         messages_for_api.append({"role": msg.role, "content": msg.content})
+         messages_for_model.append({"role": msg.role, "content": msg.content})
 
     # Remover a última mensagem do usuário duplicada se já estiver no histórico
-    if len(messages_for_api) > 1 and messages_for_api[-1]["role"] == "user" and messages_for_api[-2]["role"] == "user":
-         messages_for_api.pop(-2)
+    if len(messages_for_model) > 1 and messages_for_model[-1]["role"] == "user" and messages_for_model[-2]["role"] == "user":
+         messages_for_model.pop(-2)
 
+    assistant_response = ""
+    tokens_used = 0
+    model_used = request.model
 
     try:
-        # Chamar OpenRouter
-        response_data = await openrouter_service.call_model(
-            messages=messages_for_api,
-            model=request.model,
-            api_key=api_key,
-            temperature=request.temperature,
-            max_tokens=request.max_tokens
-        )
-        
-        # Extrair resposta
-        assistant_response = response_data["choices"][0]["message"]["content"]
-        tokens_used = response_data.get("usage", {}).get("total_tokens", 0)
+        if request.model == "PORTULAN/gervasio-8b-portuguese-ptpt-decoder":
+            # Usar o modelo Gervasio localmente
+            if app.state.gervasio_pipeline is None:
+                 raise HTTPException(
+                    status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
+                    detail="Modelo Gervasio não carregado ou disponível."
+                )
+            
+            # O pipeline espera uma lista de mensagens
+            # A resposta é uma lista, extrair o texto gerado
+            # Limitar a resposta para evitar problemas de tamanho
+            gervasio_output = app.state.gervasio_pipeline(messages_for_model, max_new_tokens=min(request.max_tokens, 50)) # Usar o limite de tokens aqui também
+            assistant_response = gervasio_output[0]['generated_text']
+            # Nota: O pipeline não retorna tokens usados diretamente como a API
+            tokens_used = len(assistant_response.split()) # Estimativa simples
+            
+        else:
+            # Chamar OpenRouter para outros modelos
+            response_data = await openrouter_service.call_model(
+                messages=messages_for_model,
+                model=request.model,
+                api_key=api_key,
+                temperature=request.temperature,
+                max_tokens=min(request.max_tokens, 50) # Limite de tokens para OpenRouter
+            )
+            
+            # Extrair resposta e tokens usados do OpenRouter
+            assistant_response = response_data["choices"][0]["message"]["content"]
+            tokens_used = response_data.get("usage", {}).get("total_tokens", 0)
         
         # Adicionar resposta do assistente à sessão
         assistant_message = Message(role="assistant", content=assistant_response)
@@ -482,7 +517,7 @@ Adapte o nível de detalhe conforme a pergunta.
         
         return ChatResponse(
             response=assistant_response,
-            model_used=request.model,
+            model_used=model_used,
             session_id=session_id,
             tokens_used=tokens_used
         )

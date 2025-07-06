@@ -5,18 +5,18 @@ const News = () => {
   const newsItems = [
     {
       "type": "event",
-      "title": "Apresentação da candidata Patrícia Cadete à Junta de Freguesia de Estoi",
-      "date": "17 de Junho, 2025",
+      "title": 'Apresentação da coligação "Faro - Capital de Confiança"',
+      "date": "1 de Julho, 2025",
       "time": "18h30",
-      "location": "Largo da Igreja Matriz de Estoi, Estói, Algarve, Portugal",
-      "summary": "Evento público de apresentação oficial da candidatura de Patrícia Cadete à Junta de Freguesia de Estoi. Mulher independente e ligada à comunidade, Patrícia compromete-se com uma gestão moderna, próxima das pessoas e orientada para a valorização do espaço público. Haverá música, animação e insufláveis para crianças, num ambiente familiar e de convívio.",
-      "image": "https://scontent.flis5-4.fna.fbcdn.net/v/t39.30808-6/506602568_1044864457748105_7224103573115041971_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=75d36f&_nc_ohc=Ha1lkZVhIgQQ7kNvwFKk15p&_nc_oc=Admy3gnMvkmZHU4gRnk0f0LkFqV1pjUMzzVX0cfzpZYcFOxwXhTVst3aD1tR_8gBP4j_ehiyZn5IO3gg92VjVDiR&_nc_zt=23&_nc_ht=scontent.flis5-4.fna&_nc_gid=dDy3HIrZl8oDSwbxMcpsZQ&oh=00_AfM9pZjPEpAgc_JSAsCgjI7bLCI-fwPnUvY5znwXSuALbA&oe=6852266A",
+      "location": "LAB Terrace, Faro, Portugal",
+      "summary": 'Cristóvão Norte apresentou em Faro uma coligação inédita a nível nacional, juntando PSD, CDS, Iniciativa Liberal, PAN e MPT numa candidatura à Câmara Municipal sob o lema “Faro, Capital de Confiança”. A união foi simbolicamente celebrada com um cocktail em que cada ingrediente representava um partido, refletindo a diversidade e complementaridade do grupo. Norte destacou que esta coligação não assenta em repartições de poder, mas numa visão comum para o futuro da cidade, reforçada por figuras como Macário Correia. Com o apoio declarado de todos os parceiros, a coligação promete desafiar o status quo e levar Faro mais longe.',
+      "image": "https://scontent.flis5-4.fna.fbcdn.net/v/t39.30808-6/514447469_1058330499734834_6242451437176797892_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_ohc=egWYI9i69nIQ7kNvwF4vUBM&_nc_oc=Adnk9vK_wCIRAq1SHPx5WhbM19NYQrLg3kSoDWbdNNcSJSgDFlNcgUIdnITXfhjms02iNpSO8cC-fPdx0jD2SCKQ&_nc_zt=23&_nc_ht=scontent.flis5-4.fna&_nc_gid=iClV4Y5qD44sEgrkuwBTIA&oh=00_AfOXD4jvET9P8RkTOqeJW9Mo3vGSGbPpdyGLza3d8LgolQ&oe=686ADB82",
       "tags": [
-        "#Estoi",
-        "#PatríciaCadete",
-        "#AlmaFarense",
-        "#decorpoealma",
-        "#faro2025",
+        "#Estoi", 
+        "#PatríciaCadete", 
+        "#AlmaFarense", 
+        "#decorpoealma", 
+        "#faro2025", 
         "#cidadaniaativa",
         "#juntafreguesia"
       ]
@@ -35,11 +35,11 @@ const News = () => {
       "title": "OUVIR MONTENEGRO — Cidadania ativa em foco",
       "date": "12 de Junho, 2025",
       "summary": 'O Salão do Clube Desportivo de Montenegro acolheu uma sessão participativa com a presença de Cristóvão Norte, Macário Correia e da Presidente da Junta, Virgínia Alpestana. A população partilhou preocupações sobre mobilidade, espaço público e qualidade de vida. Todos os contributos serão integrados num plano de ação focado nas reais necessidades da freguesia.',
-      "image": "https://scontent.flis5-3.fna.fbcdn.net/v/t39.30808-6/506700109_1044256734475544_4341407775570688104_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_ohc=AUFSkeprSwEQ7kNvwGMsqjt&_nc_oc=Adl0mby5E6wl8x1N5FZfKmZh9iD_49nB2QAiTivabyEN9J9SwRZ1NTipEq8fKIBrjjOQNg8DunxLxRp3vfYXPAQf&_nc_zt=23&_nc_ht=scontent.flis5-3.fna&_nc_gid=s1OchjDrvIVcjkQq7_Ptyw&oh=00_AfN6NZRsVH7i9_oDGZzWtTmVBkx4-qaD57yYNFiDoeDcDQ&oe=68522A78",
+      "image": "https://scontent.flis5-3.fna.fbcdn.net/v/t39.30808-6/506098992_1044256824475535_5517727825262736294_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=127cfc&_nc_ohc=dMaCE_aXK1MQ7kNvwHHpk1-&_nc_oc=AdnQSRQMTUfdhzxICU4i0chL9eQ1OjjwExB497HqTL7Itc2wR7sydolPFNqVfBX0p2TK8bPvADaXXhH11-MhDEJS&_nc_zt=23&_nc_ht=scontent.flis5-3.fna&_nc_gid=caYKUG55SLU8EWciBvBpfw&oh=00_AfP8ThcwPoRapfDu98D1clNt2ThZ2hpAMMysdQYrU96XNA&oe=686ADAC5",
       "tags": [
-        "#ParticipaçãoCívica",
-        "#faro",
-        "#montenegro",
+        "#ParticipaçãoCívica", 
+        "#faro", 
+        "#montenegro", 
         "#decorpoealma"
       ]
     },       
@@ -48,13 +48,13 @@ const News = () => {
       "title": "CAPITAL ONE — Cultura Urbana e Inclusão Social para os Jovens de Faro",
       "date": "12 de Junho, 2025",
       "summary": 'No feriado de 10 de junho, os candidatos Cristóvão Norte e Macário Correia visitaram o espaço Capital One, fundado por Filipe Pereira (Billy Fresh) e a associação Wallride.cl, liderada por Viriato Villas-Boas. Este centro de cultura urbana promove a inclusão social, a criatividade e a educação dos jovens através do hip hop. A visita reforçou o compromisso com projetos juvenis, cultura urbana e inclusão.',
-      "image": "https://scontent.flis5-3.fna.fbcdn.net/v/t39.30808-6/505979545_1043943691173515_6882326593884799343_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=uX5X8COL5WgQ7kNvwGhwgaf&_nc_oc=Adn9VB41ilHVEEZ4ygKaRE-YnDq7OUN8HJFyUZFUYim5T_rFBGsITxCCcknuY8sruNcyeiyJxYIptXZ586EfHUg_&_nc_zt=23&_nc_ht=scontent.flis5-3.fna&_nc_gid=A85HabU75-QhdWjopEV-qw&oh=00_AfOSIGfc_K7O8EzyRGCciEMH2p6iviCLWz-S1TTnKZzOuQ&oe=68520724",
+      "image": "https://scontent.flis5-3.fna.fbcdn.net/v/t39.30808-6/505792128_1043943674506850_4374005109966145167_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=w5FWJgpybtMQ7kNvwGyh9-8&_nc_oc=Admq2VKK9mGWaa3pflQUBfFBt-hzZlHSoWtflZcfCXWyP77--bHw_Ff_HirwSXIwRfwsvXWim4nPwlQ8p7SBGdfC&_nc_zt=23&_nc_ht=scontent.flis5-3.fna&_nc_gid=bPOMJcokqgPHEd-xvvayAA&oh=00_AfMtn7Oa1nJrEuCTfSGhCqb3iFRqVXX9PrP5ItaCaSKLXA&oe=686AD05E",
       "tags": [
-        "#faro",
-        "#decorpoealma",
-        "#capitalone",
-        "#culturaurbana",
-        "#wallride",
+        "#faro", 
+        "#decorpoealma", 
+        "#capitalone", 
+        "#culturaurbana", 
+        "#wallride", 
         "#inclusãosocial",
         "#hiphopcompropósito",
         "#JuventudeComFuturo"
@@ -65,7 +65,7 @@ const News = () => {
       "title": "Portugal de Lés-a-Lés chegou a Faro",
       "date": "10 de Junho, 2025",
       "summary": 'A caravana mototurística Portugal de Lés-a-Lés cruzou o país de Penafiel até Faro, passando por Alcobaça e Portalegre. O evento trouxe cerca de 2000 motards nacionais e internacionais, reforçando o papel de Faro como destino mototurístico. Cristóvão Norte e Macário Correia marcaram presença, acompanhados pelo deputado Miguel Santos, destacando os avanços da Lei 25/2025 para os motociclistas.',
-      "image": "https://scontent.flis5-3.fna.fbcdn.net/v/t39.30808-6/505520625_1042844974616720_6356970392917050887_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=PLOwz5ipqBMQ7kNvwEkW4OT&_nc_oc=Adm2cmJ4ZmLcDHz0UzxNq_FJ9tweiy7Ve-eUnner8Boo9zWKJv8qXtmd0T8ifyXJEH4q23yzEoCGkonpTIgxa5GM&_nc_zt=23&_nc_ht=scontent.flis5-3.fna&_nc_gid=up4neznx91Z23SpApsnmpg&oh=00_AfMFmp4FMo_1d3R4lbjKcfNJqNsboFsfzj7aacKiooV7wg&oe=68521C9A",
+      "image": "https://scontent.flis5-3.fna.fbcdn.net/v/t39.30808-6/505520625_1042844974616720_6356970392917050887_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_ohc=uCmp6DJgPmkQ7kNvwG5G0tJ&_nc_oc=AdkCIh2o5MLAOqnfOfx-_FrKBXWylGG3ZJcT_ieV4jya0qYQihSW8iW9E6E_z8_e_KY3z-gUpfs8WIl3WrvvGA4k&_nc_zt=23&_nc_ht=scontent.flis5-3.fna&_nc_gid=LVFyssMtWNumAnRal3LYzw&oh=00_AfPSG0MkTjkrajIjaEBGHak62GgVMfRIZSkmsVOs-W3jtQ&oe=686AF0DA",
       "tags": [
         "#lésalés",
         "#motoclubedefaro",
