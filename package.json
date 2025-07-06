@@ -10,7 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@esbuild/darwin-x64": "^0.25.5",
     "esbuild-wasm": "^0.25.5",
     "lucide-react": "^0.344.0",
     "react": "^18.3.1",
