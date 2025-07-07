@@ -15,12 +15,12 @@ const MacarioCorreiaSection = () => {
     <section id="macario" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div className="lg:order-2 space-y-6">
-              <h2 className="text-4xl font-bold text-blue-900 mb-4">
+              <h2 className="text-3xl font-bold text-blue-900 mb-4">
                 {macario.name} {/* Usar nome dos dados */}
               </h2>
-              <p className="text-xl text-gray-600 leading-relaxed">
+              <p className="text-base text-gray-600 leading-relaxed">
                 {macario.biography} {/* Usar biografia dos dados */}
               </p>
 
@@ -41,7 +41,7 @@ const MacarioCorreiaSection = () => {
                   className="rounded-lg shadow-md max-w-full h-auto" // Estilos para a imagem
                 />
               </div>
-              <div className="bg-gradient-to-br from-yellow-100 to-blue-100 p-8 rounded-2xl">
+              <div className="bg-gradient-to-br from-yellow-100 to-blue-100 p-6 rounded-2xl">
                 {/* Usar o novo componente para Papel na Candidatura */}
                 <MacarioRole />
               </div>

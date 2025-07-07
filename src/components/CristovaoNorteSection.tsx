@@ -15,12 +15,12 @@ const CristovaoNorteSection = () => {
     <section id="cristovao" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div className="space-y-6">
-              <h2 className="text-4xl font-bold text-blue-900 mb-4">
+              <h2 className="text-3xl font-bold text-blue-900 mb-4">
                 {cristovao.name} {/* Usar nome dos dados */}
               </h2>
-              <p className="text-xl text-gray-600 leading-relaxed">
+              <p className="text-base text-gray-600 leading-relaxed">
                 {cristovao.biography} {/* Usar biografia dos dados */}
               </p>
 
