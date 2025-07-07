@@ -1,9 +1,70 @@
+@font-face {
+  font-family: 'Galano Grotesque Alt';
+  src: url('/fonts/galano-grotesque-alt/GalanoGrotesqueAltRegular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Galano Grotesque Alt';
+  src: url('/fonts/galano-grotesque-alt/GalanoGrotesqueAltRegularItalic.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Galano Grotesque Alt';
+  src: url('/fonts/galano-grotesque-alt/GalanoGrotesqueAltMedium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Galano Grotesque Alt';
+  src: url('/fonts/galano-grotesque-alt/GalanoGrotesqueAltMediumItalic.otf') format('opentype');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Galano Grotesque Alt';
+  src: url('/fonts/galano-grotesque-alt/GalanoGrotesqueAltSemiBold.otf') format('opentype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Galano Grotesque Alt';
+  src: url('/fonts/galano-grotesque-alt/GalanoGrotesqueAltSemiBoldItalic.otf') format('opentype');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Galano Grotesque Alt';
+  src: url('/fonts/galano-grotesque-alt/GalanoGrotesqueAltBold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Galano Grotesque Alt';
+  src: url('/fonts/galano-grotesque-alt/GalanoGrotesqueAltBoldItalic.otf') format('opentype');
+  font-weight: 700;
+  font-style: italic;
+}
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  font-family: theme('fontFamily.galano-alt'), sans-serif;
 }
 
 /* Estilos básicos para Embla Carousel */
