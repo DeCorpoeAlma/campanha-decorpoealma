@@ -36,7 +36,7 @@ const MacarioCorreiaSection = () => {
             <div className="lg:order-1 relative space-y-6"> {/* Adicionado space-y-6 para espaçamento vertical */}
               <div className="flex justify-center mb-8 lg:mb-0"> {/* Container para centralizar a imagem */}
                 <img
-                  src="/Macário_Correia_02.jpg" // Caminho relativo à pasta public
+                  src="/Macario_Correia_02.jpg" // Caminho relativo à pasta public
                   alt={`Foto de ${macario.name}`}
                   className="rounded-lg shadow-md max-w-full h-auto" // Estilos para a imagem
                 />
