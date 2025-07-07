@@ -24,7 +24,7 @@ const Header = () => {
           }
         });
       },
-      { threshold: 0.5 } // Adjust threshold as needed
+      { rootMargin: '-80px 0px 0px 0px', threshold: 0.1 } // Adjust rootMargin and threshold as needed
     );
 
     sections.forEach((section) => {
@@ -66,12 +66,6 @@ const Header = () => {
                   activeLink === item.href ? 'text-yellow-500' : 'text-white hover:text-yellow-500'
                 }`}
                 style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)' }}
-                onClick={() => {
-                  const element = document.querySelector(item.href);
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
               >
                 {item.name}
               </a>
@@ -98,14 +92,6 @@ const Header = () => {
                   className={`transition-colors duration-200 font-medium py-2 ${
                     activeLink === item.href ? 'text-blue-900' : 'text-gray-700 hover:text-blue-900'
                   }`}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    const element = document.querySelector(item.href);
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth' });
-                    }
-                    setIsMenuOpen(false);
-                  }}
                   style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)' }}
                 >
                   {item.name}
