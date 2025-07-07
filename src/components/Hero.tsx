@@ -4,7 +4,7 @@ import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 
 const Hero = () => {
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay()]);
+  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay({ stopOnInteraction: false })]);
 
   const phrases = [
     "Algo que nunca existiu vai nascer em Faro. Uma coligação única.<br />Um encontro improvável de diferentes visões, <br />unidas por Faro e pelo compromisso de fazer melhor.",
