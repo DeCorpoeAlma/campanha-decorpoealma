@@ -43,7 +43,7 @@ export const events = [
     title: 'Montenegro. De Corpo e Alma',
     date: '10/07/2025 (quinta-feira)',
     time: '18:30',
-    location: 'Montenegro - Clube Desportivo de Montenegro',
+    location: 'Recinto escolar da Escola EB 2,3 de Montenegro',
     type: 'Apresentação Pública',
     description: 'Apresentação dos candidatos às Juntas de Freguesia.',
     attendees: 'Participação livre',
@@ -51,7 +51,7 @@ export const events = [
   },
   {
     title: 'Santa Bárbara. De Corpo e Alma',
-    date: '17/07/2025 (quinta-feira)',
+    date: '22/07/2025 (terça-feira)',
     time: '18:30',
     location: 'Santa Bárbara - Largo da Igreja',
     type: 'Apresentação Pública',
