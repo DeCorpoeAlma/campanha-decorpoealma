@@ -28,13 +28,13 @@ function App() {
     <>
       <Header />
       <Hero />
-      <News />
       <CandidateSection />
-      <Events />
       <Program />
+      <News />
+      <Events />
+      <Team />
       <Participate />
       <Chatbot />
-      <Team />
       <Footer />
     </>
   );
