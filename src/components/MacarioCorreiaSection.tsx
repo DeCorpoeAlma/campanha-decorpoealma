@@ -38,8 +38,8 @@ const MacarioCorreiaSection = () => {
                 <img
                   src="/Macario_Correia_02.jpg" // Caminho relativo à pasta public
                   alt={`Foto de ${macario.name}`}
-                  className="rounded-lg shadow-md max-w-full h-auto" // Estilos para a imagem
-                />
+                  className="w-full h-auto object-cover rounded-full flex-shrink-0" // Classes para imagem (aumentado)
+                  />
               </div>
               <div className="bg-gradient-to-br from-yellow-100 to-blue-100 p-6 rounded-2xl">
                 {/* Usar o novo componente para Papel na Candidatura */}
