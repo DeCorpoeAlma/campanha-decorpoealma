@@ -7,7 +7,7 @@ export const events = [
     type: 'Apresentação Pública',
     description: 'Ouvimos as queixas dos moradores do Montenegro.',
     attendees: 'Participação livre',
-    image: '/Ouvir_Montenegro.jpg'
+    image: '/images/eventos/Ouvir_Montenegro.jpg'
   },
   {
     title: 'Estoi. De Corpo e Alma',
@@ -17,7 +17,7 @@ export const events = [
     type: 'Apresentação Pública',
     description: 'Apresentação dos candidatos às Juntas de Freguesia.',
     attendees: 'Participação livre',
-    image: '/Estoi_17Jun.jpeg'
+    image: '/images/eventos/Estoi_17Jun.jpeg'
   },
   {
     title: 'Conceição. De Corpo e Alma',
@@ -27,7 +27,7 @@ export const events = [
     type: 'Apresentação Pública',
     description: 'Apresentação dos candidatos às Juntas de Freguesia.',
     attendees: 'Participação livre',
-    image: 'Flyer Conceição.jpg'
+    image: '/images/eventos/Flyer Conceição.jpg'
   },
   {
     title: 'Faro. De Corpo e Alma',
@@ -37,7 +37,7 @@ export const events = [
     type: 'Apresentação Pública',
     description: 'Apresentação dos candidatos às Juntas de Freguesia.',
     attendees: 'Participação livre',
-    image: '/Flyer_Bruno_Lage.jpeg'
+    image: '/images/eventos/Flyer_Bruno_Lage.jpeg'
   },
   {
     title: 'Montenegro. De Corpo e Alma',
@@ -47,7 +47,7 @@ export const events = [
     type: 'Apresentação Pública',
     description: 'Apresentação dos candidatos às Juntas de Freguesia.',
     attendees: 'Participação livre',
-    image: ''
+    image: '/images/eventos/Montenegro_10Jul.jpeg'
   },
   {
     title: 'Santa Bárbara. De Corpo e Alma',
