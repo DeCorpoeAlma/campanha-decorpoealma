@@ -48,7 +48,7 @@ const Hero = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
                 <a
                   href="#cristovao"
-                  className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2 min-w-[250px] justify-center shadow-xl"
+                  className="bg-orange-400 hover:bg-orange-500 text-sky-50 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2 min-w-[250px] justify-center shadow-xl"
                 >
                   <Users size={20} />
                   Conhece o Cristóvão Norte
@@ -56,7 +56,7 @@ const Hero = () => {
 
                 <a
                   href="#participa"
-                  className="bg-gray-200/80 backdrop-blur-md border-2 border-gray-300 hover:bg-gray-300 text-blue-900 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2 min-w-[250px] justify-center shadow-xl"
+                  className="bg-sky-500/80 backdrop-blur-md border-2 border-sky-300 hover:bg-sky-600 text-sky-50 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2 min-w-[250px] justify-center shadow-xl"
                 >
                   <ArrowRight size={20} />
                   Junta-te à Campanha
@@ -64,7 +64,7 @@ const Hero = () => {
 
                 <a
                   href="#programa"
-                  className="bg-blue-900/80 backdrop-blur-md hover:bg-blue-800 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2 min-w-[250px] justify-center shadow-xl"
+                  className="bg-blue-900/80 backdrop-blur-md hover:bg-blue-800 text-sky-50 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2 min-w-[250px] justify-center shadow-xl"
                 >
                   <FileText size={20} />
                   Programa Eleitoral
