@@ -7,14 +7,23 @@ const Hero = () => {
   const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay({ stopOnInteraction: false })]);
 
   const phrases = [
-    "Algo que nunca existiu vai nascer em Faro. Uma coligação única.<br />Um encontro improvável de diferentes visões, <br />unidas por Faro e pelo compromisso de fazer melhor.",
-    "Está a chegar algo inédito.<br />Uma coligação feita de pluralidade. De entrega genuína.<br />Com a alma de Faro no centro de tudo.",
-    "Nem todas as campanhas nascem iguais.<br />Algumas surpreendem.<br />Começam onde menos se espera: na união improvável de caminhos distintos.",
-    "De vozes que, sendo diferentes, partilham uma vontade comum.<br />Um movimento novo, nascido do inconformismo.<br />De quem acredita no futuro. Um melhor Futuro.",
-    "<br />Quando há coragem para juntar o que nunca se juntou, o futuro começa a mudar.",
-    "Ideias diversas, convicções firmes, um só compromisso: <br />cuidar da nossa cidade e do nosso concelho, <br />transformar com responsabilidade, agir com esperança e com sentido.",
-    "Juntos, vamos fazer história.<br /> Por Faro. Por todos nós.<br />Com confiança."
+    ["", "Cristóvão Norte, o presidente que conhece o seu nome.", ""],
+    ["Nem todas as campanhas nascem iguais.", "Algumas surpreendem.", "Começam onde menos se espera: na união improvável de caminhos distintos."],
+    ["", "Um presidente com o coração no lugar certo.", ""],
+    ["Ideias diversas, convicções firmes, um só compromisso:", "Cuidar da nossa cidade e do nosso concelho.", "Transformar com responsabilidade. Agir com esperança e com sentido."],
+    ["Cristóvão Norte não segue ordens.", "Segue princípios.", ""],
+    ["De vozes que sendo diferentes partilham uma vontade comum.", "Um movimento novo nascido do inconformismo.", "De quem acredita no futuro. Um melhor futuro."],
+    ["Cristóvão Norte e Macário Correia:", "Os presidentes que conhecem o seu nome.", ""],
+    ["Está a chegar algo inédito.", "Uma coligação feita de pluralidade e de entrega genuína.", "Com a alma de Faro no centro de tudo."],
+    ["Cristóvão e Macário:", "A experiência que leva Faro mais longe.", ""],
+    ["Juntos vamos fazer história.", "Por Faro. Por todos nós.", "Com confiança."],
+    ["", "Decidir bem é decidir para sempre.", ""],
+    ["", "Prometer é fácil. Fazer é competência.", ""],
+    ["Algo que nunca existiu vai nascer em Faro.", "Uma coligação única.", "Um encontro improvável de diferentes visões unidas pelo compromisso de fazer melhor."],
+    ["", "Faro Capital: o concelho que quer ter peso em Lisboa.", ""],
+    ["", "Quando há coragem para juntar o que nunca se juntou,", "o futuro começa a mudar."],
   ];
+   
 
   return (
     <section id="inicio" className="relative overflow-hidden">
@@ -38,7 +47,14 @@ const Hero = () => {
                 <div className="embla__container">
                   {phrases.map((phrase, index) => (
                     <div className="embla__slide" key={index}>
-                      <p className="text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed font-medium" dangerouslySetInnerHTML={{ __html: phrase }}></p>
+                      <div className="text-xl md:text-2xl max-w-4xl mx-auto leading-relaxed font-medium">
+                        {phrase.map((line, lineIndex) => (
+                          <React.Fragment key={lineIndex}>
+                            {line}
+                            {lineIndex < phrase.length - 1 && <br />}
+                          </React.Fragment>
+                        ))}
+                      </div>
                     </div>
                   ))}
                 </div>

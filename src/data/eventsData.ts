@@ -50,6 +50,16 @@ export const events = [
     image: '/images/eventos/Montenegro_10Jul.jpeg'
   },
   {
+    title: 'Ouvir.Atalaia',
+    date: '12/07/2025 (sexta-feira)',
+    time: '18:30',
+    location: 'Gabinete de Bairro',
+    type: 'Apresentação Pública',
+    description: 'Ouvimos as queixas dos moradores da Atalaia.',
+    attendees: 'Participação livre',
+    image: '/images/eventos/Ouvir_Atalaia.jpeg'
+  },
+  {
     title: 'Santa Bárbara. De Corpo e Alma',
     date: '22/07/2025 (terça-feira)',
     time: '18:30',

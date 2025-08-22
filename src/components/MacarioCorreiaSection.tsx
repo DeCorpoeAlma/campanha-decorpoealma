@@ -38,7 +38,7 @@ const MacarioCorreiaSection = () => {
                 <img
                   src="/Macario_Correia_02.jpg" // Caminho relativo à pasta public
                   alt={`Foto de ${macario.name}`}
-                  className="w-full h-auto object-cover rounded-full flex-shrink-0" // Classes para imagem (aumentado)
+                  className="w-64 h-84 object-cover rounded-full flex-shrink-0" // Classes para imagem (aumentado)
                   />
               </div>
               <div className="bg-gradient-to-br from-yellow-100 to-blue-100 p-6 rounded-2xl">

@@ -1,19 +1,17 @@
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import News from '@/components/News';
-import CandidateSection from '@/components/CandidateSection';
-import CristovaoNorteSection from '@/components/CristovaoNorteSection';
 import CristovaoValues from '@/components/CristovaoValues';
 import CristovaoVision from '@/components/CristovaoVision';
-import Events from '@/components/Events';
-import MacarioCorreiaSection from '@/components/MacarioCorreiaSection';
+import MunicipalListsSection from '@/components/MunicipalListsSection'; // Importar nova seção de Listas
+import Eventos from '@/components/Eventos';
 import Participate from '@/components/Participate';
 import Program from '@/components/Program';
-import Team from '@/components/Team';
+import ParishAssemblySection from '@/components/ParishAssemblySection'; // Importar nova seção de Juntas de Freguesia
+import MainParishCandidatesSection from '@/components/MainParishCandidatesSection'; // Importar nova seção de Candidatos Principais das Juntas
 import Footer from '@/components/Footer';
-// Importar o Chatbot
-import Chatbot from '@/components/Chatbot';
+import CristovaoNorteSection from '@/components/CristovaoNorteSection';
+import MacarioCorreiaSection from '@/components/MacarioCorreiaSection';
 
 function App() {
   useEffect(() => {
@@ -28,13 +26,14 @@ function App() {
     <>
       <Header />
       <Hero />
-      <CandidateSection />
+      <CristovaoNorteSection />
+      <MacarioCorreiaSection />
+      <MunicipalListsSection /> {/* Nova seção de Listas */}
+      <MainParishCandidatesSection /> {/* Nova seção de Candidatos Principais das Juntas */}
+      <ParishAssemblySection /> {/* Nova seção de Juntas de Freguesia */}
       <Program />
-      <News />
-      <Events />
-      <Team />
+      <Eventos />
       <Participate />
-      <Chatbot />
       <Footer />
     </>
   );

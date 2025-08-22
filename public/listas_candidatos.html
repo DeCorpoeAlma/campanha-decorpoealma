@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listas de Candidatos - Campanha De Corpo e Alma</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @page {
+            size: A4;
+            margin: 2cm;
+        }
+        .page-break {
+            page-break-after: always;
+        }
+        body {
+            font-family: 'Galano Grotesque Alt', sans-serif;
+        }
+        .candidate-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 1rem;
+        }
+        @media (min-width: 640px) {
+            .candidate-grid {
+                grid-template-columns: repeat(3, minmax(120px, 1fr));
+            }
+        }
+        @media (min-width: 768px) {
+            .candidate-grid {
+                grid-template-columns: repeat(4, minmax(120px, 1fr));
+            }
+        }
+        @media (min-width: 1024px) {
+            .candidate-grid {
+                grid-template-columns: repeat(5, minmax(120px, 1fr));
+            }
+        }
+
+        /* Fontes Galano Grotesque Alt */
+        @font-face {
+            font-family: 'Galano Grotesque Alt';
+            src: url('fonts/galano-grotesque-alt/GalanoGrotesqueAltRegular.otf') format('opentype');
+            font-weight: 400;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Galano Grotesque Alt';
+            src: url('fonts/galano-grotesque-alt/GalanoGrotesqueAltRegularItalic.otf') format('opentype');
+            font-weight: 400;
+            font-style: italic;
+        }
+        @font-face {
+            font-family: 'Galano Grotesque Alt';
+            src: url('fonts/galano-grotesque-alt/GalanoGrotesqueAltMedium.otf') format('opentype');
+            font-weight: 500;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Galano Grotesque Alt';
+            src: url('fonts/galano-grotesque-alt/GalanoGrotesqueAltMediumItalic.otf') format('opentype');
+            font-weight: 500;
+            font-style: italic;
+        }
+        @font-face {
+            font-family: 'Galano Grotesque Alt';
+            src: url('fonts/galano-grotesque-alt/GalanoGrotesqueAltSemiBold.otf') format('opentype');
+            font-weight: 600;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Galano Grotesque Alt';
+            src: url('fonts/galano-grotesque-alt/GalanoGrotesqueAltSemiBoldItalic.otf') format('opentype');
+            font-weight: 600;
+            font-style: italic;
+        }
+        @font-face {
+            font-family: 'Galano Grotesque Alt';
+            src: url('fonts/galano-grotesque-alt/GalanoGrotesqueAltBold.otf') format('opentype');
+            font-weight: 700;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Galano Grotesque Alt';
+            src: url('fonts/galano-grotesque-alt/GalanoGrotesqueAltBoldItalic.otf') format('opentype');
+            font-weight: 700;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Capa do PDF -->
+    <div class="min-h-screen flex flex-col items-center justify-center text-center bg-white text-blue-800 page-break">
+        <h1 class="text-6xl font-bold mb-8">Coligação</h1>
+        <h2 class="text-4xl font-semibold mb-4">Listas de Candidatos</h2>
+        <p class="text-2xl">Eleições Autárquicas</p>
+        <img src="images/Logo c partidos@4x.png" alt="Logo Coligação" class="mt-12 w-96 h-auto">
+    </div>
+
+    <!-- Seção da Câmara Municipal -->
+    <div class="min-h-screen py-16 bg-gray-100 page-break">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Candidatos à Câmara Municipal</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gray-50 rounded-2xl p-8 shadow-lg">
+                    <div class="text-center mb-8">
+                        <img src="Cristovao_Norte_01.jpg" alt="Cristóvão Norte" class="w-40 h-56 object-cover rounded-full block mx-auto mb-4 border-2 border-yellow-500" />
+                        <h3 class="text-lg font-medium text-gray-800 text-center mb-2">Cristóvão Norte</h3>
+                        <p class="text-sm text-gray-700 text-center">Câmara Municipal</p>
+                    </div>
+                    <div id="cm-grid" class="candidate-grid">
+                        <!-- Conteúdo gerado por JS -->
+                    </div>
+                    <script>
+                        const cmCandidatos = [
+                            { name: 'Gonçalo Gomes', image: 'candidatos/cm_faro/02 Goncalo_Gomes.png' },
+                            { name: 'Teresa Correia', image: 'candidatos/cm_faro/03 Teresa_Correia.png' },
+                            { name: 'Raquel Ponte', image: 'candidatos/dummy.png' },
+                            { name: 'Bruno Gomes', image: 'candidatos/cm_faro/05 Bruno_Gomes.png' },
+                            { name: 'Elsa Maia', image: 'candidatos/cm_faro/06 Elsa_Maia.png' },
+                            { name: 'Rodrigo Borges de Freitas', image: 'candidatos/cm_faro/07 Rodrigo_Borges_de_Freitas.png' },
+                            { name: 'Carlos Gonçalves', image: 'candidatos/cm_faro/08 Carlos_Goncalves.png' },
+                            { name: 'Cátia Morais Gomes', image: 'candidatos/cm_faro/09 Catia_Morais_Gomes.png' },
+                            { name: 'Rui Gago', image: 'candidatos/cm_faro/10 Rui_Gago.png' },
+                            { name: 'Inês Nicau', image: 'candidatos/cm_faro/11 Ines_Nicau.png' },
+                            { name: 'João Neves', image: 'candidatos/cm_faro/12 Joao_Neves.png' },
+                            { name: 'Carlos Mota', image: 'candidatos/cm_faro/13 Carlos_Mota.png' },
+                            { name: 'Vera Nascimento', image: 'candidatos/cm_faro/14 Vera_Nascimento.png' },
+                            { name: 'Nuno Pintassilgo', image: 'candidatos/cm_faro/15 Nuno_Pintassilgo.png' },
+                            { name: 'António Mateus', image: 'candidatos/cm_faro/16 Antonio_Mateus.png' },
+                            { name: 'Clarinda Viana', image: 'candidatos/cm_faro/17 Clarinda_Viana.png' },
+                            { name: 'Susana Valente', image: 'candidatos/dummy.png' }
+                        ];
+                        const cmGrid = document.getElementById('cm-grid');
+                        cmCandidatos.forEach(candidato => {
+                            const div = document.createElement('div');
+                            div.className = 'flex flex-col items-center text-center';
+                            div.innerHTML = `
+                                <img src="${candidato.image}" alt="Candidato ${candidato.name}" class="w-24 h-24 object-cover rounded-full mb-2 border-2 border-yellow-500" />
+                                <p class="text-sm text-gray-700 text-center">${candidato.name}</p>
+                            `;
+                            cmGrid.appendChild(div);
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Seção da Assembleia Municipal -->
+    <div class="min-h-screen py-16 bg-gray-100 page-break">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Candidatos à Assembleia Municipal</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gray-50 rounded-2xl p-8 shadow-lg">
+                    <div class="text-center mb-8">
+                        <img src="Macario_Correia_02.jpg" alt="Macário Correia" class="w-40 h-56 object-cover rounded-full block mx-auto mb-4 border-2 border-yellow-500" />
+                        <h3 class="text-lg font-medium text-gray-800 text-center mb-2">Macário Correia</h3>
+                        <p class="text-sm text-gray-700 text-center">Assembleia Municipal</p>
+                    </div>
+                    <div id="am-grid" class="candidate-grid">
+                        <!-- Conteúdo gerado por JS -->
+                    </div>
+                    <script>
+                        const amCandidatos = [
+                            { name: 'Alexandra Rodrigues', image: 'candidatos/assembleia_municipal/02 Alexandra_Rodrigues.png' },
+                            { name: 'Francisco Soares', image: 'candidatos/assembleia_municipal/03 Francisco_Soares.png' },
+                            { name: 'Daniel Viegas', image: 'candidatos/assembleia_municipal/04 Daniel_Viegas.png' },
+                            { name: 'Lília Martins', image: 'candidatos/assembleia_municipal/05 Lilia_Martins.png' },
+                            { name: 'Adriano Guerra', image: 'candidatos/assembleia_municipal/06 Adriano_Guerra.png' },
+                            { name: 'Carlos de Deus Pereira', image: 'candidatos/assembleia_municipal/07 Carlos_de_Deus_Pereira.png' },
+                            { name: 'Adriana Martins', image: 'candidatos/assembleia_municipal/08 Adriana_Martins.png' },
+                            { name: 'Carlos Gonçalves', image: 'candidatos/assembleia_municipal/09 Carlos_Goncalves.png' },
+                            { name: 'Manuel Mestre', image: 'candidatos/assembleia_municipal/10 Manuel_Mestre.png' },
+                            { name: 'Claudia Luz', image: 'candidatos/assembleia_municipal/11 Claudia_Luz.png' },
+                            { name: 'Andreia Baião', image: 'candidatos/assembleia_municipal/12 Andreia_Baiao.png' },
+                            { name: 'Paulo Botelho', image: 'candidatos/assembleia_municipal/13 Paulo_Botelho.png' },
+                            { name: 'Filipe Beato', image: 'candidatos/assembleia_municipal/14 Filipe_Beato.png' },
+                            { name: 'Berta Dias', image: 'candidatos/assembleia_municipal/15 Berta_Dias.png' },
+                            { name: 'Marta Correia', image: 'candidatos/assembleia_municipal/16 Marta_Correia.png' },
+                            { name: 'António Gonçalves', image: 'candidatos/assembleia_municipal/17 Antonio_Goncalves.png' },
+                            { path: 'candidatos/assembleia_municipal/18 Teresa_Correia.png', name: 'Teresa Correia' },
+                            { path: 'candidatos/assembleia_municipal/19 Pedro_Silva.png', name: 'Pedro Silva' },
+                            { path: 'candidatos/assembleia_municipal/20 Pedro_Bettencourt.png', name: 'Pedro Bettencourt' },
+                            { path: 'candidatos/assembleia_municipal/21 Eva_Contreiras.png', name: 'Eva Contreiras' },
+                            { path: 'candidatos/assembleia_municipal/22 Michel_Ribeiro.png', name: 'Michel Ribeiro' },
+                            { path: 'candidatos/assembleia_municipal/23 Ossama_Solayman.png', name: 'Ossama Solayman' },
+                            { path: 'candidatos/assembleia_municipal/24 Rita_Luis.png', name: 'Rita Luís' },
+                            { path: 'candidatos/assembleia_municipal/25 Joao_Viegas.png', name: 'João Viegas' },
+                            { path: 'candidatos/assembleia_municipal/26 Nataliya_Borysenkova.png', name: 'Nataliya Borysenkova' },
+                            { path: 'candidatos/assembleia_municipal/27 Pedro_Cavaco.png', name: 'Pedro Cavaco' },
+                            { path: 'candidatos/assembleia_municipal/28 Sara_Gomes.png', name: 'Sara Gomes' },
+                            { path: 'candidatos/assembleia_municipal/29 Filipe_Nascimento.png', name: 'Filipe Nascimento' },
+                            { path: 'candidatos/assembleia_municipal/30 Liliana_Teixeira.png', name: 'Liliana Teixeira' },
+                            { path: 'candidatos/assembleia_municipal/31 Alvaro_Patricio.png', name: 'Álvaro Patrício' },
+                            { path: 'candidatos/assembleia_municipal/32 Helder_Ramos.png', name: 'Hélder Ramos' },
+                            { path: 'candidatos/assembleia_municipal/33 Mariana_Lisboa.png', name: 'Mariana Lisboa' },
+                            { path: 'candidatos/assembleia_municipal/34 Carlos_Rita.png', name: 'Carlos Rita' },
+                            { path: 'candidatos/assembleia_municipal/35 Mariana_Melentii_Rocha.png', name: 'Mariana Melentii da Rocha' },
+                            { path: 'candidatos/assembleia_municipal/36 Joao_Pirbhay_Rodrigues.png', name: 'João Pirbhay Rodrigues' },
+                            { path: 'candidatos/assembleia_municipal/37 Iurie_Sleptov.png', name: 'Iurie Sleptov' },
+                            { path: 'candidatos/assembleia_municipal/38 Maria_Lisete_Pereira.png', name: 'Mª Lisete Pereira' },
+                            { path: 'candidatos/assembleia_municipal/39 Diogo_Telo.png', name: 'Diogo Telo' },
+                            { path: 'candidatos/assembleia_municipal/40 Gonçalo M. Santos', name: 'Gonçalo M. Santos' },
+                            { path: 'candidatos/assembleia_municipal/41 Vanda_Baiao.png', name: 'Vanda Baião' },
+                            { path: 'candidatos/assembleia_municipal/42 Pedro_Bandeira.png', name: 'Pedro Bandeira' },
+                            { path: 'candidatos/assembleia_municipal/43 Joaquim_Sousa.png', name: 'Joaquim Sousa' },
+                            { path: 'candidatos/assembleia_municipal/44 Maria_Eugenia_Mendonca.png', name: 'Mª Eugénia Mendonça' },
+                            { path: 'candidatos/assembleia_municipal/45 Luis_Vaz.png', name: 'Luís Vaz' },
+                            { path: 'candidatos/assembleia_municipal/46 Aura_Nobrega.png', name: 'Aura Nóbrega' },
+                            { path: 'candidatos/assembleia_municipal/47 Isabel_Van_der_Keller.png', name: 'Isabel Van der Keller' },
+                            { path: 'candidatos/assembleia_municipal/48 Alvaro_Carvalho.png', name: 'Álvaro Carvalho' },
+                            { path: 'candidatos/assembleia_municipal/49 Laura_Lage.png', name: 'Laura Lage' },
+                            { path: 'candidatos/assembleia_municipal/50 Maria_Ana_Martins_Fulgencio.png', name: 'Mª Ana Martins Fulgêncio' },
+                            { path: 'candidatos/assembleia_municipal/51 Jose_Carlos_Junior.png', name: 'José Carlos Júnior' },
+                            { path: 'candidatos/assembleia_municipal/52 Rita_Nair.png', name: 'Rita Nair' },
+                            { path: 'candidatos/assembleia_municipal/53 Pedro_Claudio.png', name: 'Pedro Cláudio' },
+                            { path: 'candidatos/assembleia_municipal/54 Fernando_Silva.png', name: 'Fernando da Silva' }
+                        ];
+                        const amGrid = document.getElementById('am-grid');
+                        amCandidatos.forEach(candidato => {
+                            const div = document.createElement('div');
+                            div.className = 'flex flex-col items-center text-center';
+                            div.innerHTML = `
+                                <img src="${candidato.image}" alt="Candidato ${candidato.name}" class="w-24 h-24 object-cover rounded-full mb-2 border-2 border-yellow-500" />
+                                <p class="text-sm text-gray-700 text-center">${candidato.name}</p>
+                            `;
+                            amGrid.appendChild(div);
+                        });
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+ 
+    <!-- Seções das Freguesias -->
+    <script>
+        const parishesData = [
+            {
+                name: 'Conceição',
+                candidate: 'João Ferradeira',
+                image: 'candidatos/conceicao/Joao_Ferradeira_02.jpg',
+                assemblyMembers: [
+                    { path: 'candidatos/conceicao/02 Carlos_Alexandre.png', name: 'Carlos Alexandre' },
+                    { path: 'candidatos/conceicao/03 Catarina_Rafael.png', name: 'Catarina Rafael' },
+                    { path: 'candidatos/conceicao/04 Nelson_Ramos.png', name: 'Nelson Ramos' },
+                    { path: 'candidatos/conceicao/05 Celia_Faustino.png', name: 'Célia Faustino' },
+                    { path: 'candidatos/conceicao/06 Luis_Pacheco.png', name: 'Luís Pacheco' },
+                    { path: 'candidatos/conceicao/07 Sandra_Cardoso.png', name: 'Sandra Cardoso' },
+                    { path: 'candidatos/conceicao/08 Pedro_Sousa.png', name: 'Pedro Sousa' },
+                    { path: 'candidatos/conceicao/09 Cidalia_Pereira.png', name: 'Cidália Pereira' },
+                    { path: 'candidatos/conceicao/10 Ana_Baltazar.png', name: 'Ana Baltazar' },
+                    { path: 'candidatos/conceicao/11 Americo_Baltazar.png', name: 'Américo Baltazar' },
+                    { path: 'candidatos/conceicao/12 Andreina_Tavares.png', name: 'Andreina Tavares' },
+                    { path: 'candidatos/conceicao/13 Manuel_Francisco_Mestre.png', name: 'Manuel Francisco Mestre' },
+                    { path: 'candidatos/conceicao/14 Carla_Alexandre.png', name: 'Carla Alexandre' },
+                    { path: 'candidatos/conceicao/15 Helder_Teixeira.png', name: 'Hélder Teixeira' }
+                ]
+            },
+            {
+                name: 'Estoi',
+                candidate: 'Patricia Cadete',
+                image: 'candidatos/estoi/Patricia_Cadete_01.jpg',
+                assemblyMembers: [
+                    { path: 'candidatos/estoi/02 Rui_Cavaco.png', name: 'Rui Cavaco' },
+                    { path: 'candidatos/estoi/03 Ana_Isa_Martins.png', name: 'Ana Isa Martins' },
+                    { path: 'candidatos/estoi/04 Americo_Faria.png', name: 'Américo Faria' },
+                    { path: 'candidatos/estoi/05 Nidia_Bolas.png', name: 'Nídia Bolas' },
+                    { path: 'candidatos/estoi/06 Pedro_Silva.png', name: 'Pedro Silva' },
+                    { path: 'candidatos/estoi/07 Nuno_Barradas.png', name: 'Nuno Barradas' },
+                    { path: 'candidatos/estoi/08 Filipa_Faria.png', name: 'Filipa Faria' },
+                    { path: 'candidatos/dummy.png', name: 'Jorge Pinela' },
+                    { path: 'candidatos/estoi/10 Monica_Alves.png', name: 'Mónica Alves' },
+                    { path: 'candidatos/estoi/11 Joao_Luz.png', name: 'João Luz' },
+                    { path: 'candidatos/estoi/12 Mauro_Goncalves.png', name: 'Mauro Gonçalves' },
+                    { path: 'candidatos/estoi/13 Silvia_Navio.png', name: 'Sílvia Navio' },
+                    { path: 'candidatos/estoi/14 Lino_Domingos.png', name: 'Lino Domingos' },
+                    { path: 'candidatos/estoi/15 Celine_Castilho.png', name: 'Celine Castilho' },
+                    { path: 'candidatos/estoi/16 Nuno_Santos.png', name: 'Nuno Santos' },
+                    { path: 'candidatos/estoi/17 Isilda_Sousa.png', name: 'Isilda Sousa' },
+                    { path: 'candidatos/estoi/18 Carolina_Azevedo.png', name: 'Carolina Azevedo' }
+                ]
+            },
+            {
+                name: 'Santa Bárbara de Nexe',
+                candidate: 'Eva Mendonça',
+                image: 'candidatos/sta_barbara_nexe/Eva_Mendonca_01.jpg',
+                assemblyMembers: [
+                    { path: 'candidatos/sta_barbara_nexe/02 Antonieta_Guerreiro.png', name: 'Antonieta Guerreiro' },
+                    { path: 'candidatos/sta_barbara_nexe/03 Jose_Rodrigues.png', name: 'José Rodrigues' },
+                    { path: 'candidatos/sta_barbara_nexe/04 Marta_Cavaco.png', name: 'Marta Cavaco' },
+                    { path: 'candidatos/sta_barbara_nexe/05 Maria_Anselmo_Mendes.png', name: 'Maria Anselmo Mendes' },
+                    { path: 'candidatos/sta_barbara_nexe/06 Rui_Gago.png', name: 'Rui Gago' },
+                    { path: 'candidatos/sta_barbara_nexe/07 Antonio_Farrajota.png', name: 'António Farrajota' },
+                    { path: 'candidatos/sta_barbara_nexe/08 Lucibel_Gago_Viegas.png', name: 'Lucibel Gago Viegas' },
+                    { path: 'candidatos/sta_barbara_nexe/09 Rodolfo_Reis.png', name: 'Rodolfo Reis' },
+                    { path: 'candidatos/sta_barbara_nexe/10 Lucia_Mendes.png', name: 'Lúcia Mendes' },
+                    { path: 'candidatos/sta_barbara_nexe/11 Artur_Goncalves.png', name: 'Artur Gonçalves' },
+                    { path: 'candidatos/sta_barbara_nexe/12 Halia_Santos.png', name: 'Hália Santos' },
+                    { path: 'candidatos/sta_barbara_nexe/13 Elisabete_Rosa.png', name: 'Elisabete Rosa' },
+                    { path: 'candidatos/sta_barbara_nexe/14 Miguel_Simplicio.png', name: 'Miguel Simplício' },
+                    { path: 'candidatos/sta_barbara_nexe/15 Maria_Jose_Romba.png', name: 'Maria José Romba' },
+                    { path: 'candidatos/sta_barbara_nexe/16 Francisco_Rosa.png', name: 'Francisco Rosa' },
+                    { path: 'candidatos/sta_barbara_nexe/17 Maria_Filomena_Sousa.png', name: 'Maria Filomena Sousa' },
+                    { path: 'candidatos/sta_barbara_nexe/18 Patricia_Rodrigues.png', name: 'Patrícia Rodrigues' }
+                ]
+            },
+            {
+                name: 'Montenegro',
+                candidate: 'Virgínia Alpestana',
+                image: 'candidatos/montenegro/Virginia_Alpestana_01.jpg',
+                assemblyMembers: [
+                    { path: 'candidatos/montenegro/02 Patricia_Galvao.png', name: 'Patrícia Galvão' },
+                    { path: 'candidatos/montenegro/03 Joao_Geraldes.png', name: 'João Geraldes' },
+                    { path: 'candidatos/montenegro/04 Maria_do_Ceu_de_Oliveira.png', name: 'Maria do Céu de Oliveira' },
+                    { path: 'candidatos/montenegro/05 Marco_Gouveia.png', name: 'Marco Gouveia' },
+                    { path: 'candidatos/montenegro/06 Pedro_Bettencourt.png', name: 'Pedro Bettencourt' },
+                    { path: 'candidatos/montenegro/07 Armanda_Leal.png', name: 'Armanda Leal' },
+                    { path: 'candidatos/montenegro/08 Carlos_Goncalves.png', name: 'Carlos Gonçalves' },
+                    { path: 'candidatos/montenegro/09 Ana_Paula_Machado.png', name: 'Ana Paula Machado' },
+                    { path: 'candidatos/montenegro/10 Ines_Dias.png', name: 'Inês Dias' },
+                    { path: 'candidatos/montenegro/11 Marco_Mealha.png', name: 'Marco Mealha' },
+                    { path: 'candidatos/montenegro/12 Afonso_Sousa.png', name: 'Afonso Sousa' },
+                    { path: 'candidatos/montenegro/13 Maria_Ines_Mestre.png', name: 'Maria Inês Mestre' },
+                    { path: 'candidatos/montenegro/14 Paula_Mestre_Sousa.png', name: 'Paula Mestre Sousa' },
+                    { path: 'candidatos/montenegro/15 Jorge_Pereira.png', name: 'Jorge Pereira' },
+                    { path: 'candidatos/montenegro/16 Ligia_Santos.png', name: 'Lígia Santos' },
+                    { path: 'candidatos/montenegro/17 Sara_Gomes.png', name: 'Sara Gomes' },
+                    { path: 'candidatos/montenegro/18 Luis_Abreu.png', name: 'Luís Abreu' },
+                    { path: 'candidatos/montenegro/19 Mariana_Massapina.png', name: 'Mariana Massapina' },
+                    { path: 'candidatos/montenegro/20 Diana_Carvalho.png', name: 'Diana Carvalho' },
+                    { path: 'candidatos/montenegro/21 Francisco_Bandarra.png', name: 'Francisco Bandarra' },
+                    { path: 'candidatos/montenegro/22 Deonlide_Inacio.png', name: 'Deonlide Inácio' },
+                    { path: 'candidatos/montenegro/23 Paulo_Farias.png', name: 'Paulo Farias' },
+                    { path: 'candidatos/montenegro/24 Joao_Correia.png', name: 'João Correia' },
+                    { path: 'candidatos/montenegro/25 Sonia_Floro_Ribeiro.png', name: 'Sónia Floro Ribeiro' },
+                    { path: 'candidatos/montenegro/26 Filipe_Vilhena.png', name: 'Filipe Vilhena' }
+                ]
+            },
+            {
+                name: 'Faro (Sé e São Pedro)',
+                candidate: 'Bruno Lage',
+                image: 'candidatos/faro/Bruno_Lage_02.jpg',
+                assemblyMembers: [
+                    { path: 'candidatos/faro/02 Davide_Alpestana.png', name: 'Davide Alpestana' },
+                    { path: 'candidatos/faro/03 Elizabete_Vargues.png', name: 'Elizabete Vargues' },
+                    { path: 'candidatos/faro/04 Jorge_Pereira.png', name: 'Jorge Pereira' },
+                    { path: 'candidatos/faro/05 Ilidia_Serio.png', name: 'Ilídia Sério' },
+                    { path: 'candidatos/faro/06 Jardim_de_Sousa.png', name: 'Jardim de Sousa' },
+                    { path: 'candidatos/faro/07 Maria_Joao_Ribeiro.png', name: 'Maria João Ribeiro' },
+                    { path: 'candidatos/faro/08 Joao_Viegas.png', name: 'João Viegas' },
+                    { path: 'candidatos/faro/09 Sandra_Coelho.png', name: 'Sandra Coelho' },
+                    { path: 'candidatos/faro/10 Ezequiel_Canario.png', name: 'Ezequiel Canário' },
+                    { path: 'candidatos/faro/11 Margarida_Vasconcelos.png', name: 'Margarida Vasconcelos' },
+                    { path: 'candidatos/faro/12 Luis_Gabadinho.png', name: 'Luís Gabadinho' },
+                    { path: 'candidatos/faro/13 Elsa_Maia.png', name: 'Elsa Maia' },
+                    { path: 'candidatos/faro/14 Maria_Margarida_Pereira.png', name: 'Guida Pereira' },
+                    { path: 'candidatos/faro/15 Vitor_Cantinho.png', name: 'Vítor Cantinho' },
+                    { path: 'candidatos/faro/16 Luciano_Santos.png', name: 'Luciano Santos' },
+                    { path: 'candidatos/faro/17 Isabel_Frade.png', name: 'Isabel Frade' },
+                    { path: 'candidatos/faro/18 Cristiano_Palma.png', name: 'Cristiano Palma' },
+                    { path: 'candidatos/faro/19 Antonio_Palma.png', name: 'António Palma' },
+                    { path: 'candidatos/faro/20 Sofia_Oliveira.png', name: 'Sofia Oliveira' },
+                    { path: 'candidatos/faro/21 David_Silva.png', name: 'David Silva' },
+                    { path: 'candidatos/faro/22 Carla_Correia.png', name: 'Carla Correia' },
+                    { path: 'candidatos/faro/23 Luis_Fontinha.png', name: 'Luís Fontinha' },
+                    { path: 'candidatos/faro/24 Domingos_Carreira.png', name: 'Domingos Carreira' },
+                    { path: 'candidatos/faro/25 Delmira_Silva.png', name: 'Delmira Silva' },
+                    { path: 'candidatos/faro/26 Tiago_Gomes.png', name: 'Tiago Gomes' },
+                    { path: 'candidatos/faro/27 Marcia_Paulino.png', name: 'Márcia Paulino' },
+                    { path: 'candidatos/faro/28 Sergio_Rodrigues.png', name: 'Sérgio Rodrigues' },
+                    { path: 'candidatos/faro/29 Rui_Lucio.png', name: 'Rui Lúcio' },
+                    { path: 'candidatos/faro/30 Catarina_Eusebio.png', name: 'Catarina Eusébio' },
+                    { path: 'candidatos/faro/31 Nuno_Ribeiro.png', name: 'Nuno Ribeiro' },
+                    { path: 'candidatos/faro/32 Rui_Patricio_Guerreiro.png', name: 'Rui Guerreiro' },
+                    { path: 'candidatos/faro/33 Maria_Amalia_Martins.png', name: 'Maria Amália Martins' },
+                    { path: 'candidatos/faro/34 Vitor_Lima.png', name: 'Vítor Lima' },
+                    { path: 'candidatos/faro/35 Vicencia_Picarra.png', name: 'Vicência Piçarra' },
+                    { path: 'candidatos/faro/36 Maria_Celina_de_Oliveira.png', name: 'Maria Celina de Oliveira' },
+                    { path: 'candidatos/faro/37 Joao_Bolas.png', name: 'João Bolas Soares' },
+                    { path: 'candidatos/faro/38 Ilidio_Mestre.png', name: 'Ilídio Mestre' }
+                ]
+            }
+        ];
+ 
+        const desiredOrder = [
+            'Faro (Sé e São Pedro)',
+            'Montenegro',
+            'Estoi',
+            'Santa Bárbara de Nexe',
+            'Conceição'
+        ];
+ 
+        const orderedParishes = parishesData.sort((a, b) =>
+            desiredOrder.indexOf(a.name) - desiredOrder.indexOf(b.name)
+        );
+ 
+        orderedParishes.forEach((parish, index) => {
+            const section = document.createElement('div');
+            section.className = `min-h-screen py-16 bg-gray-100 ${index < orderedParishes.length - 1 ? 'page-break' : ''}`;
+            section.innerHTML = `
+                <div class="container mx-auto px-4">
+                    <h2 class="text-4xl font-bold text-center text-gray-800 mb-12">Candidatos à Junta de Freguesia de ${parish.name}</h2>
+                    <div class="max-w-4xl mx-auto">
+                        <div class="bg-gray-50 rounded-2xl p-8 shadow-lg">
+                            <div class="text-center mb-8">
+                                <img src="${parish.image}" alt="${parish.candidate}" class="w-40 h-56 object-cover rounded-full block mx-auto mb-4 border-2 border-yellow-500" />
+                                <h3 class="text-lg font-medium text-gray-800 text-center mb-2">${parish.candidate}</h3>
+                                <p class="text-sm text-gray-700 text-center">Junta de Freguesia de ${parish.name}</p>
+                            </div>
+                            <div id="parish-grid-${parish.name.replace(/\s/g, '-')}" class="candidate-grid">
+                                <!-- Conteúdo gerado por JS -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(section);
+ 
+            const parishGrid = document.getElementById(`parish-grid-${parish.name.replace(/\s/g, '-')}`);
+            parish.assemblyMembers.forEach(member => {
+                const div = document.createElement('div');
+                div.className = 'flex flex-col items-center text-center';
+                div.innerHTML = `
+                    <img src="${member.path}" alt="Candidato ${member.name}" class="w-24 h-24 object-cover rounded-full mb-2 border-2 border-yellow-500" />
+                    <p class="text-sm text-gray-700 text-center">${member.name}</p>
+                `;
+                parishGrid.appendChild(div);
+            });
+        });
+    </script>
+ 
+</body>
+</html>

@@ -9,10 +9,16 @@ export default defineConfig({
     exclude: ['lucide-react'],
   },
   server: {
-    allowedHosts: [
-      'devserver-main--decorpoealma.netlify.app',
-    ],
+    port: 5173,
+    cors: true,
+    origin: 'http://localhost:5173',
+    fs: {
+      strict: false,
+      allow: ['.', 'public']
+    }
   },
+  publicDir: 'public',
+  base: '/',
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),

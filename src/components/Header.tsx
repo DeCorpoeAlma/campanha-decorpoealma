@@ -42,12 +42,9 @@ const Header = () => {
     { name: 'Início', href: '#inicio' },
     { name: 'Cristóvão Norte', href: '#cristovao' },
     { name: 'Macário Correia', href: '#macario' },
-    { name: 'Programa', href: '#programa' },
-    { name: 'Notícias', href: '#noticias' },
+    { name: 'Listas', href: '#listas' },
     { name: 'Eventos', href: '#eventos' },
-    { name: 'Equipa', href: '#equipa' },
     { name: 'Participa', href: '#participa' },
-    { name: 'Chatbot', href: '#chatbot' },
   ];
 
   return (

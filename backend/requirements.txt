@@ -1,4 +1,22 @@
-fastapi
-uvicorn[standard]
-httpx
-python-dotenv
+# API e servidor
+fastapi==0.103.1
+uvicorn==0.23.2
+pydantic==2.3.0
+httpx==0.24.1
+python-dotenv==1.0.0
+
+# Modelos de IA
+transformers==4.33.2
+torch==2.0.1
+accelerate==0.23.0
+
+# Processamento de texto
+beautifulsoup4==4.12.2
+lxml==4.9.3
+
+# Persistência e agendamento (opcional)
+redis==4.6.0
+apscheduler==3.10.4
+
+# CORS e segurança
+starlette==0.27.0

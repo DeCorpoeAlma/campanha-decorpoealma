@@ -20,7 +20,7 @@ const Chatbot = () => {
     if (chatMessagesRef.current) {
       chatMessagesRef.current.scrollTop = chatMessagesRef.current.scrollHeight;
     }
-})
+  }, [messages]) // Adicionar messages como dependência para executar apenas quando as mensagens mudarem
 
   const addMessage = (text: string, sender: string) => {
     const now = new Date();

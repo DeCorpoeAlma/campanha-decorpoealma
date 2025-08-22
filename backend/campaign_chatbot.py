@@ -94,16 +94,22 @@ async def lifespan(app: FastAPI):
     app.state.http_client = httpx.AsyncClient(timeout=60.0)
     app.state.site_context = load_site_content() # Carregar conteúdo do site na inicialização
     logger.info(f"Conteúdo do site carregado. Tamanho: {len(app.state.site_context)} caracteres.")
-    logger.info("⏳ Carregando modelo Gervasio (PORTULAN/gervasio-8b-portuguese-ptpt-decoder)...")
+    logger.info("⏳ Carregando modelo em português (pierreguillou/gpt2-small-portuguese)...")
     try:
-        # Temporariamente usando DialoGPT-medium para teste
-        app.state.gervasio_pipeline = pipeline("text-generation", model="microsoft/DialoGPT-medium", trust_remote_code=True)
-        logger.info("✅ Modelo Gervasio carregado com sucesso.")
+        # Usar um modelo em português para melhor qualidade de respostas
+        app.state.local_pipeline = pipeline("text-generation", model="pierreguillou/gpt2-small-portuguese", trust_remote_code=True)
+        logger.info("✅ Modelo em português carregado com sucesso.")
     except Exception as e:
-        logger.error(f"❌ Erro ao carregar modelo Gervasio: {e}")
-        app.state.gervasio_pipeline = None # Define como None em caso de erro
-        # Dependendo da criticidade, pode-se considerar levantar a exceção ou sair
-        # raise e # Descomente para impedir o startup em caso de falha
+        logger.error(f"❌ Erro ao carregar modelo em português: {e}")
+        app.state.local_pipeline = None # Define como None em caso de erro
+        logger.warning("Tentando carregar modelo de fallback...")
+        try:
+            # Fallback para um modelo menor se o primeiro falhar
+            app.state.local_pipeline = pipeline("text-generation", model="microsoft/DialoGPT-small", trust_remote_code=True)
+            logger.info("✅ Modelo de fallback carregado com sucesso.")
+        except Exception as e2:
+            logger.error(f"❌ Erro ao carregar modelo de fallback: {e2}")
+            app.state.local_pipeline = None
     yield
     # Shutdown
     logger.info("🛑 Finalizando Campaign Chatbot Backend...")
@@ -120,9 +126,12 @@ app = FastAPI(
 )
 
 # Configuração CORS
+# Obter origens permitidas do ambiente ou usar padrões
+allowed_origins = os.getenv("ALLOWED_ORIGINS", "https://decorpoealma.netlify.app,http://localhost:5173").split(",")
+logger.info(f"CORS configurado com origens permitidas: {allowed_origins}")
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://decorpoealma.netlify.app"],  # Domínio do site Netlify em produção
+    allow_origins=allowed_origins,  # Domínios permitidos, incluindo desenvolvimento local
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
@@ -481,19 +490,21 @@ Adapte o nível de detalhe conforme a pergunta.
     model_used = request.model
 
     try:
-        if request.model == "PORTULAN/gervasio-8b-portuguese-ptpt-decoder":
-            # Usar o modelo Gervasio localmente
-            if app.state.gervasio_pipeline is None:
+        if request.model == "pierreguillou/gpt2-small-portuguese" or request.model == "PORTULAN/gervasio-8b-portuguese-ptpt-decoder":
+            # Usar o modelo em português localmente
+            if app.state.local_pipeline is None:
                  raise HTTPException(
                     status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
-                    detail="Modelo Gervasio não carregado ou disponível."
+                    detail="Modelo em português não carregado ou disponível."
                 )
             
             # O pipeline espera uma lista de mensagens
             # A resposta é uma lista, extrair o texto gerado
             # Limitar a resposta para evitar problemas de tamanho
-            gervasio_output = app.state.gervasio_pipeline(messages_for_model, max_new_tokens=min(request.max_tokens, 50)) # Usar o limite de tokens aqui também
-            assistant_response = gervasio_output[0]['generated_text']
+            # Converter a lista de mensagens em um texto para o modelo
+            input_text = "\n".join([f"{msg['role']}: {msg['content']}" for msg in messages_for_model[-3:]])  # Usar apenas as últimas mensagens
+            local_output = app.state.local_pipeline(input_text, max_new_tokens=min(request.max_tokens, 500)) # Limite de 500 tokens
+            assistant_response = local_output[0]['generated_text']
             # Nota: O pipeline não retorna tokens usados diretamente como a API
             tokens_used = len(assistant_response.split()) # Estimativa simples
             
@@ -504,7 +515,7 @@ Adapte o nível de detalhe conforme a pergunta.
                 model=request.model,
                 api_key=api_key,
                 temperature=request.temperature,
-                max_tokens=min(request.max_tokens, 50) # Limite de tokens para OpenRouter
+                max_tokens=min(request.max_tokens, 1000) # Aumentar limite para 1000 tokens para respostas mais completas
             )
             
             # Extrair resposta e tokens usados do OpenRouter

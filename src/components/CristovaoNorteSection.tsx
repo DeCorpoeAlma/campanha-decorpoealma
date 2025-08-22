@@ -39,7 +39,7 @@ const CristovaoNorteSection = () => {
                 <img
                   src="/Cristovao_Norte_01.jpg" // Caminho relativo à pasta public
                   alt={`Foto de ${cristovao.name}`}
-                  className="w-auto h-auto object-cover rounded-full flex-shrink-0" // Classes para imagem (aumentado)
+                  className="w-64 h-84 object-cover rounded-full flex-shrink-0" // Classes para imagem (aumentado)
                 />
               </div>
               {/* Renderizar CristovaoVision apenas se cristovao.vision existir */}
