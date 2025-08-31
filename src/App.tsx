@@ -4,7 +4,7 @@ import Hero from '@/components/Hero';
 import CristovaoValues from '@/components/CristovaoValues';
 import CristovaoVision from '@/components/CristovaoVision';
 import MunicipalListsSection from '@/components/MunicipalListsSection'; // Importar nova seção de Listas
-import Eventos from '@/components/Eventos';
+// import Eventos from '@/components/Eventos';
 import Participate from '@/components/Participate';
 import Program from '@/components/Program';
 import ParishAssemblySection from '@/components/ParishAssemblySection'; // Importar nova seção de Juntas de Freguesia
@@ -32,7 +32,7 @@ function App() {
       <MainParishCandidatesSection /> {/* Nova seção de Candidatos Principais das Juntas */}
       <ParishAssemblySection /> {/* Nova seção de Juntas de Freguesia */}
       <Program />
-      <Eventos />
+      {/* <Eventos /> */}
       <Participate />
       <Footer />
     </>

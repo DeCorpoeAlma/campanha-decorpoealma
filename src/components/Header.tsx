@@ -43,7 +43,6 @@ const Header = () => {
     { name: 'Cristóvão Norte', href: '#cristovao' },
     { name: 'Macário Correia', href: '#macario' },
     { name: 'Listas', href: '#listas' },
-    { name: 'Eventos', href: '#eventos' },
     { name: 'Participa', href: '#participa' },
   ];
 
