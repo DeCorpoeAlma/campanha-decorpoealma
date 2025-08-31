@@ -214,7 +214,7 @@ const ParishAssemblySection = () => {
               }`}
             >
               <Building size={18} />
-              <span className="hidden sm:inline font-medium">{parish.name}</span>
+              <span className="hidden font-medium">{parish.name}</span>
             </button>
           ))}
         </div>

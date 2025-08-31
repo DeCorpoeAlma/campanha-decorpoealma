@@ -97,7 +97,7 @@ const Program = () => {
           </p>
           <div className="mt-8 p-4 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 text-lg">
             <p className="font-semibold">Atenção:</p>
-            <p>Esta seção está em construção e será atualizada em breve com mais detalhes.</p>
+            <p>Esta secção está em construção e será atualizada em breve com mais detalhes.</p>
           </div>
         </div>
 

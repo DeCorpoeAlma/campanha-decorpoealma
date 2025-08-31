@@ -30,7 +30,7 @@ export const amCandidatos = [
   { name: 'Manuel Mestre', image: '/candidatos/assembleia_municipal/10 Manuel_Mestre.png' },
   { name: 'Claudia Luz', image: '/candidatos/assembleia_municipal/11 Claudia_Luz.png' },
   { name: 'Andreia Baião', image: '/candidatos/assembleia_municipal/12 Andreia_Baiao.png' },
-  { name: 'Paulo Botelho', image: '/candidatos/assembleia_municipal/13 Paulo_Botelho.png' },
+  { name: 'Paulo de Oliveira Botelho', image: '/candidatos/assembleia_municipal/13 Paulo_Botelho.png' },
   { name: 'Filipe Beato', image: '/candidatos/assembleia_municipal/14 Filipe_Beato.png' },
   { name: 'Berta Dias', image: '/candidatos/assembleia_municipal/15 Berta_Dias.png' },
   { name: 'Marta Correia', image: '/candidatos/assembleia_municipal/16 Marta_Correia.png' },
