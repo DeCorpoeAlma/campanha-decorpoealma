@@ -39,7 +39,7 @@ export const amCandidatos = [
   { name: 'Pedro Silva', image: '/candidatos/assembleia_municipal/19 Pedro_Silva.png' },
   { name: 'Pedro Bettencourt', image: '/candidatos/assembleia_municipal/20 Pedro_Bettencourt.png' },
   { name: 'Eva Contreiras', image: '/candidatos/assembleia_municipal/21 Eva_Contreiras.png' },
-  { name: 'Michel Ribeiro', image: '/candidatos/assembleia_municipal/22 Michel_Ribeiro.png' },
+  { name: 'João Arroja Neves', image: '/candidatos/assembleia_municipal/22 Joao_Arroja_Neves.png' },
   { name: 'Ossama Solayman', image: '/candidatos/assembleia_municipal/23 Ossama_Solayman.png' },
   { name: 'Rita Luís', image: '/candidatos/assembleia_municipal/24 Rita_Luis.png' },
   { name: 'João Viegas', image: '/candidatos/assembleia_municipal/25 Joao_Viegas.png' },
