@@ -30,7 +30,7 @@ const Hero = () => {
       {/* Background Image */}
       <div>
         <img
-          src="/capa_peq.png"
+          src="/capa_2.png"
           alt="Faro. De Corpo e Alma - Cristóvão Norte e Macário Correia"
           className="w-full object-cover object-center"
         />
