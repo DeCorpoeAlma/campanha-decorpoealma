@@ -22,9 +22,8 @@ const Footer = () => {
               </div>
               
               <div className="text-blue-200 text-sm text-center md:text-right">
-                <p>Mandatário: [Nome do Mandatário]</p>
                 <p className="mt-1">
-                  Campanha desenvolvida com{' '}
+                  Desenvolvido com{' '}
                   <Heart size={14} className="inline text-yellow-400" />{' '}
                   para Faro
                 </p>
