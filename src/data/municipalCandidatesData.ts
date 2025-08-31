@@ -67,7 +67,7 @@ export const amCandidatos = [
   { name: 'Isabel Van der Keller', image: '/candidatos/assembleia_municipal/47 Isabel_Van_der_Keller.png' },
   { name: 'Álvaro Carvalho', image: '/candidatos/assembleia_municipal/48 Alvaro_Carvalho.png' },
   { name: 'Laura Lage', image: '/candidatos/assembleia_municipal/49 Laura_Lage.png' },
-  { name: 'Maria Ana Martins Fulgencio', image: '/candidatos/assembleia_municipal/50 Maria_Ana_Martins_Fulgencio.png' },
+  { name: 'Maria Ana Martins', image: '/candidatos/assembleia_municipal/50 Maria_Ana_Martins_Fulgencio.png' },
   { name: 'José Carlos Júnior', image: '/candidatos/assembleia_municipal/51 Jose_Carlos_Junior.png' },
   { name: 'Rita Nair', image: '/candidatos/assembleia_municipal/52 Rita_Nair.png' },
   { name: 'Pedro Cláudio', image: '/candidatos/assembleia_municipal/53 Pedro_Claudio.png' },

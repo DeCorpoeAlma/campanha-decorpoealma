@@ -2,7 +2,7 @@ export const camaraMunicipalMembers = [
   { path: '/candidatos/dummy.png', name: 'Cristóvão Norte' },
   { path: '/candidatos/cm_faro/02 Goncalo_Gomes.png', name: 'Gonçalo Duarte Gomes' },
   { path: '/candidatos/cm_faro/03 Teresa_Correia.png', name: 'Teresa Correia' },
-  { path: '/candidatos/dummy.png', name: 'Raquel Ponte' },
+  { path: '/candidatos/cm_faro/04 Raquel_Ponte.png', name: 'Raquel Ponte' },
   { path: '/candidatos/cm_faro/05 Bruno_Gomes.png', name: 'Bruno Gomes' },
   { path: '/candidatos/cm_faro/06 Elsa_Maia.png', name: 'Elsa Maia' },
   { path: '/candidatos/cm_faro/07 Rodrigo_Borges_de_Freitas.png', name: 'Rodrigo Borges de Freitas' },
@@ -16,7 +16,7 @@ export const camaraMunicipalMembers = [
   { path: '/candidatos/cm_faro/15 Nuno_Pintassilgo.png', name: 'Nuno Pintassilgo' },
   { path: '/candidatos/cm_faro/16 Antonio_Mateus.png', name: 'António Mateus' },
   { path: '/candidatos/cm_faro/17 Clarinda_Viana.png', name: 'Clarinda Viana' },
-  { path: '/candidatos/dummy.png', name: 'Susana Valente' }
+  { path: '/candidatos/cm_faro/18 Susana_Valente.png', name: 'Susana Valente' }
 ];
 
 export const municipalAssemblyMembers = [
@@ -69,7 +69,7 @@ export const municipalAssemblyMembers = [
   { path: '/candidatos/assembleia_municipal/47 Isabel_Van_der_Keller.png', name: 'Isabel Van der Keller' },
   { path: '/candidatos/assembleia_municipal/48 Alvaro_Carvalho.png', name: 'Álvaro Carvalho' },
   { path: '/candidatos/assembleia_municipal/49 Laura_Lage.png', name: 'Laura Lage' },
-  { path: '/candidatos/assembleia_municipal/50 Maria_Ana_Martins_Fulgencio.png', name: 'Mª Ana Martins Fulgêncio' },
+  { path: '/candidatos/assembleia_municipal/50 Maria_Ana_Martins_Fulgencio.png', name: 'Mª Ana Martins' },
   { path: '/candidatos/assembleia_municipal/51 Jose_Carlos_Junior.png', name: 'José Carlos Júnior' },
   { path: '/candidatos/assembleia_municipal/52 Rita_Nair.png', name: 'Rita Nair' },
   { path: '/candidatos/assembleia_municipal/53 Pedro_Claudio.png', name: 'Pedro Cláudio' },
