@@ -8,7 +8,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -48,7 +48,13 @@ const Header = () => {
   ];
 
   return (
-    <header className="fixed w-full z-50 transition-all duration-300 bg-transparent py-4">
+    <header
+      className={`fixed w-full z-50 transition-all duration-300 py-4 ${
+        isScrolled
+          ? 'bg-white/90 shadow-md opacity-100 transform translate-y-0'
+          : 'bg-transparent opacity-0 transform -translate-y-full'
+      }`}
+    >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           <img src="/images/Logo_FCC_transparente_01.png" alt="Logo FCC" className="h-10 w-auto" />
@@ -60,9 +66,13 @@ const Header = () => {
                 key={item.name}
                 href={item.href}
                 className={`transition-colors duration-200 font-medium ${
-                  activeLink === item.href ? 'text-yellow-500' : 'text-white hover:text-yellow-500'
+                  activeLink === item.href
+                    ? 'text-yellow-500'
+                    : isScrolled
+                      ? 'text-gray-800 hover:text-yellow-500'
+                      : 'text-white hover:text-yellow-500'
                 }`}
-                style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)' }}
+                style={{ textShadow: isScrolled ? 'none' : '1px 1px 2px rgba(0, 0, 0, 0.5)' }}
               >
                 {item.name}
               </a>
@@ -71,7 +81,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2"
+            className={`lg:hidden p-2 ${isScrolled ? 'text-gray-800' : 'text-white'}`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -80,16 +90,20 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4 border-t border-gray-200">
+          <div className={`lg:hidden mt-4 pb-4 border-t ${isScrolled ? 'border-gray-200 bg-white/90' : 'border-gray-200/30 bg-black/70'}`}>
             <nav className="flex flex-col space-y-2 pt-4">
               {menuItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
                   className={`transition-colors duration-200 font-medium py-2 ${
-                    activeLink === item.href ? 'text-blue-900' : 'text-gray-700 hover:text-blue-900'
+                    activeLink === item.href
+                      ? 'text-yellow-500'
+                      : isScrolled
+                        ? 'text-gray-800 hover:text-yellow-500'
+                        : 'text-white hover:text-yellow-500'
                   }`}
-                  style={{ textShadow: '1px 1px 2px rgba(0, 0, 0, 0.5)' }}
+                  style={{ textShadow: isScrolled ? 'none' : '1px 1px 2px rgba(0, 0, 0, 0.5)' }}
                 >
                   {item.name}
                 </a>
