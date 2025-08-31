@@ -5,31 +5,31 @@ const mainParishCandidates = [
         name: 'Bruno Lage',
         image: '/candidatos/faro/Bruno_Lage_02.jpg',
         parish: 'Faro (Sé e São Pedro)',
-        bio: 'Bruno Gonçalo de Azevedo Lage\n\nNascido em 1977, no concelho de Faro, Bruno Lage é licenciado em Engenharia do Ambiente, pós-graduado em Urbanismo e Mestre em Gestão e Políticas Ambientais pela Faculdade de Ciências e Tecnologia da Universidade Nova de Lisboa.\n\nÉ fundador e foi presidente da FARO 1540 – Associação de Defesa e Promoção do Património Ambiental e Cultural de Faro e da Confraria Marinha da Ria Formosa. Membro da Ordem dos Engenheiros desde 2002, integra ainda a direção da APEA – Associação Portuguesa de Engenharia do Ambiente e participa no movimento internacional Global City 2.0, que reúne cidadãos de várias cidades do mundo em torno de projetos para promover comunidades mais sustentáveis, atrativas e inovadoras.\n\nDesde 2017, desempenha as funções de Presidente da Junta da União das Freguesias de Faro (Sé e São Pedro) e é também membro da delegação do Algarve da Associação Nacional de Freguesias.'
+        bio: 'Bruno Gonçalo de Azevedo Lage\nNasceu em 1977, no concelho de Faro. É licenciado em Engenharia do Ambiente, pós-graduado em Urbanismo e Mestre em Gestão e Políticas Ambientais pela Faculdade de Ciências e Tecnologia da Universidade Nova de Lisboa. Fundou e presidiu à FARO 1540 – Associação de Defesa e Promoção do Património Ambiental e Cultural de Faro e à Confraria Marinha da Ria Formosa. É membro da Ordem dos Engenheiros desde 2002, integra a direção da APEA – Associação Portuguesa de Engenharia do Ambiente e participa no movimento internacional Global City 2.0. Desde 2017 exerce as funções de Presidente da Junta da União das Freguesias de Faro (Sé e São Pedro) e é também membro da delegação do Algarve da Associação Nacional de Freguesias.'
     },
     {
         name: 'Virgínia Alpestana',
         image: '/candidatos/montenegro/Virginia_Alpestana_01.jpg',
         parish: 'Montenegro',
-        bio: 'Virgínia Alpestana é professora aposentada e ocupou diversos cargos de relevância distrital, designadamente o de diretora regional do Instituto Português da Juventude. Desde 2009 encontra-se ao serviço dos seus fregueses em Montenegro, integrando o executivo da Junta. Desde então o seu trabalho tem-se feito notar, recorrendo à autenticidade, cooperação e empenho para tornar mais fácil a vida das pessoas que vivem na freguesia ou ali trabalham. Em 2021 foi eleita presidente da Junta de Freguesia e a proximidade com os fregueses continuou a ser tónica do seu contributo.'
+        bio: 'Virgínia Maria Guerreiro Alcaria Alpestana\nNasceu em Loulé, em 1956. É professora aposentada e desempenhou diversos cargos de relevância distrital, incluindo o de diretora regional do Instituto Português da Juventude. Desde 2009 integra o executivo da Junta de Freguesia de Montenegro, onde o seu trabalho tem sido marcado pela autenticidade, cooperação e proximidade com a população. Em 2021 foi eleita presidente da Junta de Freguesia, mantendo como prioridade a proximidade aos fregueses.'
     },
     {
         name: 'Patricia Cadete',
         image: '/candidatos/estoi/Patricia_Cadete_01.jpg',
         parish: 'Estoi',
-        bio: 'Patrícia Cadete nasceu em Faro e há muito que escolheu Estoi para viver com a família.\nLicenciada em Assessoria de Administração pela UAlg, trabalha em seguros há mais de 20 anos, onde adquiriu experiência de gestão e resolução prática de problemas.\nEm Estoi, tem-se dedicado também a projetos comunitários e educativos, sempre com foco na participação ativa das crianças e jovens, na valorização do património local e no apoio às famílias.\nPatrícia conhece bem a freguesia e acredita que Estoi merece mais presente e melhor futuro.'
+        bio: 'Patrícia Isabel Aleixo de Sousa Cadete\nNasceu em Faro, em 1981. É licenciada em Assessoria de Administração pela Universidade do Algarve e trabalha no setor dos seguros há mais de 20 anos, onde adquiriu experiência de gestão e resolução prática de problemas. Reside em Estoi com a família e tem desenvolvido projetos comunitários e educativos, com foco na participação ativa das crianças e jovens, na valorização do património local e no apoio às famílias. Defende mais presente e melhor futuro para a freguesia de Estoi.'
     },
     {
         name: 'Eva Mendonça',
         image: '/candidatos/sta_barbara_nexe/Eva_Mendonca_01.jpg',
         parish: 'Santa Bárbara de Nexe',
-        bio: 'Eva Catarina Afonso Mendonça\n\nNascida em 1975 no concelho de Faro, Eva Catarina Afonso Mendonça reside em Bordeira, freguesia de Santa Bárbara de Nexe. Casada e mãe de uma filha, construiu a sua vida pessoal e profissional sempre ligada à sua terra e comunidade.\n\nÉ licenciada em Gestão Financeira pela Escola Superior de Gestão, Hotelaria e Turismo da Universidade do Algarve e Contabilista Certificada desde 2001. Desde 2003 é sócia-gerente da Gestibarra – Serviços de Contabilidade, Lda, empresa que lidera com foco no rigor, na proximidade e na confiança com os seus clientes.\n\nParalelamente, mantém um forte envolvimento associativo. Desde 1999 integra a direção da Sociedade Recreativa Bordeirense, onde contribui ativamente para a dinamização cultural e social da freguesia.'
+        bio: 'Eva Catarina Afonso Mendonça\nNasceu em Faro, em 1975, e reside em Bordeira, freguesia de Santa Bárbara de Nexe. Casada e mãe de uma filha, construiu a sua vida pessoal e profissional sempre ligada à sua comunidade. É licenciada em Gestão Financeira pela Universidade do Algarve, Contabilista Certificada desde 2001 e sócia-gerente da Gestibarra – Serviços de Contabilidade, Lda, desde 2003. Paralelamente, integra desde 1999 a direção da Sociedade Recreativa Bordeirense, contribuindo para a dinamização cultural e social da freguesia.'
     },
     {
         name: 'João Ferradeira',
         image: '/candidatos/conceicao/Joao_Ferradeira_02.jpg',
         parish: 'Conceição',
-        bio: 'João Pedro Ferradeira nasceu em Faro em 1982 e cresceu desde sempre na Conceição de Faro, onde mantém as suas raízes e ligação à comunidade. Formado em Sociologia na Universidade do Algarve e em Turismo pela Universidade de Surrey (Reino Unido), trabalhou na área do turismo e da educação. Com a pandemia, regressou em pleno à sua Conceição, dedicando-se à agricultura e ao comércio de frutos secos. \nTrabalhador, prático, com os pés assentes na terra, o João está aqui de Corpo e Alma, disponível para servir a comunidade que o viu crescer.'
+        bio: 'João Pedro Faria Ferradeira\nNasceu em Faro, em 1982. Cresceu na Conceição de Faro, onde mantém as suas raízes e ligação à comunidade. É licenciado em Sociologia pela Universidade do Algarve e em Turismo pela Universidade de Surrey (Reino Unido). Trabalhou no setor do turismo e da educação e, com a pandemia, regressou em pleno à sua terra natal, dedicando-se à agricultura e ao comércio de frutos secos. É reconhecido como trabalhador, prático e sempre disponível para servir a comunidade que o viu crescer.'
     },
 ];
 
