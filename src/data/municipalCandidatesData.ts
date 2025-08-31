@@ -1,7 +1,7 @@
 export const cmCandidatos = [
   { name: 'Gonçalo Duarte Gomes', image: '/candidatos/cm_faro/02 Goncalo_Gomes.png' },
   { name: 'Teresa Correia', image: '/candidatos/cm_faro/03 Teresa_Correia.png' },
-  { name: 'Raquel Ponte', image: `/candidatos/cm_faro/04 Raquel_Ponte.png?t=${Date.now()}` },
+  { name: 'Raquel Ponte', image: '/candidatos/cm_faro/04 Raquel_Ponte.png' },
   { name: 'Bruno Gomes', image: '/candidatos/cm_faro/05 Bruno_Gomes.png' },
   { name: 'Elsa Maia', image: '/candidatos/cm_faro/06 Elsa_Maia.png' },
   { name: 'Rodrigo Borges de Freitas', image: '/candidatos/cm_faro/07 Rodrigo_Borges_de_Freitas.png' },
@@ -15,7 +15,7 @@ export const cmCandidatos = [
   { name: 'Nuno Pintassilgo', image: '/candidatos/cm_faro/15 Nuno_Pintassilgo.png' },
   { name: 'António Mateus', image: '/candidatos/cm_faro/16 Antonio_Mateus.png' },
   { name: 'Clarinda Viana', image: '/candidatos/cm_faro/17 Clarinda_Viana.png' },
-  { name: 'Susana Valente', image: '/candidatos/dummy.png' },
+  { name: 'Susana Valente', image: '/candidatos/cm_faro/18 Susana_Valente.png' },
 ];
 
 export const amCandidatos = [
