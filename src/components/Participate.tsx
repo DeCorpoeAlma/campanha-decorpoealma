@@ -33,10 +33,18 @@ const Participate = () => {
                   <Users className="text-yellow-600" size={24} />
                   <h4 className="font-semibold text-blue-900">Voluntariado</h4>
                 </div>
-                <p className="text-gray-600">
-                  Participa ativamente na campanha através de diversas atividades 
+                <p className="text-gray-600 mb-4">
+                  Participa ativamente na campanha através de diversas atividades
                   de apoio e mobilização.
                 </p>
+                <a
+                  href="https://form.qomon.org/faro-2025/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-yellow-500 hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
+                >
+                  Inscreve-te aqui
+                </a>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-500">
@@ -116,13 +124,13 @@ const Participate = () => {
                     <FaWhatsapp size={24} color="#FFFF00" />
                   </a>
                   <a
-                    href="https://www.facebook.com/AlmaFarense/"
+                    href="https://www.facebook.com/Farocapitaldeconfianca/"
                     className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full transition-colors duration-200"
                   >
                     <Facebook size={24} />
                   </a>
                   <a
-                    href="https://www.instagram.com/faro_de_corpo_e_alma/"
+                    href="https://www.instagram.com/faro.capital_de_confianca/"
                     className="bg-pink-600 hover:bg-pink-700 text-white p-3 rounded-full transition-colors duration-200"
                   >
                     <Instagram size={24} />
