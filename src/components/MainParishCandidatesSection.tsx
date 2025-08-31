@@ -11,13 +11,13 @@ const mainParishCandidates = [
         name: 'Virgínia Alpestana',
         image: '/candidatos/montenegro/Virginia_Alpestana_01.jpg',
         parish: 'Montenegro',
-        bio: 'Professora e ativista comunitária. Trabalha há 10 anos em projetos educacionais e culturais para jovens da freguesia.'
+        bio: 'Virgínia Alpestana é professora aposentada e ocupou diversos cargos de relevância distrital, designadamente o de diretora regional do Instituto Português da Juventude. Desde 2009 encontra-se ao serviço dos seus fregueses em Montenegro, integrando o executivo da Junta. Desde então o seu trabalho tem-se feito notar, recorrendo à autenticidade, cooperação e empenho para tornar mais fácil a vida das pessoas que vivem na freguesia ou ali trabalham. Em 2021 foi eleita presidente da Junta de Freguesia e a proximidade com os fregueses continuou a ser tónica do seu contributo.'
     },
     {
         name: 'Patricia Cadete',
         image: '/candidatos/estoi/Patricia_Cadete_01.jpg',
         parish: 'Estoi',
-        bio: 'Empresária local e voluntária em associações culturais. Comprometida com a preservação do património histórico de Estoi.'
+        bio: 'Patrícia Cadete nasceu em Faro e há muito que escolheu Estoi para viver com a família.\nLicenciada em Assessoria de Administração pela UAlg, trabalha em seguros há mais de 20 anos, onde adquiriu experiência de gestão e resolução prática de problemas.\nEm Estoi, tem-se dedicado também a projetos comunitários e educativos, sempre com foco na participação ativa das crianças e jovens, na valorização do património local e no apoio às famílias.\nPatrícia conhece bem a freguesia e acredita que Estoi merece mais presente e melhor futuro.'
     },
     {
         name: 'Eva Mendonça',
@@ -29,7 +29,7 @@ const mainParishCandidates = [
         name: 'João Ferradeira',
         image: '/candidatos/conceicao/Joao_Ferradeira_02.jpg',
         parish: 'Conceição',
-        bio: 'Economista com foco em desenvolvimento local. Coordenou diversos projetos de revitalização urbana e apoio ao comércio tradicional.'
+        bio: 'João Pedro Ferradeira nasceu em Faro em 1982 e cresceu desde sempre na Conceição de Faro, onde mantém as suas raízes e ligação à comunidade. Formado em Sociologia na Universidade do Algarve e em Turismo pela Universidade de Surrey (Reino Unido), trabalhou na área do turismo e da educação. Com a pandemia, regressou em pleno à sua Conceição, dedicando-se à agricultura e ao comércio de frutos secos. \nTrabalhador, prático, com os pés assentes na terra, o João está aqui de Corpo e Alma, disponível para servir a comunidade que o viu crescer.'
     },
 ];
 
