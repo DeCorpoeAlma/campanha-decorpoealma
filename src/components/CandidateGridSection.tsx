@@ -17,12 +17,12 @@ const CandidateGridSection: React.FC<CandidateGridSectionProps> = ({ title, memb
   return (
     <section id={sectionId} className="py-16 bg-gray-100">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">{`Candidatos à ${title}`}</h2>
+        <h2 className="text-4xl font-bold text-center text-dark-blue mb-12">{`Candidatos à ${title}`}</h2>
         <div className="max-w-4xl mx-auto">
           <div className="bg-gray-50 rounded-2xl p-8">
             <div className="text-center mb-8">
               <Building size={48} className={`${iconColorClass} mx-auto mb-4`} />
-              <h3 className="text-3xl font-bold text-blue-900 mb-2">
+              <h3 className="text-3xl font-bold text-dark-blue mb-2">
                 {title}
               </h3>
             </div>

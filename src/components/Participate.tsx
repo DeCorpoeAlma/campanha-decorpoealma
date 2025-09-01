@@ -5,10 +5,10 @@ import { FaWhatsapp } from 'react-icons/fa';
 const Participate = () => {
 
   return (
-    <section id="participa" className="py-20 bg-blue-50">
+    <section id="participa" className="py-20 bg-light-blue/10">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-blue-900 mb-4">
+          <h2 className="text-4xl font-bold text-dark-blue mb-4">
             Junta-te à Campanha
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -23,15 +23,15 @@ const Participate = () => {
         <div className="max-w-6xl mx-auto">
           {/* Ways to Help */}
           <div className="space-y-8">
-            <h3 className="text-2xl font-bold text-blue-900 mb-6">
+            <h3 className="text-2xl font-bold text-dark-blue mb-6">
               Como Podes Ajudar
             </h3>
             
             <div className="space-y-4">
-              <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-yellow-500">
-                <div className="flex items-center gap-3 mb-3">
-                  <Users className="text-yellow-600" size={24} />
-                  <h4 className="font-semibold text-blue-900">Voluntariado</h4>
+            <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-primary-orange">
+            <div className="flex items-center gap-3 mb-3">
+                  <Users className="text-primary-orange" size={24} />
+                  <h4 className="font-semibold text-dark-blue">Voluntariado</h4>
                 </div>
                 <p className="text-gray-600 mb-4">
                   Participa ativamente na campanha através de diversas atividades
@@ -41,16 +41,16 @@ const Participate = () => {
                   href="https://form.qomon.org/faro-2025/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-yellow-500 hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500"
+                  className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary-orange hover:bg-primary-orange/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-orange"
                 >
                   Inscreve-te aqui
                 </a>
               </div>
 
-              <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-500">
-                <div className="flex items-center gap-3 mb-3">
-                  <Share2 className="text-blue-600" size={24} />
-                  <h4 className="font-semibold text-blue-900">Redes Sociais</h4>
+            <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-light-blue">
+              <div className="flex items-center gap-3 mb-3">
+                  <Share2 className="text-light-blue" size={24} />
+                  <h4 className="font-semibold text-dark-blue">Redes Sociais</h4>
                 </div>
                 <p className="text-gray-600">
                   Partilha as nossas propostas e conteúdos nas redes sociais para
@@ -65,26 +65,26 @@ const Participate = () => {
                     </a>
                     <a
                       href="https://www.facebook.com/Farocapitaldeconfianca/"
-                      className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full transition-colors duration-200"
+                      className="bg-dark-blue/80 hover:bg-dark-blue text-white p-3 rounded-full transition-colors duration-200"
                     >
                       <Facebook size={24} />
                     </a>
                     <a
                       href="https://www.instagram.com/faro.capital_de_confianca/"
-                      className="bg-pink-600 hover:bg-pink-700 text-white p-3 rounded-full transition-colors duration-200"
+                      className="bg-primary-orange/80 hover:bg-primary-orange text-white p-3 rounded-full transition-colors duration-200"
                     >
                       <Instagram size={24} />
                     </a>
                 </div>
               </div>
 
-              <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-red-500">
-                <div className="flex items-center gap-3 mb-3">
-                  <Heart className="text-red-600" size={24} />
-                  <h4 className="font-semibold text-blue-900">Passa a Palavra</h4>
+            <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-dark-blue">
+              <div className="flex items-center gap-3 mb-3">
+                  <Heart className="text-dark-blue" size={24} />
+                  <h4 className="font-semibold text-dark-blue">Passa a Palavra</h4>
                 </div>
                 <p className="text-gray-600">
-                  Fala com família, amigos e colegas sobre as nossas propostas 
+                  Fala com família, amigos e colegas sobre as nossas propostas
                   para Faro.
                 </p>
               </div>
@@ -92,15 +92,15 @@ const Participate = () => {
 {/* Contactos e Mapa */}
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold text-blue-900 mb-6">
+                <h3 className="text-2xl font-bold text-dark-blue mb-6">
                   Informações de Contacto
                 </h3>
 
                 <div className="space-y-6">
                   <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
-                    <MapPin className="text-blue-600 mt-1" size={24} />
+                    <MapPin className="text-dark-blue mt-1" size={24} />
                     <div>
-                      <h4 className="font-semibold text-gray-800 mb-1">Sede de Campanha</h4>
+                      <h4 className="font-semibold text-dark-blue mb-1">Sede de Campanha</h4>
                       <p className="text-gray-600">
                         Rua de São Luís (Beco Frei André Álvares), 56<br />
                         8000-285 Faro
@@ -113,17 +113,17 @@ const Participate = () => {
                   </div>
 
                   <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
-                    <Mail className="text-blue-600 mt-1" size={24} />
+                    <Mail className="text-dark-blue mt-1" size={24} />
                     <div>
-                      <h4 className="font-semibold text-gray-800 mb-1">Email</h4>
+                      <h4 className="font-semibold text-dark-blue mb-1">Email</h4>
                       <p className="text-gray-600">geral@farodecorpoealma.pt</p>
                     </div>
                   </div>
 
                   <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
-                    <Phone className="text-blue-600 mt-1" size={24} />
+                    <Phone className="text-dark-blue mt-1" size={24} />
                     <div>
-                      <h4 className="font-semibold text-gray-800 mb-1">Telefone</h4>
+                      <h4 className="font-semibold text-dark-blue mb-1">Telefone</h4>
                       <p className="text-gray-600">289 813 425</p>
                     </div>
                   </div>

@@ -37,7 +37,7 @@ const Team = () => {
     <section id="equipa" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-blue-900 mb-4">
+          <h2 className="text-4xl font-bold text-dark-blue mb-4">
             A Nossa Equipa
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -48,7 +48,7 @@ const Team = () => {
 
         {/* Core Team */}
         <div className="mb-20">
-          <h3 className="text-2xl font-bold text-blue-900 text-center mb-12">
+          <h3 className="text-2xl font-bold text-dark-blue text-center mb-12">
             Equipa de Campanha
           </h3>
 
@@ -61,15 +61,15 @@ const Team = () => {
                     alt={member.name}
                     className="w-24 h-24 rounded-full mx-auto object-cover"
                   />
-                  <div className="absolute -bottom-1 -right-1 bg-blue-500 text-white p-1 rounded-full">
+                  <div className="absolute -bottom-1 -right-1 bg-light-blue text-white p-1 rounded-full">
                     <Users size={16} />
                   </div>
                 </div>
 
-                <h4 className="text-xl font-bold text-blue-900 mb-1">
+                <h4 className="text-xl font-bold text-dark-blue mb-1">
                   {member.name}
                 </h4>
-                <p className="text-yellow-600 font-medium mb-2">
+                <p className="text-primary-orange font-medium mb-2">
                   {member.role}
                 </p>
 
@@ -87,17 +87,17 @@ const Team = () => {
         </div>
 
         {/* Join Team CTA */}
-        <div className="bg-blue-900 rounded-2xl p-8 text-center mt-16 max-w-4xl mx-auto">
+        <div className="bg-dark-blue rounded-2xl p-8 text-center mt-16 max-w-4xl mx-auto">
           <h3 className="text-2xl font-bold text-white mb-4">
             Quer fazer parte da nossa equipa?
           </h3>
-          <p className="text-blue-100 mb-6 text-lg">
+          <p className="text-light-blue/50 mb-6 text-lg">
             Estamos sempre à procura de pessoas dedicadas que queiram contribuir
             para o desenvolvimento de Faro.
           </p>
           <a
             href="#participa"
-            className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 inline-block"
+            className="bg-primary-orange hover:bg-primary-orange/90 text-dark-blue px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 inline-block"
           >
             Juntar-me à Equipa
           </a>

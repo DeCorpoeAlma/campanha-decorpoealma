@@ -78,7 +78,7 @@ const Chatbot = () => {
     <section id="chatbot" className="py-20 bg-gray-100 scroll-mt-24">
       <div className="max-w-screen-xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-blue-900 mb-4">
+          <h2 className="text-4xl font-bold text-dark-blue mb-4">
             Fale Connosco
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -96,8 +96,8 @@ const Chatbot = () => {
                 <div
                   className={`p-4 rounded-lg w-[85%] ${
                     msg.sender === 'user'
-                      ? 'bg-blue-500 text-white'
-                      : 'bg-gray-200 text-gray-800' // Cor de fundo para mensagens do bot
+                      ? 'bg-light-blue text-white'
+                      : 'bg-gray-200 text-dark-blue' // Cor de fundo para mensagens do bot
                   }`}
                 >
                   {/* Renderizar Markdown para mensagens do bot */}
@@ -116,7 +116,7 @@ const Chatbot = () => {
             ))}
             {isTyping && (
               <div className="flex justify-start">
-                <div className="p-4 rounded-lg w-[85%] bg-gray-200 text-gray-800">
+                <div className="p-4 rounded-lg w-[85%] bg-gray-200 text-dark-blue">
                   <div className="typing-indicator">
                     <div className="typing-dots">
                       <span></span>
@@ -135,12 +135,12 @@ const Chatbot = () => {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Escreva a sua mensagem..."
-              className="flex-grow px-4 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:border-blue-500"
+              className="flex-grow px-4 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:border-light-blue"
               disabled={isTyping}
             />
             <button
               type="submit"
-              className="bg-blue-900 hover:bg-blue-800 text-white px-6 py-2 rounded-r-lg font-semibold transition-colors duration-200 flex items-center justify-center gap-2"
+              className="bg-dark-blue hover:bg-dark-blue/90 text-white px-6 py-2 rounded-r-lg font-semibold transition-colors duration-200 flex items-center justify-center gap-2"
               disabled={isTyping || !input.trim()}
             >
               <Send size={20} />

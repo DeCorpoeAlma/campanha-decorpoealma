@@ -195,7 +195,7 @@ const ParishAssemblySection = () => {
   return (
     <section id="juntas-freguesia" className="py-16 bg-gray-100">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-blue-900 text-center mb-4">
+        <h2 className="text-4xl font-bold text-dark-blue text-center mb-4">
             Listas candidatas às Assembleias de Freguesia
         </h2>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto text-center mb-16">
@@ -209,7 +209,7 @@ const ParishAssemblySection = () => {
               onClick={() => setActiveParishTab(index)}
               className={`flex items-center gap-2 px-4 py-3 rounded-full transition-all duration-300 ${
                 activeParishTab === index
-                  ? 'bg-yellow-500 text-white shadow-lg'
+                  ? 'bg-primary-orange text-white shadow-lg'
                   : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
               }`}
             >
@@ -223,8 +223,8 @@ const ParishAssemblySection = () => {
         <div className="max-w-4xl mx-auto">
           <div className="bg-gray-50 rounded-2xl p-8">
             <div className="text-center mb-8">
-              <Building size={48} className="text-yellow-500 mx-auto mb-4" />
-              <h3 className="text-3xl font-bold text-blue-900 mb-2">
+              <Building size={48} className="text-primary-orange mx-auto mb-4" />
+              <h3 className="text-3xl font-bold text-dark-blue mb-2">
                 {parishes[activeParishTab].name}
               </h3>
             </div>
@@ -235,7 +235,7 @@ const ParishAssemblySection = () => {
                   <img
                     src={member.path}
                     alt={`Candidato ${member.name}`}
-                    className="w-24 h-24 object-cover rounded-full mb-2 border-2 border-yellow-500"
+                    className="w-24 h-24 object-cover rounded-full mb-2 border-2 border-primary-orange"
                     loading="lazy"  // Otimização: lazy loading para imagens
                   />
                   <p className="text-sm text-gray-700 text-center">{member.name}</p>

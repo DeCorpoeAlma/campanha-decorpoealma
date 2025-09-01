@@ -17,16 +17,16 @@ const CristovaoNorteSection = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div className="space-y-6">
-              <h2 className="text-3xl font-bold text-blue-900 mb-4">
+              <h2 className="text-3xl font-bold text-dark-blue mb-4">
                 {cristovao.name} {/* Usar nome dos dados */}
               </h2>
               <p className="text-base text-gray-600 leading-relaxed">
                 {cristovao.biography} {/* Usar biografia dos dados */}
               </p>
 
-              <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
-                <Quote size={24} className="text-blue-500 mb-3" />
-                <blockquote className="text-lg italic text-blue-900">
+              <div className="bg-light-blue/10 p-6 rounded-lg border-l-4 border-light-blue">
+                <Quote size={24} className="text-light-blue mb-3" />
+                <blockquote className="text-lg italic text-dark-blue">
                   {cristovao.quote} {/* Usar citação dos dados */}
                 </blockquote>
               </div>

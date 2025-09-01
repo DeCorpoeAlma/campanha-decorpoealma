@@ -19,7 +19,7 @@ const TabsComponent: React.FC<TabsProps> = ({
   tabs,
   initialTab,
   tabButtonClassName = 'px-6 py-3 rounded-lg text-lg font-semibold transition-colors duration-300',
-  activeTabButtonClassName = 'bg-blue-600 text-white shadow-md',
+  activeTabButtonClassName = 'bg-light-blue text-white shadow-md',
   inactiveTabButtonClassName = 'bg-gray-200 text-gray-700 hover:bg-gray-300',
   tabContainerClassName = 'flex justify-center mb-8 space-x-4',
 }) => {

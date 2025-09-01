@@ -13,8 +13,8 @@ const MunicipalListsSection = () => {
     <div className="max-w-4xl mx-auto">
       <div className="bg-gray-50 rounded-2xl p-8">
         <div className="text-center mb-8">
-          <img src={mainCandidateImage} alt={mainCandidateName} className="w-40 h-56 object-cover rounded-full block mx-auto mb-4 border-2 border-yellow-500" />
-          <h3 className="text-lg font-medium text-gray-800 text-center mb-2">
+          <img src={mainCandidateImage} alt={mainCandidateName} className="w-40 h-56 object-cover rounded-full block mx-auto mb-4 border-2 border-primary-orange" />
+          <h3 className="text-lg font-medium text-dark-blue text-center mb-2">
             {mainCandidateName}
           </h3>
           <p className="text-sm text-gray-700 text-center">{title}</p>
@@ -25,7 +25,7 @@ const MunicipalListsSection = () => {
               <img
                 src={candidato.image}
                 alt={`Candidato ${candidato.name}`}
-                className="w-24 h-24 object-cover rounded-full mb-2 border-2 border-yellow-500"
+                className="w-24 h-24 object-cover rounded-full mb-2 border-2 border-primary-orange"
               />
               <p className="text-sm text-gray-700 text-center">{candidato.name}</p>
             </div>
@@ -59,13 +59,13 @@ const MunicipalListsSection = () => {
   return (
     <section id="listas" className="py-16 bg-gray-100">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center text-blue-800 mb-12">Listas para os Órgãos Municipais</h2>
+        <h2 className="text-4xl font-bold text-center text-dark-blue mb-12">Listas para os Órgãos Municipais</h2>
         <TabsComponent
           tabs={tabs}
           initialTab="camara"
           tabButtonClassName="flex items-center px-6 py-3 text-xl font-semibold rounded-full transition-colors duration-300"
-          activeTabButtonClassName="bg-yellow-500 text-white"
-          inactiveTabButtonClassName="bg-gray-200 text-gray-700 hover:bg-yellow-400 hover:text-white"
+          activeTabButtonClassName="bg-primary-orange text-white"
+          inactiveTabButtonClassName="bg-gray-200 text-gray-700 hover:bg-primary-orange/80 hover:text-white"
           tabContainerClassName="flex justify-center mb-8 space-x-4"
         />
       </div>

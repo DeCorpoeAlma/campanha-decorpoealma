@@ -24,7 +24,7 @@ const CarouselComponent = () => {
   return (
     <section id="carousel" className="py-16 bg-gray-100">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">Galeria de Imagens</h2>
+        <h2 className="text-4xl font-bold text-center text-dark-blue mb-8">Galeria de Imagens</h2>
         <div className="max-w-4xl mx-auto">
           <Slider {...settings}>
             {images.map((image, index) => (

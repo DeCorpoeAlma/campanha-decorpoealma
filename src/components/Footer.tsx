@@ -3,7 +3,7 @@ import { Heart } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="bg-blue-900 text-white py-16">
+    <footer className="bg-dark-blue text-white py-16">
       <div className="container mx-auto px-4">
         <div className="max-w-6xl mx-auto">
           {/* Bottom Section */}
@@ -15,16 +15,16 @@ const Footer = () => {
                 className="mx-auto md:mx-0 h-auto w-full"
               />
             </div>
-          <div className="border-t border-blue-800 pt-8">
+          <div className="border-t border-dark-blue/80 pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-              <div className="text-blue-200 text-sm">
+              <div className="text-light-blue/50 text-sm">
                 <p>&copy; 2025 Faro. De Corpo e Alma. Todos os direitos reservados.</p>
               </div>
               
-              <div className="text-blue-200 text-sm text-center md:text-right">
+              <div className="text-light-blue/50 text-sm text-center md:text-right">
                 <p className="mt-1">
                   Desenvolvido com{' '}
-                  <Heart size={14} className="inline text-yellow-400" />{' '}
+                  <Heart size={14} className="inline text-primary-orange" />{' '}
                   para Faro
                 </p>
               </div>

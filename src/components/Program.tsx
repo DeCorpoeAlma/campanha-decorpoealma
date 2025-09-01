@@ -8,7 +8,7 @@ const Program = () => {
     {
       icon: Home,
       title: 'Habitação e Urbanismo',
-      color: 'bg-blue-500',
+      color: 'bg-light-blue',
       proposals: [
         'Criação de habitação social e acessível',
         'Reabilitação urbana dos centros históricos',
@@ -19,7 +19,7 @@ const Program = () => {
     {
       icon: Car,
       title: 'Mobilidade',
-      color: 'bg-green-500',
+      color: 'bg-dark-blue',
       proposals: [
         'Expansão da rede de transportes públicos',
         'Criação de ciclovias seguras',
@@ -30,7 +30,7 @@ const Program = () => {
     {
       icon: Building,
       title: 'Economia Local',
-      color: 'bg-yellow-500',
+      color: 'bg-primary-orange',
       proposals: [
         'Apoio ao comércio local e PME',
         'Promoção do turismo sustentável',
@@ -41,7 +41,7 @@ const Program = () => {
     {
       icon: GraduationCap,
       title: 'Juventude e Educação',
-      color: 'bg-purple-500',
+      color: 'bg-dark-blue/80',
       proposals: [
         'Bolsas de estudo para estudantes carenciados',
         'Programas de emprego jovem',
@@ -52,7 +52,7 @@ const Program = () => {
     {
       icon: Heart,
       title: 'Saúde e Bem-Estar',
-      color: 'bg-red-500',
+      color: 'bg-primary-orange/80',
       proposals: [
         'Centros de saúde de proximidade',
         'Programas de desporto sénior',
@@ -63,7 +63,7 @@ const Program = () => {
     {
       icon: Music,
       title: 'Cultura e Desporto',
-      color: 'bg-indigo-500',
+      color: 'bg-light-blue/80',
       proposals: [
         'Festival anual de artes de Faro',
         'Reabilitação de espaços culturais',
@@ -74,7 +74,7 @@ const Program = () => {
     {
       icon: Users,
       title: 'Associativismo',
-      color: 'bg-teal-500',
+      color: 'bg-dark-blue/70',
       proposals: [
         'Apoio financeiro às associações',
         'Espaços cedidos para atividades',
@@ -88,14 +88,14 @@ const Program = () => {
     <section id="programa" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-blue-900 mb-4">
+          <h2 className="text-4xl font-bold text-dark-blue mb-4">
             Programa Eleitoral
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Um programa abrangente que aborda os principais desafios de Faro,
             com propostas concretas para melhorar a qualidade de vida de todos os cidadãos.
           </p>
-          <div className="mt-8 p-4 bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 text-lg">
+          <div className="mt-8 p-4 bg-primary-orange/10 border-l-4 border-primary-orange text-primary-orange/70 text-lg">
             <p className="font-semibold">Atenção:</p>
             <p>Esta secção está em construção e será atualizada em breve com mais detalhes.</p>
           </div>
@@ -130,7 +130,7 @@ const Program = () => {
                 size: 48,
                 className: `${programAreas[activeTab].color.replace('bg-', 'text-')} mx-auto mb-4`
               })}
-              <h3 className="text-3xl font-bold text-blue-900 mb-2">
+              <h3 className="text-3xl font-bold text-dark-blue mb-2">
                 {programAreas[activeTab].title}
               </h3>
             </div>
@@ -149,7 +149,7 @@ const Program = () => {
         </div>
 
         <div className="text-center mt-12">
-          <button className="bg-blue-900 hover:bg-blue-800 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2 mx-auto">
+          <button className="bg-dark-blue hover:bg-dark-blue/90 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2 mx-auto">
             <Download size={20} />
             Descarregar Programa Completo (PDF)
           </button>

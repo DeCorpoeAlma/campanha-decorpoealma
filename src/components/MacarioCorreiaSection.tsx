@@ -17,7 +17,7 @@ const MacarioCorreiaSection = () => {
         <div className="max-w-6xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <div className="lg:order-2 space-y-6">
-              <h2 className="text-3xl font-bold text-blue-900 mb-4">
+              <h2 className="text-3xl font-bold text-dark-blue mb-4">
                 {macario.name} {/* Usar nome dos dados */}
               </h2>
               <p className="text-base text-gray-600 leading-relaxed">
@@ -25,9 +25,9 @@ const MacarioCorreiaSection = () => {
               </p>
 
               {/* Mover a citação para aqui, na primeira coluna */}
-              <div className="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
-                <Quote size={24} className="text-blue-500 mb-3" />
-                <blockquote className="text-lg italic text-blue-900">
+              <div className="bg-light-blue/10 p-6 rounded-lg border-l-4 border-light-blue">
+                <Quote size={24} className="text-light-blue mb-3" />
+                <blockquote className="text-lg italic text-dark-blue">
                   {macario.quote} {/* Usar citação dos dados */}
                 </blockquote>
               </div>
@@ -41,7 +41,7 @@ const MacarioCorreiaSection = () => {
                   className="w-64 h-84 object-cover rounded-full flex-shrink-0" // Classes para imagem (aumentado)
                   />
               </div>
-              <div className="bg-gradient-to-br from-yellow-100 to-blue-100 p-6 rounded-2xl">
+              <div className="bg-gradient-to-br from-primary-orange/10 to-light-blue/10 p-6 rounded-2xl">
                 {/* Usar o novo componente para Papel na Candidatura */}
                 <MacarioRole />
               </div>

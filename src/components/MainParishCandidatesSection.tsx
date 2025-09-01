@@ -37,7 +37,7 @@ const MainParishCandidatesSection = () => {
   return (
     <section id="candidatos-juntas-principais" className="py-16 bg-white">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center text-blue-900 mb-12">
+        <h2 className="text-4xl font-bold text-center text-dark-blue mb-12">
           Candidatos às Juntas de Freguesia
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
@@ -46,9 +46,9 @@ const MainParishCandidatesSection = () => {
               <img
                 src={candidate.image}
                 alt={`Foto de ${candidate.name}`}
-                className="w-40 h-56 object-cover rounded-full block mx-auto mb-4 border-2 border-yellow-500"
+                className="w-40 h-56 object-cover rounded-full block mx-auto mb-4 border-2 border-primary-orange"
               />
-              <h3 className="text-xl font-semibold text-blue-900 mb-1">{candidate.name}</h3>
+              <h3 className="text-xl font-semibold text-dark-blue mb-1">{candidate.name}</h3>
               <p className="text-md text-gray-700">{candidate.parish}</p>
               <p className="text-sm text-gray-600 mt-2 max-h-40 overflow-y-auto text-justify px-1" style={{ whiteSpace: 'pre-line' }}>{candidate.bio}</p>
             </div>

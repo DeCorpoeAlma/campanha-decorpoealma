@@ -132,7 +132,7 @@ const Eventos = () => {
     <section id="eventos" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-blue-900 mb-4">
+          <h2 className="text-4xl font-bold text-dark-blue mb-4">
             Notícias e Eventos
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -151,10 +151,10 @@ const Eventos = () => {
                 />
                 <div className={`absolute top-4 left-4 px-3 py-1 rounded-full text-sm font-medium ${
                   item.type === 'video'
-                    ? 'bg-red-500 text-white'
+                    ? 'bg-primary-orange text-white'
                     : item.type === 'event'
-                      ? 'bg-blue-500 text-white'
-                      : 'bg-green-500 text-white'
+                      ? 'bg-light-blue text-white'
+                      : 'bg-dark-blue text-white'
                 }`}>
                   {item.type === 'video' ? 'Vídeo' : item.type === 'event' ? 'Evento' : 'Notícia'}
                 </div>
@@ -166,7 +166,7 @@ const Eventos = () => {
                   <span>{item.date}</span>
                 </div>
                 
-                <h3 className="text-xl font-bold text-blue-900 mb-3 leading-tight">
+                <h3 className="text-xl font-bold text-dark-blue mb-3 leading-tight">
                   {item.title}
                 </h3>
                 
@@ -176,7 +176,7 @@ const Eventos = () => {
                 
                 {item.type === 'video' && item.video_url ? (
                   <button
-                    className="flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200"
+                    className="flex items-center gap-2 text-light-blue hover:text-dark-blue font-medium transition-colors duration-200"
                     onClick={() => item.video_url && openVideoModal(item.video_url)}
                   >
                     Ver Vídeo
@@ -185,16 +185,16 @@ const Eventos = () => {
                 ) : item.type === 'event' ? (
                   <div className="flex flex-col gap-2 text-sm mt-4">
                     <div className="flex items-center gap-2 text-gray-600">
-                      <Clock size={16} className="text-blue-500" />
+                      <Clock size={16} className="text-light-blue" />
                       <span>{item.time}</span>
                     </div>
                     <div className="flex items-center gap-2 text-gray-600">
-                      <MapPin size={16} className="text-blue-500" />
+                      <MapPin size={16} className="text-light-blue" />
                       <span>{item.location}</span>
                     </div>
                     {item.attendees && (
                       <div className="flex items-center gap-2 text-gray-600">
-                        <Users size={16} className="text-blue-500" />
+                        <Users size={16} className="text-light-blue" />
                         <span>{item.attendees}</span>
                       </div>
                     )}
@@ -204,7 +204,7 @@ const Eventos = () => {
                     href="#" // Substituir por URL real se disponível nos dados
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium transition-colors duration-200"
+                    className="flex items-center gap-2 text-light-blue hover:text-dark-blue font-medium transition-colors duration-200"
                   >
                     Ler Mais
                     <ExternalLink size={16} />
@@ -223,7 +223,7 @@ const Eventos = () => {
             href="https://form.qomon.org/faro-2025/"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block bg-yellow-500 hover:bg-yellow-600 text-blue-900 px-6 py-3 rounded-full font-semibold transition-colors duration-200"
+            className="inline-block bg-primary-orange hover:bg-primary-orange/90 text-dark-blue px-6 py-3 rounded-full font-semibold transition-colors duration-200"
           >
             Subscrever Agenda
           </a>

@@ -33,11 +33,11 @@ const Contact = () => {
     <section id="contactos" className="py-20 bg-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-blue-900 mb-4">
+          <h2 className="text-4xl font-bold text-dark-blue mb-4">
             Contactos
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Estamos aqui para ouvir. Entre em contacto connosco para esclarecer 
+            Estamos aqui para ouvir. Entre em contacto connosco para esclarecer
             dúvidas, dar sugestões ou participar na nossa campanha.
           </p>
         </div>
@@ -46,15 +46,15 @@ const Contact = () => {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-blue-900 mb-6">
+              <h3 className="text-2xl font-bold text-dark-blue mb-6">
                 Informações de Contacto
               </h3>
               
               <div className="space-y-6">
                 <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
-                  <MapPin className="text-blue-600 mt-1" size={24} />
+                  <MapPin className="text-light-blue mt-1" size={24} />
                   <div>
-                    <h4 className="font-semibold text-gray-800 mb-1">Sede de Campanha</h4>
+                    <h4 className="font-semibold text-dark-blue mb-1">Sede de Campanha</h4>
                     <p className="text-gray-600">
                       Rua de São Luís (Beco Frei André Álvares), 56<br />
                       8000-285 Faro
@@ -67,17 +67,17 @@ const Contact = () => {
                 </div>
 
                 <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
-                  <Mail className="text-blue-600 mt-1" size={24} />
+                  <Mail className="text-light-blue mt-1" size={24} />
                   <div>
-                    <h4 className="font-semibold text-gray-800 mb-1">Email</h4>
+                    <h4 className="font-semibold text-dark-blue mb-1">Email</h4>
                     <p className="text-gray-600">geral@farodecorpoealma.pt</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
-                  <Phone className="text-blue-600 mt-1" size={24} />
+                  <Phone className="text-light-blue mt-1" size={24} />
                   <div>
-                    <h4 className="font-semibold text-gray-800 mb-1">Telefone</h4>
+                    <h4 className="font-semibold text-dark-blue mb-1">Telefone</h4>
                     <p className="text-gray-600">289 813 425</p>
                   </div>
                 </div>
@@ -86,20 +86,20 @@ const Contact = () => {
 
             {/* Social Media */}
             <div>
-              <h3 className="text-2xl font-bold text-blue-900 mb-6">
+              <h3 className="text-2xl font-bold text-dark-blue mb-6">
                 Redes Sociais
               </h3>
               
               <div className="flex gap-4">
                 <a
                   href="https://www.facebook.com/profile.php?id=100066736810804"
-                  className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full transition-colors duration-200"
+                  className="bg-dark-blue/80 hover:bg-dark-blue text-white p-3 rounded-full transition-colors duration-200"
                 >
                   <Facebook size={24} />
                 </a>
                 <a
                   href="https://www.instagram.com/faro_de_corpo_e_alma/"
-                  className="bg-pink-600 hover:bg-pink-700 text-white p-3 rounded-full transition-colors duration-200"
+                  className="bg-primary-orange/80 hover:bg-primary-orange text-white p-3 rounded-full transition-colors duration-200"
                 >
                   <Instagram size={24} />
                 </a>
@@ -107,7 +107,7 @@ const Contact = () => {
                   href="https://www.youtube.com/@farodecorpoealma"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="bg-red-600 hover:bg-red-700 text-white p-3 rounded-full transition-colors duration-200"
+                  className="bg-primary-orange/80 hover:bg-primary-orange text-white p-3 rounded-full transition-colors duration-200"
                 >
                   <Youtube size={24} />
                 </a>
@@ -159,7 +159,7 @@ const Contact = () => {
                     required
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-light-blue"
                   />
                 </div>
 
@@ -174,7 +174,7 @@ const Contact = () => {
                     required
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-light-blue"
                   />
                 </div>
 
@@ -188,7 +188,7 @@ const Contact = () => {
                     required
                     value={formData.subject}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-light-blue"
                   >
                     <option value="">Selecione um assunto</option>
                     <option value="apoio">Quero apoiar a campanha</option>
@@ -210,13 +210,13 @@ const Contact = () => {
                     rows={5}
                     value={formData.message}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 resize-vertical"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:border-light-blue resize-vertical"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-blue-900 hover:bg-blue-800 text-white py-4 rounded-lg font-semibold text-lg transition-colors duration-200 flex items-center justify-center gap-2"
+                  className="w-full bg-dark-blue hover:bg-dark-blue/90 text-white py-4 rounded-lg font-semibold text-lg transition-colors duration-200 flex items-center justify-center gap-2"
                 >
                   <Send size={20} />
                   Enviar Mensagem

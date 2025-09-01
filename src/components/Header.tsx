@@ -66,10 +66,10 @@ const Header = () => {
                 href={item.href}
                 className={`transition-colors duration-200 font-medium ${
                   activeLink === item.href
-                    ? 'text-yellow-500'
+                    ? 'text-primary-orange'
                     : isScrolled
-                      ? 'text-gray-800 hover:text-yellow-500'
-                      : 'text-white hover:text-yellow-500'
+                      ? 'text-dark-blue hover:text-primary-orange'
+                      : 'text-white hover:text-primary-orange'
                 }`}
                 style={{ textShadow: isScrolled ? 'none' : '1px 1px 2px rgba(0, 0, 0, 0.5)' }}
               >
@@ -80,7 +80,7 @@ const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className={`lg:hidden p-2 ${isScrolled ? 'text-gray-800' : 'text-white'}`}
+            className={`lg:hidden p-2 ${isScrolled ? 'text-dark-blue' : 'text-white'}`}
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -89,7 +89,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className={`lg:hidden mt-4 pb-4 border-t ${isScrolled ? 'border-gray-200 bg-white/90' : 'border-gray-200/30 bg-black/70'}`}>
+          <div className={`lg:hidden mt-4 pb-4 border-t ${isScrolled ? 'border-gray-200 bg-white/90' : 'border-dark-blue/30 bg-dark-blue/70'}`}>
             <nav className="flex flex-col space-y-2 pt-4">
               {menuItems.map((item) => (
                 <a
@@ -97,10 +97,10 @@ const Header = () => {
                   href={item.href}
                   className={`transition-colors duration-200 font-medium py-2 ${
                     activeLink === item.href
-                      ? 'text-yellow-500'
+                      ? 'text-primary-orange'
                       : isScrolled
-                        ? 'text-gray-800 hover:text-yellow-500'
-                        : 'text-white hover:text-yellow-500'
+                        ? 'text-dark-blue hover:text-primary-orange'
+                        : 'text-white hover:text-primary-orange'
                   }`}
                   style={{ textShadow: isScrolled ? 'none' : '1px 1px 2px rgba(0, 0, 0, 0.5)' }}
                 >
