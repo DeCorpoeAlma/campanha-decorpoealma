@@ -14,9 +14,9 @@ const Participate = () => {
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Algo grandioso está prestes a acontecer!
 
-            O sucesso desta "maratona" depende do envolvimento de todos. Ao preencher este formulário, ajudará a identificar as suas áreas de interesse e a estar informado sobre as próximas iniciativas.
+            O sucesso desta "maratona" depende do envolvimento de todos. Siga-nos nas redes sociais e ajude-nos a identificar as suas áreas de interesse e a estar informado sobre as próximas iniciativas.
 
-            Agradecemos a sua colaboração!
+            Estamos juntos para fazer Faro melhor!
           </p>
         </div>
 
@@ -53,9 +53,29 @@ const Participate = () => {
                   <h4 className="font-semibold text-blue-900">Redes Sociais</h4>
                 </div>
                 <p className="text-gray-600">
-                  Partilha as nossas propostas e conteúdos nas redes sociais para 
+                  Partilha as nossas propostas e conteúdos nas redes sociais para
                   chegarem a mais pessoas.
                 </p>
+                <div className="flex gap-4 mt-4">
+                  <a
+                      href="https://chat.whatsapp.com/DjMV20H2j8Q89MvFawhgm7"
+                      className="bg-[#25D366] hover:bg-[#22c35e] text-white p-3 rounded-full transition-colors duration-200"
+                    >
+                      <FaWhatsapp size={24} color="#FFFF00" />
+                    </a>
+                    <a
+                      href="https://www.facebook.com/Farocapitaldeconfianca/"
+                      className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full transition-colors duration-200"
+                    >
+                      <Facebook size={24} />
+                    </a>
+                    <a
+                      href="https://www.instagram.com/faro.capital_de_confianca/"
+                      className="bg-pink-600 hover:bg-pink-700 text-white p-3 rounded-full transition-colors duration-200"
+                    >
+                      <Instagram size={24} />
+                    </a>
+                </div>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow-md border-l-4 border-red-500">
@@ -110,33 +130,6 @@ const Participate = () => {
                 </div>
               </div>
 
-              {/* Social Media */}
-              <div>
-                <h3 className="text-2xl font-bold text-blue-900 mb-6">
-                  Redes Sociais
-                </h3>
-
-                <div className="flex gap-4">
-                <a
-                    href="https://chat.whatsapp.com/DjMV20H2j8Q89MvFawhgm7"
-                    className="bg-[#25D366] hover:bg-[#22c35e] text-white p-3 rounded-full transition-colors duration-200"
-                  >
-                    <FaWhatsapp size={24} color="#FFFF00" />
-                  </a>
-                  <a
-                    href="https://www.facebook.com/Farocapitaldeconfianca/"
-                    className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-full transition-colors duration-200"
-                  >
-                    <Facebook size={24} />
-                  </a>
-                  <a
-                    href="https://www.instagram.com/faro.capital_de_confianca/"
-                    className="bg-pink-600 hover:bg-pink-700 text-white p-3 rounded-full transition-colors duration-200"
-                  >
-                    <Instagram size={24} />
-                  </a>
-                </div>
-              </div>
 
               {/* Map Placeholder */}
               {/* Mapa da localização */}
