@@ -53,8 +53,7 @@ const Participate = () => {
                   <h4 className="font-semibold text-dark-blue">Redes Sociais</h4>
                 </div>
                 <p className="text-gray-600">
-                  Partilha as nossas propostas e conteúdos nas redes sociais para
-                  chegarem a mais pessoas.
+                  Segue-nos nas redes sociais para estar informado sobre as próximas iniciativas.
                 </p>
                 <div className="flex gap-4 mt-4">
                   <a
