@@ -1,255 +1,140 @@
-# Campanha De Corpo e Alma
+# Campanha De Corpo e Alma - Projeto Frontend
 
-Este repositório contém o site da campanha política "Faro. De Corpo e Alma", uma plataforma web com frontend em React e backend em Python que inclui um chatbot inteligente para interação com os visitantes.
+Este projeto é o frontend da campanha "De Corpo e Alma", desenvolvido com React e Vite, utilizando TypeScript para tipagem e Tailwind CSS para estilização. O objetivo é criar uma interface de utilizador moderna e responsiva para a campanha.
 
-## Índice
+## 🚀 Tecnologias Principais
 
-- [Visão Geral](#visão-geral)
-- [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Requisitos](#requisitos)
-- [Instalação](#instalação)
-- [Configuração](#configuração)
-- [Execução](#execução)
-- [Estrutura do Projeto](#estrutura-do-projeto)
-- [Desenvolvimento](#desenvolvimento)
-- [Implantação](#implantação)
-- [Contribuição](#contribuição)
+*   **React**: Biblioteca JavaScript para construção de interfaces de utilizador.
+*   **Vite**: Ferramenta de build de frontend que oferece uma experiência de desenvolvimento extremamente rápida.
+*   **TypeScript**: Superset de JavaScript que adiciona tipagem estática.
+*   **Tailwind CSS**: Framework CSS utilitário para construção rápida de designs personalizados.
+*   **PostCSS**: Ferramenta para transformar CSS com plugins JavaScript.
+*   **ESLint**: Ferramenta de linting para identificar e reportar padrões problemáticos encontrados no código JavaScript/TypeScript.
+*   **Netlify**: Plataforma para deploy contínuo e alojamento de aplicações web.
 
-## Visão Geral
+## 📦 Dependências (package.json)
 
-O projeto "Campanha De Corpo e Alma" é um site para a campanha política "Faro. De Corpo e Alma", que apresenta informações sobre os candidatos Cristóvão Norte e Macário Correia, o programa eleitoral, eventos, notícias e uma equipa. O site também inclui um chatbot inteligente que utiliza modelos de IA para responder a perguntas sobre a campanha.
+### Dependências de Produção (`dependencies`):
+*   [`embla-carousel-autoplay`](https://www.embla-carousel.com/): Plugin de autoplay para o Embla Carousel.
+*   [`embla-carousel-react`](https://www.embla-carousel.com/): Componente React para o Embla Carousel.
+*   [`esbuild-wasm`](https://esbuild.github.io/): Bundler JavaScript extremamente rápido (versão WebAssembly).
+*   [`lucide-react`](https://lucide.dev/): Biblioteca de ícones leves e personalizáveis para React.
+*   [`react`](https://react.dev/): Biblioteca principal do React.
+*   [`react-dom`](https://react.dev/): Pacote para renderização do React no DOM.
+*   [`react-icons`](https://react-icons.github.io/react-icons/): Coleção popular de ícones React.
+*   [`react-markdown`](https://github.com/remarkjs/react-markdown): Componente React para renderizar Markdown.
+*   [`react-slick`](https://react-slick.neostack.com/): Componente de carrossel para React.
+*   [`rehype-raw`](https://github.com/rehypejs/rehype-raw): Plugin Rehype para analisar HTML bruto dentro de Markdown.
+*   [`remark-gfm`](https://github.com/remarkjs/remark-gfm): Plugin Remark para suporte a GitHub Flavored Markdown.
+*   [`slick-carousel`](https://kenwheeler.github.io/slick/): Carrossel responsivo.
 
-## Tecnologias Utilizadas
+### Dependências de Desenvolvimento (`devDependencies`):
+*   [`@eslint/js`](https://eslint.org/): Configurações JavaScript recomendadas para ESLint.
+*   [`@types/react`](https://www.npmjs.com/package/@types/react): Definições de tipo para React.
+*   [`@types/react-dom`](https://www.npmjs.com/package/@types/react-dom): Definições de tipo para React DOM.
+*   [`@types/react-slick`](https://www.npmjs.com/package/@types/react-slick): Definições de tipo para React Slick.
+*   [`@vitejs/plugin-react`](https://github.com/vitejs/vite-plugin-react/): Plugin React para Vite.
+*   [`autoprefixer`](https://github.com/postcss/autoprefixer): Plugin PostCSS para adicionar prefixos de fornecedor automaticamente.
+*   [`eslint`](https://eslint.org/): Ferramenta de linting.
+*   [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks): Regras de linting para Hooks do React.
+*   [`eslint-plugin-react-refresh`](https://www.npmjs.com/package/eslint-plugin-react-refresh): Plugin ESLint para garantir que o Fast Refresh do React funcione corretamente.
+*   [`globals`](https://www.npmjs.com/package/globals): Variáveis globais para ESLint.
+*   [`postcss`](https://postcss.org/): Ferramenta para transformar CSS.
+*   [`tailwindcss`](https://tailwindcss.com/): Framework CSS utilitário.
+*   [`typescript`](https://www.typescriptlang.org/): Linguagem de programação TypeScript.
+*   [`typescript-eslint`](https://typescript-eslint.io/): Ferramentas ESLint para TypeScript.
+*   [`vite`](https://vitejs.dev/): Ferramenta de build de frontend.
 
-### Frontend
-- **React 18**: Biblioteca JavaScript para construção de interfaces
-- **TypeScript**: Superset tipado de JavaScript
-- **Vite**: Bundler e ferramenta de desenvolvimento
-- **TailwindCSS**: Framework CSS utilitário
-- **Embla Carousel**: Biblioteca para carrosséis
-- **React Markdown**: Para renderização de conteúdo markdown
-- **Lucide React**: Biblioteca de ícones
-
-### Backend
-- **Python 3.9+**: Linguagem de programação
-- **FastAPI**: Framework web para APIs
-- **Uvicorn**: Servidor ASGI para Python
-- **Hugging Face Transformers**: Biblioteca para modelos de IA
-- **OpenRouter API**: Serviço para acesso a modelos de IA avançados
-- **HTTPX**: Cliente HTTP assíncrono para Python
-- **Pydantic**: Validação de dados e configurações
-
-## Requisitos
-
-### Frontend
-- Node.js 18.x ou superior
-- npm 9.x ou superior
-
-### Backend
-- Python 3.9 ou superior
-- pip (gestor de pacotes Python)
-- Ambiente virtual Python (recomendado)
-
-## Instalação
-
-### Clonar o Repositório
-
-```bash
-git clone https://github.com/seu-utilizador/campanha-decorpoealma.git
-cd campanha-decorpoealma
-```
-
-### Frontend
-
-```bash
-# Instalar dependências do frontend
-npm install
-```
-
-### Backend
-
-O backend inclui scripts de inicialização que automatizam o processo de configuração e execução:
-
-#### Linux/Mac:
-```bash
-cd backend
-chmod +x start.sh  # Tornar o script executável (apenas na primeira vez)
-./start.sh
-```
-
-#### Windows:
-```bash
-cd backend
-start.bat
-```
-
-Estes scripts irão:
-1. Criar um ambiente virtual Python se não existir
-2. Instalar todas as dependências necessárias
-3. Criar um ficheiro `.env` a partir do `.env.example` se não existir
-4. Iniciar o servidor backend
-
-Alternativamente, pode configurar manualmente:
-
-```bash
-# Criar e ativar ambiente virtual (recomendado)
-python -m venv venv
-source venv/bin/activate  # No Windows: venv\Scripts\activate
-
-# Instalar dependências do backend
-cd backend
-pip install -r requirements.txt
-```
-
-## Configuração
-
-### Frontend
-
-Não é necessária configuração adicional para o frontend em ambiente de desenvolvimento.
-
-### Backend
-
-1. Copie o ficheiro `.env.example` para `.env` na pasta `backend`:
-
-```bash
-cd backend
-cp .env.example .env  # No Windows: copy .env.example .env
-```
-
-2. Edite o ficheiro `.env` e configure as seguintes variáveis:
+## 📂 Estrutura do Projeto
 
 ```
-# API Keys
-OPENROUTER_API_KEY=sua_chave_api_aqui
-
-# Outras configurações conforme necessário
+.
+├── public/                  # Ficheiros estáticos (imagens, fontes, etc.)
+│   ├── candidatos/          # Imagens de candidatos
+│   ├── fonts/               # Fontes personalizadas (Galano Grotesque Alt)
+│   └── images/              # Outras imagens
+├── src/                     # Código fonte da aplicação
+│   ├── App.tsx              # Componente principal da aplicação
+│   ├── components/          # Componentes React reutilizáveis
+│   ├── data/                # Dados estáticos ou mocks
+│   └── ...                  # Outros ficheiros e diretórios de código
+├── .env.example             # Exemplo de variáveis de ambiente
+├── .gitignore               # Ficheiros e diretórios a serem ignorados pelo Git
+├── eslint.config.js         # Configuração do ESLint
+├── index.html               # Ponto de entrada HTML
+├── netlify.toml             # Configuração de deploy para Netlify
+├── package.json             # Metadados do projeto e scripts
+├── postcss.config.js        # Configuração do PostCSS
+├── tailwind.config.js       # Configuração do Tailwind CSS
+├── tsconfig.json            # Configuração do TypeScript
+├── vite.config.ts           # Configuração do Vite
+└── ...                      # Outros ficheiros de configuração e scripts
 ```
 
-3. Obtenha uma chave de API do OpenRouter:
-   - Aceda a [OpenRouter](https://openrouter.ai/)
-   - Crie uma conta e gere uma chave de API
-   - Adicione a chave ao ficheiro `.env`
+## ⚙️ Scripts Disponíveis
 
-## Execução
+No ficheiro `package.json`, os seguintes scripts estão definidos:
 
-### Frontend
+*   `dev`: Inicia o servidor de desenvolvimento Vite.
+    ```bash
+    npm run dev
+    ```
+*   `build`: Compila o projeto para produção.
+    ```bash
+    npm run build
+    ```
+*   `lint`: Executa o ESLint para verificar problemas de código.
+    ```bash
+    npm run lint
+    ```
+*   `preview`: Serve a build de produção localmente para pré-visualização.
+    ```bash
+    npm run preview
+    ```
 
-```bash
-# Iniciar o servidor de desenvolvimento
-npm run dev
-```
+## 🎨 Estilização
 
-O frontend estará disponível em `http://localhost:5173`.
+O projeto utiliza **Tailwind CSS** para estilização, configurado através de `tailwind.config.js` e `postcss.config.js`.
 
-### Backend
+*   **`tailwind.config.js`**: Define as classes utilitárias do Tailwind, incluindo cores personalizadas (`primary-orange`, `dark-blue`, `light-blue`) e famílias de fontes (`galano-alt`).
+*   **`postcss.config.js`**: Configura o PostCSS para processar o CSS, utilizando `tailwindcss` e `autoprefixer` para garantir compatibilidade entre navegadores.
 
-```bash
-# Na pasta raiz do projeto
-cd backend
-./start.sh  # No Linux/Mac
-# OU
-start.bat   # No Windows
-```
+## 📝 Linting e Tipagem
 
-Alternativamente, pode iniciar manualmente:
+*   **ESLint (`eslint.config.js`)**: Configurado para TypeScript e React, utilizando `@eslint/js`, `typescript-eslint`, `eslint-plugin-react-hooks` e `eslint-plugin-react-refresh`. Garante a qualidade do código e a conformidade com as melhores práticas do React.
+*   **TypeScript (`tsconfig.json`, `tsconfig.app.json`, `tsconfig.node.json`)**: O projeto é totalmente tipado com TypeScript, o que ajuda a prevenir erros em tempo de desenvolvimento e melhora a manutenibilidade do código.
 
-```bash
-# Na pasta raiz do projeto
-cd backend
-python run.py
-```
+## 🛠️ Configuração de Build e Desenvolvimento
 
-O backend estará disponível em `http://localhost:8000`. Pode aceder à documentação da API em `http://localhost:8000/docs`.
+*   **Vite (`vite.config.ts`)**: Configurado para desenvolvimento React com TypeScript.
+    *   **Plugins**: Utiliza `@vitejs/plugin-react`.
+    *   **Otimização de Dependências**: Exclui `lucide-react` da otimização.
+    *   **Servidor de Desenvolvimento**: Configurado para a porta `5173`, com CORS habilitado e origem `http://localhost:5173`. Permite acesso a ficheiros estáticos na pasta `public`.
+    *   **Aliases**: Define `@` como alias para o diretório `src`.
+    *   **Build**: Configura o Rollup para criar `manualChunks` para `react` e `react-dom`, otimizando o carregamento.
 
-## Estrutura do Projeto
+## ☁️ Deploy Contínuo (Netlify)
 
-```
-campanha-decorpoealma/
-├── .env.example           # Exemplo de variáveis de ambiente
-├── .gitignore             # Ficheiros ignorados pelo Git
-├── package.json           # Dependências e scripts do frontend
-├── postcss.config.js      # Configuração do PostCSS
-├── README.md              # Este ficheiro
-├── backend/               # Código do backend
-│   ├── campaign_chatbot.py # Implementação principal do backend
-│   ├── run.py             # Ponto de entrada do backend
-│   ├── requirements.txt   # Dependências do backend
-│   ├── .env.example       # Modelo para configuração de variáveis de ambiente
-│   ├── start.sh           # Script de inicialização para Linux/Mac
-│   └── start.bat          # Script de inicialização para Windows
-├── public/                # Ficheiros estáticos
-│   ├── fonts/             # Fontes
-│   ├── images/            # Imagens
-│   └── candidatos/        # Fotos dos candidatos
-└── src/                   # Código fonte do frontend
-    ├── App.tsx            # Componente principal
-    ├── components/        # Componentes React
-    │   ├── Header.tsx     # Cabeçalho do site
-    │   ├── Hero.tsx       # Secção principal
-    │   ├── Chatbot.tsx    # Implementação do chatbot
-    │   └── ...            # Outros componentes
-    └── data/              # Dados estáticos
-```
+O ficheiro `netlify.toml` configura o deploy do projeto no Netlify:
 
-## Desenvolvimento
+*   **Comando de Build**: `npm run build`
+*   **Diretório de Publicação**: `dist` (onde o Vite gera os ficheiros de build).
+*   **Redirecionamentos**: Configura um redirecionamento para `index.html` com status `200` para todas as rotas, o que é comum para aplicações SPA (Single Page Application) para lidar com roteamento no lado do cliente.
 
-### Frontend
+## 🤖 Chatbot (Backend e Scripts Python)
 
-O frontend utiliza React com TypeScript e é construído com Vite. Os componentes estão organizados na pasta `src/components` e os dados estáticos na pasta `src/data`.
+O projeto inclui diretórios e scripts relacionados a um chatbot e processamento de dados:
 
-#### Scripts Disponíveis
+*   **`backend/`**: Provavelmente contém o código do backend da aplicação, que pode interagir com o chatbot ou outras funcionalidades.
+*   **`chatbot/`**: Contém a lógica do chatbot.
+*   **`generate_pdf.py`**: Script Python para geração de PDFs.
+*   **`test_chatbot.py`**: Script Python para testes do chatbot.
+*   **`fb_media/`**: Diretório para média do Facebook.
+*   **`output_facebook_data/`**: Diretório para dados de saída do Facebook.
+*   **`facebook_cookies.txt`**: Ficheiro de cookies do Facebook, possivelmente usado para automação ou recolha de dados.
 
-- `npm run dev`: Inicia o servidor de desenvolvimento
-- `npm run build`: Compila o projeto para produção
-- `npm run preview`: Visualiza a versão de produção localmente
-- `npm run lint`: Executa o linter para verificar o código
+Estes componentes sugerem um workflow que envolve a recolha e processamento de dados do Facebook, possivelmente para alimentar o chatbot ou para análise da campanha.
 
-### Backend
+## 🧪 Testes
 
-O backend utiliza FastAPI e é organizado em torno do ficheiro `campaign_chatbot.py`, que contém a implementação principal da API. O ficheiro `run.py` é o ponto de entrada para execução do servidor.
-
-#### Endpoints Principais
-
-- `GET /`: Verificação de saúde da API
-- `GET /health`: Verificação de saúde detalhada
-- `GET /models`: Lista modelos disponíveis
-- `POST /chat`: Endpoint principal para interação com o chatbot
-- `POST /sessions/cleanup`: Remove sessões antigas
-
-## Implantação
-
-### Frontend
-
-O frontend está configurado para implantação no Netlify:
-
-```bash
-# Compilar o projeto
-npm run build
-
-# Implantar no Netlify (requer CLI do Netlify)
-netlify deploy --prod
-```
-
-### Backend
-
-O backend está configurado para implantação no Render:
-
-1. Crie um novo serviço Web no Render
-2. Conecte ao repositório GitHub
-3. Configure as variáveis de ambiente no Render
-4. Defina o comando de build: `pip install -r requirements.txt`
-5. Defina o comando de start: `python run.py`
-
-## Contribuição
-
-Para contribuir com o projeto:
-
-1. Faça um fork do repositório
-2. Crie uma branch para a sua funcionalidade (`git checkout -b funcionalidade/nova-funcionalidade`)
-3. Faça commit das suas alterações (`git commit -m 'Adiciona nova funcionalidade'`)
-4. Faça push para a branch (`git push origin funcionalidade/nova-funcionalidade`)
-5. Abra um Pull Request
-
-## Licença
-
-Este projeto está licenciado sob a licença MIT - veja o ficheiro LICENSE para detalhes.
+Embora não haja um framework de teste explícito configurado no `package.json` para o frontend, a presença de `test_chatbot.py` indica que há testes para a parte do chatbot. Para o frontend, seria recomendável adicionar um framework como Jest ou React Testing Library.
