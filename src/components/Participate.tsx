@@ -99,7 +99,7 @@ const Participate = () => {
                   <div className="flex items-start gap-4 p-4 bg-gray-50 rounded-lg">
                     <MapPin className="text-dark-blue mt-1" size={24} />
                     <div>
-                      <h4 className="font-semibold text-dark-blue mb-1">Sede de Campanha</h4>
+                      <h4 className="font-semibold text-dark-blue mb-1">Sede do PSD Faro</h4>
                       <p className="text-gray-600">
                         Rua de São Luís (Beco Frei André Álvares), 56<br />
                         8000-285 Faro
