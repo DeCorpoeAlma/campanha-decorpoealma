@@ -126,7 +126,7 @@ const parishesData = [
       { path: '/candidatos/montenegro/19 Mariana_Massapina.png', name: 'Mariana Massapina' },
       { path: '/candidatos/montenegro/20 Diana_Carvalho.png', name: 'Diana Carvalho' },
       { path: '/candidatos/montenegro/21 Francisco_Bandarra.png', name: 'Francisco Bandarra' },
-      { path: '/candidatos/montenegro/22 Deonlide_Inacio.png', name: 'Deonlide Inácio' },
+      { path: '/candidatos/montenegro/22 Deonilde_Inacio.png', name: 'Deonilde Inácio' },
       { path: '/candidatos/montenegro/23 Paulo_Farias.png', name: 'Paulo Farias' },
       { path: '/candidatos/montenegro/24 Joao_Correia.png', name: 'João Correia' },
       { path: '/candidatos/montenegro/25 Sonia_Floro_Ribeiro.png', name: 'Sónia Floro Ribeiro' },
