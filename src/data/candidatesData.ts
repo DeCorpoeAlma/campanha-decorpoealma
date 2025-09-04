@@ -18,20 +18,9 @@ export const candidates = [
   {
     id: 'macario',
     name: 'Macário Correia',
-    biography: `José Macário Correia nasceu em Santo Estêvão, Tavira, a 1 de abril de 1957. Algarvio de raiz e convicção, dedicou a vida ao serviço da sua terra, num percurso marcado pela competência, proximidade e compromisso público.
-Licenciado em Engenharia Agronómica e mestre em Economia Rural, iniciou a carreira como Deputado do PSD em 1985. Integrou governos de Cavaco Silva como Secretário de Estado do Ambiente, destacando-se em políticas de sustentabilidade e proteção da natureza.
-No poder local, foi Presidente da Câmara de Tavira (1998-2009), transformando completamente o município e aproximando o poder das populações. Em Faro (2009-2013), recuperou uma Câmara em escombros e deu azo à revitalização económica e urbana que o concelho conheceu a partir desses anos, bem como a avanços na mobilidade e na sustentabilidade. Transformou a autarquia numa máquina operativa afinada e pessoa de bem. Presidiu também à AMAL, defendendo os interesses regionais em saúde, transportes, ambiente e desenvolvimento rural.
-Enfrentou desafios judiciais ligados a decisões em Tavira, assumidos com responsabilidade. Depois da vida política, regressou à agricultura e ao associativismo, liderando a Federação da Agricultura do Algarve, a Associação de Regantes do Sotavento e o Centro Social de Santo Estêvão. É a voz mais avalizada na questão da água, tendo sido peça essencial no desbloqueio dos investimentos anunciados pelo Governo para o Algarve.
-Agraciado em 2006 com o grau de Grande-Oficial da Ordem do Mérito, continua a servir a região com espírito de missão. Homem de causas, fala com franqueza, age com convicção e acredita que o Algarve merece — e pode ter — mais e melhor.`,
-    quote: `"A experiência ensina-nos que os grandes projetos se constroem com paciência, diálogo e determinação. Faro precisa dessa estabilidade para crescer de forma sustentável."`,
+    biography: ``,
+    quote: `""`,
     politicalCareer: [
-      'Deputado à Assembleia da República (1985–1990, 1991)',
-      'Secretário de Estado do Ambiente (1987–1991)',
-      'Vereador da Câmara Municipal de Lisboa (1993–1997)',
-      'Presidente da Câmara Municipal de Tavira (1998–2009)',
-      'Presidente da Comunidade Intermunicipal do Algarve (2004–2013)',
-      'Vice-presidente da Comissão de Ambiente do Comité das Regiões da UE',
-      'Presidente da Câmara Municipal de Faro (2009–2013)',
     ],
     roleInCandidacy: {
       description: 'Como candidato à Assembleia Municipal, Macário Correia será a ponte entre a câmara e os cidadãos, garantindo transparência e participação em todas as decisões importantes.',
