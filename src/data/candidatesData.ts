@@ -36,7 +36,7 @@ Cristóvão Norte é reconhecido pela forte ligação ao Algarve, em especial a 
   {
     id: 'macario',
     name: 'Macário Correia',
-    biography: `Macário Correia, natural de Santo Estêvão, Tavira, nasceu há 68 anos e é pai de três filhos. Ao longo de mais de quatro décadas, construiu uma carreira marcada pelo serviço público, pela gestão autárquica e pela dedicação ao desenvolvimento agrícola e ambiental do Algarve e do país.
+    biography: `José Macário Custódio Correia, natural de Santo Estêvão, Tavira, nasceu há 68 anos e é pai de três filhos. Ao longo de mais de quatro décadas, construiu uma carreira marcada pelo serviço público, pela gestão autárquica e pela dedicação ao desenvolvimento agrícola e ambiental do Algarve e do país.
 
 Licenciado em Engenharia Agronómica e Arquitetura Paisagista pelo Instituto Superior de Agronomia da Universidade de Lisboa em 1982, prosseguiu estudos em França, onde concluiu o mestrado em Economia Rural no Instituto Agronómico Mediterrânico de Montpellier em 1984. Regressado a Portugal, iniciou o doutoramento em Engenharia do Ambiente na Faculdade de Ciências e Tecnologia da Universidade Nova de Lisboa, experiência que conjugou com a docência como assistente naquela instituição.
 
