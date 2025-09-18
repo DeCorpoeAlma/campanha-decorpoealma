@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
-import { Maximize, Minimize } from 'lucide-react';
+import { Maximize, Minimize, ZoomIn, ZoomOut } from 'lucide-react';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `/pdf.worker.min.js`;
 
@@ -14,11 +14,22 @@ const PdfViewer: React.FC<PdfViewerProps> = ({ pdfPath }) => {
   const [numPages, setNumPages] = useState<number | null>(null);
   const [pageNumber, setPageNumber] = useState<number>(1);
   const [isFullscreen, setIsFullscreen] = useState<boolean>(false);
+  const [scale, setScale] = useState<number>(1.0);
   const viewerRef = useRef<HTMLDivElement>(null);
+  const pageContainerRef = useRef<HTMLDivElement>(null);
+
+  const minScale = 0.5;
+  const maxScale = 2.0;
+  const scaleStep = 0.25;
 
   const onDocumentLoadSuccess = ({ numPages }: { numPages: number }) => {
     setNumPages(numPages);
     setPageNumber(1);
+    if (pageContainerRef.current) {
+      const containerWidth = pageContainerRef.current.offsetWidth;
+      const defaultPageWidth = 794;
+      setScale(containerWidth / defaultPageWidth);
+    }
   };
 
   const changePage = (offset: number) => {
@@ -27,6 +38,14 @@ const PdfViewer: React.FC<PdfViewerProps> = ({ pdfPath }) => {
 
   const previousPage = () => changePage(-1);
   const nextPage = () => changePage(1);
+
+  const zoomIn = () => {
+    setScale(prevScale => Math.min(prevScale + scaleStep, maxScale));
+  };
+
+  const zoomOut = () => {
+    setScale(prevScale => Math.max(prevScale - scaleStep, minScale));
+  };
 
   const toggleFullscreen = () => {
     if (!viewerRef.current) return;
@@ -49,9 +68,22 @@ const PdfViewer: React.FC<PdfViewerProps> = ({ pdfPath }) => {
     return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
   }, []);
 
+  useEffect(() => {
+    const handleResize = () => {
+      if (pageContainerRef.current && !isFullscreen) {
+        const containerWidth = pageContainerRef.current.offsetWidth;
+        const defaultPageWidth = 794;
+        setScale(containerWidth / defaultPageWidth);
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [isFullscreen]);
+
   return (
     <div ref={viewerRef} className={`pdf-viewer-container ${isFullscreen ? 'fixed inset-0 z-50 bg-white flex flex-col' : 'relative w-full max-w-3xl mx-auto'}`}>
-      <div className={`flex-grow flex justify-center items-center ${isFullscreen ? 'overflow-auto' : ''}`}>
+      <div ref={pageContainerRef} className={`flex-grow flex justify-center items-center ${isFullscreen ? 'overflow-auto' : ''}`}>
         <Document
           file={pdfPath}
           onLoadSuccess={onDocumentLoadSuccess}
@@ -61,7 +93,8 @@ const PdfViewer: React.FC<PdfViewerProps> = ({ pdfPath }) => {
             pageNumber={pageNumber}
             renderTextLayer={true}
             renderAnnotationLayer={true}
-            className={isFullscreen ? 'w-full h-full' : ''}
+            scale={scale}
+            width={isFullscreen ? undefined : (pageContainerRef.current?.offsetWidth || undefined)}
           />
         </Document>
       </div>
@@ -82,6 +115,26 @@ const PdfViewer: React.FC<PdfViewerProps> = ({ pdfPath }) => {
             className="px-4 py-2 bg-blue-500 text-white rounded disabled:opacity-50"
           >
             Próxima
+          </button>
+        </div>
+        <div className="flex gap-2">
+          <button
+            type="button"
+            onClick={zoomOut}
+            disabled={scale <= minScale}
+            className="p-2 bg-gray-300 text-gray-800 rounded hover:bg-gray-400 disabled:opacity-50"
+            title="Zoom Out"
+          >
+            <ZoomOut size={20} />
+          </button>
+          <button
+            type="button"
+            onClick={zoomIn}
+            disabled={scale >= maxScale}
+            className="p-2 bg-gray-300 text-gray-800 rounded hover:bg-gray-400 disabled:opacity-50"
+            title="Zoom In"
+          >
+            <ZoomIn size={20} />
           </button>
         </div>
         <p className="text-lg">
