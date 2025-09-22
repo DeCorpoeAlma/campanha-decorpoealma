@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PdfViewer from './PdfViewer';
 import Modal from './Modal';
-import { Download } from 'lucide-react';
+import { Download, Eye } from 'lucide-react';
 
 const Program = () => {
   const pdfPath = '/programa_eleitoral.pdf';
@@ -23,13 +23,21 @@ const Program = () => {
           </p>
         </div>
 
-        <div className="text-center mt-12">
+        <div className="text-center mt-12 flex flex-col gap-4">
           <button
             onClick={openModal}
             className="bg-dark-blue hover:bg-dark-blue/90 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2 mx-auto"
           >
+            <Eye size={20} />
+            Ver Programa
+          </button>
+          <button
+            onClick={() => window.open(pdfPath, '_blank')}
+            className="bg-dark-blue hover:bg-dark-blue/90 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2 mx-auto"
+            title="Descarregar Programa Eleitoral (PDF)"
+          >
             <Download size={20} />
-            Ver Programa Eleitoral (PDF)
+            Descarregar Programa
           </button>
         </div>
 
