@@ -144,7 +144,7 @@ const parishesData = [
     ],
     assemblyMembers: [
       { path: '/candidatos/faro/02 Davide_Alpestana.png', name: 'Davide Alpestana' },
-      { path: '/candidatos/faro/03 Elizabete_Vargues.png', name: 'Elizabete Vargues' },
+      { path: '/candidatos/faro/03 Elizabete_Vargues.png', name: 'Elisabete Vargues' },
       { path: '/candidatos/faro/04 Jorge_Pereira.png', name: 'Jorge Pereira' },
       { path: '/candidatos/faro/05 Ilidia_Serio.png', name: 'Ilídia Sério' },
       { path: '/candidatos/faro/06 Jardim_de_Sousa.png', name: 'Jardim de Sousa' },
