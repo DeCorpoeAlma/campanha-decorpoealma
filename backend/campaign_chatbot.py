@@ -94,22 +94,8 @@ async def lifespan(app: FastAPI):
     app.state.http_client = httpx.AsyncClient(timeout=60.0)
     app.state.site_context = load_site_content() # Carregar conteúdo do site na inicialização
     logger.info(f"Conteúdo do site carregado. Tamanho: {len(app.state.site_context)} caracteres.")
-    logger.info("⏳ Carregando modelo em português (pierreguillou/gpt2-small-portuguese)...")
-    try:
-        # Usar um modelo em português para melhor qualidade de respostas
-        app.state.local_pipeline = pipeline("text-generation", model="pierreguillou/gpt2-small-portuguese", trust_remote_code=True)
-        logger.info("✅ Modelo em português carregado com sucesso.")
-    except Exception as e:
-        logger.error(f"❌ Erro ao carregar modelo em português: {e}")
-        app.state.local_pipeline = None # Define como None em caso de erro
-        logger.warning("Tentando carregar modelo de fallback...")
-        try:
-            # Fallback para um modelo menor se o primeiro falhar
-            app.state.local_pipeline = pipeline("text-generation", model="microsoft/DialoGPT-small", trust_remote_code=True)
-            logger.info("✅ Modelo de fallback carregado com sucesso.")
-        except Exception as e2:
-            logger.error(f"❌ Erro ao carregar modelo de fallback: {e2}")
-            app.state.local_pipeline = None
+    logger.info("💡 Usando sistema de respostas baseado em contexto (modelo local desabilitado para startup rápido)")
+    app.state.local_pipeline = None
     yield
     # Shutdown
     logger.info("🛑 Finalizando Campaign Chatbot Backend...")
@@ -375,11 +361,9 @@ session_manager = SessionManager()
 def get_openrouter_api_key() -> str:
     """Obtém a chave da API OpenRouter das variáveis de ambiente."""
     api_key = os.getenv("OPENROUTER_API_KEY")
-    if not api_key or api_key == 'seu_token_aqui':
-         raise HTTPException(
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail="Chave da API OpenRouter não configurada. Verifique seu arquivo .env"
-        )
+    if not api_key or api_key == 'seu_token_aqui' or api_key == 'your_key_here':
+        # Return None to indicate local model should be used
+        return None
     return api_key
 
 # Endpoints da API
@@ -409,10 +393,7 @@ async def list_models():
     }
 
 @app.post("/chat", response_model=ChatResponse)
-async def chat(
-    request: ChatRequest,
-    api_key: str = Depends(get_openrouter_api_key) # Usar a chave do .env
-):
+async def chat(request: ChatRequest):
     """Endpoint principal para chat"""
     
     # Validar modelo
@@ -488,37 +469,58 @@ Adapte o nível de detalhe conforme a pergunta.
     assistant_response = ""
     tokens_used = 0
     model_used = request.model
+    api_key = get_openrouter_api_key()
 
     try:
-        if request.model == "pierreguillou/gpt2-small-portuguese" or request.model == "PORTULAN/gervasio-8b-portuguese-ptpt-decoder":
-            # Usar o modelo em português localmente
+        if request.model == "pierreguillou/gpt2-small-portuguese" or request.model == "PORTULAN/gervasio-8b-portuguese-ptpt-decoder" or api_key is None:
+            # Usar o modelo em português localmente ou como fallback
             if app.state.local_pipeline is None:
-                 raise HTTPException(
-                    status_code=status.HTTP_503_SERVICE_UNAVAILABLE,
-                    detail="Modelo em português não carregado ou disponível."
-                )
-            
-            # O pipeline espera uma lista de mensagens
-            # A resposta é uma lista, extrair o texto gerado
-            # Limitar a resposta para evitar problemas de tamanho
-            # Converter a lista de mensagens em um texto para o modelo
-            input_text = "\n".join([f"{msg['role']}: {msg['content']}" for msg in messages_for_model[-3:]])  # Usar apenas as últimas mensagens
-            local_output = app.state.local_pipeline(input_text, max_new_tokens=min(request.max_tokens, 500)) # Limite de 500 tokens
-            assistant_response = local_output[0]['generated_text']
-            # Nota: O pipeline não retorna tokens usados diretamente como a API
-            tokens_used = len(assistant_response.split()) # Estimativa simples
+                # Se não tiver modelo local, usar resposta simples baseada no contexto
+                user_query = request.message.lower()
+                context_snippets = []
+                
+                # Busca simples por palavras-chave no contexto do site
+                if any(word in user_query for word in ['cristóvão', 'cristovao', 'candidato', 'presidente']):
+                    context_snippets.append("Cristóvão Norte é o candidato a presidente da campanha 'Faro. De Corpo e Alma'.")
+                
+                if any(word in user_query for word in ['macário', 'macario', 'vice']):
+                    context_snippets.append("Macário Correia é o candidato a vice-presidente da campanha.")
+                
+                if any(word in user_query for word in ['programa', 'propostas', 'projetos']):
+                    context_snippets.append("O programa eleitoral inclui propostas para desenvolvimento urbano, economia e qualidade de vida em Faro.")
+                
+                if any(word in user_query for word in ['campanha', 'faro', 'corpo', 'alma']):
+                    context_snippets.append("A campanha 'Faro. De Corpo e Alma' representa uma visão de desenvolvimento sustentável para a cidade.")
+                
+                if context_snippets:
+                    assistant_response = "Com base nas informações da campanha:\n\n" + "\n\n".join([f"• {snippet}" for snippet in context_snippets])
+                else:
+                    assistant_response = "Olá! Sou o assistente da campanha 'Faro. De Corpo e Alma'. Posso ajudá-lo com informações sobre os candidatos Cristóvão Norte e Macário Correia, bem como sobre o programa eleitoral. O que gostaria de saber?"
+                
+                tokens_used = len(assistant_response.split())
+            else:
+                # Usar o modelo local se estiver disponível
+                input_text = "\n".join([f"{msg['role']}: {msg['content']}" for msg in messages_for_model[-3:]])  # Usar apenas as últimas mensagens
+                local_output = app.state.local_pipeline(input_text, max_new_tokens=min(request.max_tokens, 500)) # Limite de 500 tokens
+                assistant_response = local_output[0]['generated_text']
+                tokens_used = len(assistant_response.split())
             
         else:
-            # Chamar OpenRouter para outros modelos
+            # Chamar OpenRouter para outros modelos se a chave estiver disponível
+            if api_key is None:
+                raise HTTPException(
+                    status_code=status.HTTP_400_BAD_REQUEST,
+                    detail="Chave da API OpenRouter não configurada. Configure OPENROUTER_API_KEY no arquivo .env para usar modelos externos."
+                )
+            
             response_data = await openrouter_service.call_model(
                 messages=messages_for_model,
                 model=request.model,
                 api_key=api_key,
                 temperature=request.temperature,
-                max_tokens=min(request.max_tokens, 1000) # Aumentar limite para 1000 tokens para respostas mais completas
+                max_tokens=min(request.max_tokens, 1000)
             )
             
-            # Extrair resposta e tokens usados do OpenRouter
             assistant_response = response_data["choices"][0]["message"]["content"]
             tokens_used = response_data.get("usage", {}).get("total_tokens", 0)
         
@@ -575,10 +577,7 @@ async def cleanup_sessions(max_age_hours: int = 24):
 
 # Endpoint para streaming (opcional)
 @app.post("/chat/stream")
-async def chat_stream(
-    request: ChatRequest,
-    api_key: str = Depends(get_openrouter_api_key)
-):
+async def chat_stream(request: ChatRequest):
     """Endpoint para chat com streaming (implementação futura)"""
 
 @app.post("/subscribe")

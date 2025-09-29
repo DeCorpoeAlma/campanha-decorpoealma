@@ -1,22 +1,26 @@
 # API e servidor
-fastapi==0.103.1
-uvicorn==0.23.2
-pydantic==2.3.0
+fastapi
+uvicorn
+pydantic
 httpx==0.24.1
 python-dotenv==1.0.0
 
 # Modelos de IA
-transformers==4.33.2
-torch==2.0.1
-accelerate==0.23.0
+transformers
+torch # Remove a versão fixa para permitir a atualização
+accelerate
+numpy==1.26.4
 
 # Processamento de texto
 beautifulsoup4==4.12.2
 lxml==4.9.3
+pypdf==3.17.1
+langchain-huggingface==0.1.0 # Adiciona a nova biblioteca para embeddings do Hugging Face
+langchain-chroma # Adiciona a nova biblioteca para Chroma
 
 # Persistência e agendamento (opcional)
 redis==4.6.0
 apscheduler==3.10.4
 
 # CORS e segurança
-starlette==0.27.0
+starlette

@@ -177,7 +177,7 @@ const parishesData = [
       { path: '/candidatos/faro/33 Maria_Amalia_Martins.png', name: 'Maria Amália Martins' },
       { path: '/candidatos/faro/34 Vitor_Lima.png', name: 'Vítor Lima' },
       { path: '/candidatos/faro/35 Vicencia_Picarra.png', name: 'Vicência Piçarra' },
-      { path: '/candidatos/faro/36 Maria_Celina_de_Oliveira.png', name: 'Maria Celina de Oliveira' },
+      { path: '/candidatos/faro/36 Maria_Celina_de_Oliveira.png', name: 'Celina de Oliveira' },
       { path: '/candidatos/faro/37 Joao_Bolas.png', name: 'João Bolas Soares' },
       { path: '/candidatos/faro/38 Ilidio_Mestre.png', name: 'Ilídio Mestre' }
     ]

@@ -34,7 +34,7 @@ const Program = () => {
           <button
             onClick={() => window.open(pdfPath, '_blank')}
             className="bg-dark-blue hover:bg-dark-blue/90 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300 transform hover:scale-105 flex items-center gap-2 mx-auto"
-            title="Descarregar Programa Eleitoral (PDF)"
+            title="Descarregar Programa"
           >
             <Download size={20} />
             Descarregar Programa

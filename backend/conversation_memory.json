@@ -1,0 +1,71 @@
+{
+  "conversations": {
+    "de57f281-f475-4e77-ba32-73e7921357a3": [
+      {
+        "timestamp": "2025-09-25T21:16:26.084081",
+        "user_message": "ola, como esta?",
+        "bot_response": "Olá! Muito prazer em falar consigo! \n\nSou o assistente da campanha \"Faro. De Corpo e Alma\" e estou aqui para esclarecer todas as suas dúvidas sobre os nossos candidatos e propostas para Faro.\n\nPode perguntar-me sobre qualquer tema - desde o percurso do Cristóvão Norte como candidato a presidente da câmara, até às propostas específicas que temos para o desenvolvimento da cidade. Também posso falar sobre o Macário Correia, que lidera a nossa lista para a Assembleia Municipal, ou sobre os nossos candidatos às juntas de freguesia.\n\nO que gostaria de saber?",
+        "source": "programmed",
+        "session_id": "de57f281-f475-4e77-ba32-73e7921357a3"
+      }
+    ],
+    "bf0eef22-61a5-4c92-873d-0c0f40a8850d": [
+      {
+        "timestamp": "2025-09-25T21:28:13.335344",
+        "user_message": "quem é a virgin<",
+        "bot_response": "Não tenho bem a certeza do que me está a perguntar, mas posso ajudá-lo com muita informação sobre a nossa candidatura!\n\nPosso falar-lhe sobre os nossos candidatos - o Cristóvão Norte para presidente da câmara e o Macário Correia que lidera a lista para a Assembleia Municipal. Também tenho informação sobre os candidatos às juntas de freguesia e sobre as nossas propostas para Faro.\n\nSe quiser saber sobre temas específicos como ambiente, economia, turismo, habitação, ou qualquer outra área, é só perguntar. Ou se prefere saber mais sobre o programa eleitoral ou sobre como pode participar na campanha, também posso ajudar.\n\nO que é que gostaria de saber exatamente?",
+        "source": "programmed",
+        "session_id": "bf0eef22-61a5-4c92-873d-0c0f40a8850d"
+      },
+      {
+        "timestamp": "2025-09-25T21:28:24.815234",
+        "user_message": "quem é a virginia\\",
+        "bot_response": "**Virgínia Alpestana** - Candidato à Junta de Freguesia de Montenegro\n\n👤 Nasceu em 1956 em Loulé\n🎓 Professora aposentada\n🏛️ Diretora Regional do Instituto Português da Juventude\n🗳️ Presidente da Junta desde 2021\n💼 No executivo da Junta desde 2009",
+        "source": "candidate_knowledge",
+        "session_id": "bf0eef22-61a5-4c92-873d-0c0f40a8850d"
+      },
+      {
+        "timestamp": "2025-09-25T21:28:39.747095",
+        "user_message": "qual a lista dela",
+        "bot_response": "As nossas listas para as eleições autárquicas são:\n\n**Câmara Municipal**: Cristóvão Norte (presidente) + 17 vereadores\n**Assembleia Municipal**: Macário Correia (cabeça de lista) + 53 candidatos\n**Juntas de Freguesia**: 5 candidatos a presidente de junta\n\nQuer saber mais detalhes sobre algum órgão específico?",
+        "source": "candidate_knowledge",
+        "session_id": "bf0eef22-61a5-4c92-873d-0c0f40a8850d"
+      },
+      {
+        "timestamp": "2025-09-25T21:28:48.678139",
+        "user_message": "tens a lista da virginia",
+        "bot_response": "**Virgínia Alpestana** - Candidato à Junta de Freguesia de Montenegro\n\n👤 Nasceu em 1956 em Loulé\n🎓 Professora aposentada\n🏛️ Diretora Regional do Instituto Português da Juventude\n🗳️ Presidente da Junta desde 2021\n💼 No executivo da Junta desde 2009",
+        "source": "candidate_knowledge",
+        "session_id": "bf0eef22-61a5-4c92-873d-0c0f40a8850d"
+      },
+      {
+        "timestamp": "2025-09-25T21:29:38.648502",
+        "user_message": "ola",
+        "bot_response": "Olá! Muito prazer em falar consigo! \n\nSou o assistente da campanha \"Faro. De Corpo e Alma\" e estou aqui para esclarecer todas as suas dúvidas sobre os nossos candidatos e propostas para Faro.\n\nPode perguntar-me sobre qualquer tema - desde o percurso do Cristóvão Norte como candidato a presidente da câmara, até às propostas específicas que temos para o desenvolvimento da cidade. Também posso falar sobre o Macário Correia, que lidera a nossa lista para a Assembleia Municipal, ou sobre os nossos candidatos às juntas de freguesia.\n\nO que gostaria de saber?",
+        "source": "programmed",
+        "session_id": "bf0eef22-61a5-4c92-873d-0c0f40a8850d"
+      }
+    ]
+  },
+  "user_profiles": {
+    "de57f281-f475-4e77-ba32-73e7921357a3": {
+      "session_id": "de57f281-f475-4e77-ba32-73e7921357a3",
+      "first_seen": "2025-09-25T21:16:26.084091",
+      "last_active": "2025-09-25T21:16:26.084091",
+      "total_messages": 1,
+      "interests": [],
+      "frequent_queries": [],
+      "conversation_style": "conversational"
+    },
+    "bf0eef22-61a5-4c92-873d-0c0f40a8850d": {
+      "session_id": "bf0eef22-61a5-4c92-873d-0c0f40a8850d",
+      "first_seen": "2025-09-25T21:28:13.335495",
+      "last_active": "2025-09-25T21:29:38.648525",
+      "total_messages": 5,
+      "interests": [],
+      "frequent_queries": [],
+      "conversation_style": "brief"
+    }
+  },
+  "last_updated": "2025-09-25T21:29:38.648878"
+}
