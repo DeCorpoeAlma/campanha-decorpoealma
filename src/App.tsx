@@ -12,7 +12,6 @@ import MainParishCandidatesSection from '@/components/MainParishCandidatesSectio
 import Footer from '@/components/Footer';
 import CristovaoNorteSection from '@/components/CristovaoNorteSection';
 import MacarioCorreiaSection from '@/components/MacarioCorreiaSection';
-import ChatbotPage from '@/components/ChatbotPage'; // Importar o componente ChatbotPage
 
 function App() {
   useEffect(() => {
@@ -35,7 +34,6 @@ function App() {
       <Program />
       {/* <Eventos /> */}
       <Participate />
-      <ChatbotPage /> {/* Página dedicada ao chatbot */}
       <Footer />
     </>
   );
